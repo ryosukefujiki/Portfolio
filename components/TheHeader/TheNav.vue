@@ -27,6 +27,7 @@
                     <div class="clearfix">
                         <a href="https://dribbble.com/bighappy" class="TheNav__icon TheNav__icon__dribble" target="_blank">
                             <i class="fab fa-dribbble"></i>
+                            <font-awesome-icon icon="facebook"/>
                         </a>
                         <a href="https://www.facebook.com/rfujiki0625" class="TheNav__icon TheNav__icon__facebook" target="_blank">
                             <i class="fab fa-facebook-square"></i>
@@ -120,7 +121,7 @@ export default {
   display: block;
   position: relative;
   opacity: 0;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 .TheNav ul li a {
   display: block;
@@ -150,6 +151,7 @@ export default {
 .TheNav__icon{
   display: block;
   float: left;
+  font-weight: normal;
 }
 .TheNav__icon img{
   width: 36px;
