@@ -1,10 +1,30 @@
 <template>
-  <div>
+  <!-- <div>
     <nuxt/>
-  </div>
+  </div> -->
+  <div class="default">
+    <!-- <TheBackground></TheBackground> -->
+    <!-- <div id="scrollArea"> -->
+    <nuxt></nuxt>
+    <!-- </div> -->
+    <TheNav></TheNav>
+    <!-- <TheFirstview></TheFirstview>
+    <TheAudio></TheAudio> -->
+</div>
 </template>
 
-<style lang="scss">
+<script>
+import TheNav from '~/components/TheNav.vue'
+
+export default {
+  components: {
+    TheNav,
+  },
+}
+</script>
+
+
+<style lang="scss" scoped>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
