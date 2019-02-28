@@ -1,4 +1,4 @@
-# ryosukefujikiportfolio
+# Ryosuke Fujiki Portfolio
 
 > Nuxt.js project
 
