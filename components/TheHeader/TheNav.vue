@@ -3,36 +3,35 @@
         <nav>
             <ul class="TheNav_List">
                 <li class="TheNav_Item">
-                    <a href="index.html" class="TheNav__home">
-                        <span class="text--letterspace">Work</span>s
+                    <a href="index.html" class="text--letterspace">
+                        Home
                     </a>
                 </li>
                 <li class="TheNav_Item">
-                    <a href="about.html" class="TheNav__works">
-                        <span class="text--letterspace">Abou</span>t
+                    <a href="about.html" class="text--letterspace">
+                        About
                     </a>
                 </li>
                 <li class="TheNav_Item">
-                    <a href="https://note.mu/ryosukefujiki" target="_blank" class="TheNav__about">
-                        <span class="text--letterspace">Blog</span>s
+                    <a href="https://note.mu/ryosukefujiki" target="_blank" class="text--letterspace">
+                        Blogs
                     </a>
                 </li>
-                <li class="TheNav_Item">
+                <!-- <li class="TheNav_Item">
                     <a href="resume.pdf" class="TheNav__resume" target="_blank">
                         <span class="text--letterspace">Resum</span>e
                     </a>
-                </li>
+                </li> -->
 
                 <li class="TheNav_Item">
-                    <div class="clearfix">
-                        <a href="https://dribbble.com/bighappy" class="TheNav__icon TheNav__icon__dribble" target="_blank">
+                    <div class="TheNav_ItemIcons">
+                        <a href="https://dribbble.com/bighappy" class="TheNav_ItemIcon TheNav_ItemIcon_Dribbble" target="_blank">
                             <i class="fab fa-dribbble"></i>
-                            <font-awesome-icon icon="facebook"/>
                         </a>
-                        <a href="https://www.facebook.com/rfujiki0625" class="TheNav__icon TheNav__icon__facebook" target="_blank">
+                        <a href="https://www.facebook.com/rfujiki0625" class="TheNav_ItemIcon TheNav_ItemIcon_Facebook" target="_blank">
                             <i class="fab fa-facebook-square"></i>
                         </a>
-                        <a href="https://www.instagram.com/ryosukefujiki/" class="TheNav__icon TheNav__icon__instagram" target="_blank">
+                        <a href="https://www.instagram.com/ryosukefujiki/" class="TheNav_ItemIcon TheNav_ItemIcon_Instagram" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -122,6 +121,8 @@ export default {
   position: relative;
   opacity: 0;
   margin-bottom: 32px;
+  width: 200px;
+  text-align: center;
 }
 .TheNav ul li a {
   display: block;
@@ -143,32 +144,21 @@ export default {
   background: #D2DADF;
 }
 
-// .TheNav ul li ul{
-//   margin: 0 auto;
-//   text-align: center;
-//   width: 200px;
-// }
-.TheNav__icon{
+.TheNav_ItemIcons{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  align-items: center;
+}
+.TheNav_ItemIcon{
   display: block;
-  float: left;
   font-weight: normal;
 }
-.TheNav__icon img{
-  width: 36px;
-  transition: 0.3s;
-  fill: black;
-}
-.TheNav__icon img:hover{
-  width: 36px;
-  fill: red;
-}
-.TheNav__icon__dribble{
+.TheNav_ItemIcon_Dribbble{
   font-size: 32px;
-  margin-right: 40px;
 }
-.TheNav__icon__facebook{
+.TheNav_ItemIcon_Facebook{
   font-size: 34px;
-  margin-right: 42px;
 }
 
 
@@ -176,7 +166,7 @@ export default {
   content: '';
   position: absolute;
   top: 50%;
-  left: 43.5%;
+  left: 46.5%;
   width: 0%;
   transform: translateX(-50%);
   height: 3px;
