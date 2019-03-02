@@ -1,7 +1,7 @@
 <template>
   <header class="TheHeader">
         <h1 class="TheHeader_Title">
-          <img :src="headerTitle" alt="" class="TheHeader_TitleImg" @click="routing('/')">
+            <img :src="headerTitle" alt="" class="TheHeader_TitleImg"  @click="routing('/')">
         </h1>
         <div class="TheHeader_Toggle" :class="{'active': headerActive}" @click="toggleMenu">
             <img :src="headerHamburgerBg" alt="" class="TheHeader_ToggleImg">
@@ -32,14 +32,12 @@ export default {
   },
   methods: {
     toggleMenu (){
-      console.log("呼ばれた!")
-      console.log(this.headerActive)
       this.headerActive = !this.headerActive
     },
     routing(url){
       this.$router.push(url)
       if (this.headerActive == true){
-        this.headerActive = !this.headerActive
+        this.toggleMenu()
       }
     },
   },
@@ -57,6 +55,7 @@ $blackColor: #272727;
   left: 74px;
   z-index: 10;
   display: block;
+  cursor: pointer;
 }
 
 .TheHeader_Toggle{

@@ -17,12 +17,6 @@
                         Blogs
                     </a>
                 </li>
-                <!-- <li class="TheNav_Item">
-                    <a href="resume.pdf" class="TheNav__resume" target="_blank">
-                        <span class="text--letterspace">Resum</span>e
-                    </a>
-                </li> -->
-
                 <li class="TheNav_Item">
                     <div class="TheNav_ItemIcons">
                         <a href="https://dribbble.com/bighappy" class="TheNav_ItemIcon TheNav_ItemIcon_Dribbble" target="_blank">
@@ -36,7 +30,6 @@
                         </a>
                     </div>
                 </li>
-
             </ul>
           </nav>
     </div>
@@ -48,7 +41,7 @@ export default {
   methods: {
     routing(url){
       this.$router.push(url)
-      this.$parent.headerActive =!this.$parent.headerActive
+      this.$parent.toggleMenu()
     },
   },
 }
