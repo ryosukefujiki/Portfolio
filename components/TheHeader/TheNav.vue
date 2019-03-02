@@ -3,12 +3,12 @@
         <nav>
             <ul class="TheNav_List">
                 <li class="TheNav_Item">
-                    <a href="index.html" class="text--letterspace">
+                    <a @click="routing('/')" class="text--letterspace">
                         Home
                     </a>
                 </li>
                 <li class="TheNav_Item">
-                    <a href="about.html" class="text--letterspace">
+                    <a @click="routing('/about')" class="text--letterspace">
                         About
                     </a>
                 </li>
@@ -44,7 +44,13 @@
 
 <script>
 export default {
-    
+  props: ['headerActive'],
+  methods: {
+    routing(url){
+      this.$router.push(url)
+      this.$parent.headerActive =!this.$parent.headerActive
+    },
+  },
 }
 </script>
 
@@ -86,7 +92,6 @@ export default {
 }
 
 .TheNav.open li {
-
   animation: fadeInRight .5s ease forwards;
   animation-delay: .35s;
 }
@@ -183,6 +188,31 @@ export default {
     opacity: 1;
     left: 0;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .TheNav ul li {
+      margin-bottom: 36px;
+      width: 160px;
+    }
+
+    .TheNav_ItemIcons{
+   width: 160px;
+}
+
+    .TheNav nav {
+      font-size: 28px;
+    }
+
+    .text--letterspace{
+      letter-spacing: 8px;
+    }
+    .TheNav_ItemIcon_Dribbble{
+      font-size: 26px;
+    }
+    .TheNav_ItemIcon_Facebook{
+      font-size: 28px;
+    }
 }
 
 

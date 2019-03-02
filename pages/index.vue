@@ -1,65 +1,6 @@
 <template>
 <div class="container">
   <h1 class="heading"><span class="text--letterspace">Work</span>s</h1>
-  <div class="swiper-slide swiper-slide-left">
-            <a href="hive.html">
-                <div class="contents__bg">
-                </div>
-                <div class="trim">
-                    <img src="images/home/hive_home.png" alt="" class="contents__work__img">
-                </div>
-                <p class="contents__title">UI / UX Design</p>
-                <p class="contents__category">Hive</p>
-            </a>
-        </div>
-
-        <div class="swiper-slide swiper-slide-right">
-            <a href="familybook.html">
-                <div class="contents__bg">
-                </div>
-                <div class="trim">
-                    <img src="images/home/familybook_home.png" alt="" class="contents__work__img">
-                </div>
-                <p class="contents__title">Planning</p>
-                <p class="contents__category">かぞくが、ものがたり。</p>
-            </a>
-        </div>
-
-        <div class="swiper-slide  swiper-slide-left">
-            <a href="lineandball.html">
-                <div class="contents__bg">
-                </div>
-                <div class="trim">
-                    <img src="images/home/lineandball.png" alt="" class="contents__work__img">
-                </div>
-                <p class="contents__title">Game Design</p>
-                <p class="contents__category">LINE and BALL</p>
-            </a>
-        </div>
-
-        <div class="swiper-slide  swiper-slide-right">
-            <a href="playfulfes.html">
-                <div class="contents__bg">
-                </div>
-                <div class="trim">
-                    <img src="images/home/playfulfes.png" alt="" class="contents__work__img">
-                </div>
-                <p class="contents__title">Web Design</p>
-                <p class="contents__category">プレイフルフェス 2018 Winter</p>
-            </a>
-        </div>
-
-        <div class="swiper-slide swiper-slide-left">
-            <a href="scrapboard.html">
-                <div class="contents__bg">
-                </div>
-                <div class="trim">
-                    <img src="images/home/scrapboard02.png" alt="" class="contents__work__img">
-                </div>
-                <p class="contents__title">UI / UX Design</p>
-                <p class="contents__category">Scrap Board</p>
-            </a>
-        </div>
 </div>
 </template>
 
