@@ -106,6 +106,10 @@ export default {
   letter-spacing: 10px;
 }
 
+.TheNav_Item a{
+  cursor: pointer;
+}
+
 .TheNav ul {
   list-style: none;
   padding: 0;
