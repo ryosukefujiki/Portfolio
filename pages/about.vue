@@ -70,6 +70,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+*{
+  margin: 0;
+  padding: 0;
+}
 .clearfix:after {
   display: block;
   clear: both;
@@ -87,6 +92,8 @@ export default {
   font-weight: 700;
   font-style: italic;
 }
+
+
 
 
 .trim {
