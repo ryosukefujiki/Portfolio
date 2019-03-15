@@ -1,7 +1,8 @@
 <template>
 
 <section class="TheAbout">
-    <img :src="profileImg" alt="" class="TheAbout_ProfileImg">
+    <TheProfileImg></TheProfileImg>
+    <!-- <img :src="profileImg" alt="" class="TheAbout_ProfileImg"> -->
     <div class="TheAbout_Profile">
       <h2 class="TheAbout_Heading">🙌 Hi, I’m Ryosuke Fujiki</h2>
       <p class="TheAbout_Text">1996年シンガポール生まれ、東京育ち。
@@ -71,10 +72,13 @@
 </template>
 
 <script>
-
+import TheProfileImg from '~/components/TheAbout/TheProfileImg.vue'
 import {mapGetters} from 'vuex'
 
 export default {
+  components: {
+    TheProfileImg,
+  },
   data () {
     return {
       profileImg: '/about/profile.png',
@@ -123,10 +127,10 @@ $hover-color: #D2DADF;
   line-height: 48px;
 }
 
-.TheAbout_ProfileImg{
-  width: 480px;
-  height: 320px;
-}
+// .TheAbout_ProfileImg{
+//   width: 480px;
+//   height: 320px;
+// }
 .TheAbout_Profile{
   width: 480px;
 }
