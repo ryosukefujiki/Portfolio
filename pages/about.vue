@@ -24,8 +24,8 @@
         <h2 class="TheAbout_Heading">✏️ SKILLS</h2>
         <p class="TheAbout_Text">
           Adobe Illustrator/Photoshop/Premiere/AfterEffects<br>
-          HTML/CSS/Javascript/Vue.js/Nuxt.js/Python<br>
-          Arduino/RapberryPi<br>
+          HTML/CSS/JavaScript/Vue.js/Nuxt.js/Python<br>
+          Arduino/RaspberryPi/Processing<br>
           Sketch/Adobe XD/ProtoPie<br>
         </p>
       </div>
@@ -94,13 +94,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-*{
-  margin: 0;
-  padding: 0;
-}
-
-
 $heading-color: #272727;
 $heading-size: 24px;
 $text-color: #9B9B9B;
