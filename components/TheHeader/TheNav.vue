@@ -122,7 +122,7 @@ export default {
   display: block;
   position: relative;
   opacity: 0;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   width: 200px;
   text-align: center;
 }
