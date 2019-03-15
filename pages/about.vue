@@ -19,7 +19,7 @@
           2018 UIST Student Inovation Contest People Choice <span class="hide-text">Award</span><br>
           2018 Goodpatch Winter Internship 最優秀賞<br>
           2017 CyberAgent UIDA UI発明賞<br>
-          2017 電通「アイディアの学校」 金賞</p>
+          2017 電通 アイディアの学校 金賞</p>
       </div>
       <div class="TheAbout_Skill TheAbout_Content">
         <h2 class="TheAbout_Heading">✏️ SKILLS</h2>
@@ -42,10 +42,10 @@
           2018 NIHONBASHI β Creator<br>
           2018 Yahoo! 冬季インターンシップ<br>
           2018 Goodpatch 冬季インターンシップ<br>
-          2017 DeNA 「Delight U for Student」<br>
-          2017 CyberAgent 「UIDA」　<br>
+          2017 DeNA Delight U for Student<br>
+          2017 CyberAgent UIDA　<br>
           2017 CyberAgent Technical Creator Challenge<br>
-          2017 電通「アイディアの学校」　<br>
+          2017 電通 アイディアの学校　<br>
           2016 チームラボ株式会社<br>
           2015 株式会社ライフイズテック</p>
       </div>
