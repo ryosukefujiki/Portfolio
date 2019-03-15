@@ -16,6 +16,10 @@ module.exports = {
       { rel: "stylesheet", href:"https://use.fontawesome.com/releases/v5.6.1/css/all.css"}
     ]
   },
+  css: [
+    // プロジェクト内の CSS ファイル
+    '@/assets/css/reset.css',
+  ],
   /*
   ** Customize the progress bar color
   */
