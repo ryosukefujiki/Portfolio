@@ -1,49 +1,57 @@
 <template>
-  <section class="container">
-    <h1 class="heading"><span class="text--letterspace">Abou</span>t</h1>
 
-
-    <section class="about__contents">
-        <div class="about__introduction clearfix">
-            <div class="trim">
-                <img :src="profileImg" alt="" class="about__introduction__img">
-            </div>
-            <div class="about__introduction__text">
-                <h2 class="about__introduction__title">Hi, I’m Ryosuke Fujiki</h2><br>
-                <p class="about__introduction__details">1996年シンガポール生まれ、東京育ち。2015年より慶應義塾大学環境情報学部に通い、2018年春に大学４年生に進学する。HCI, UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO などの展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画立案から ”ものづくり” をすることが得意なクリエイター。</p>
-            </div>
-        </div>
-
-        <div class="about__skill clearfix">
-            <img :src="skillImg" alt="" class="sp_about__skill__img">
-            <div class="about__skill__text">
-                <h2 class="about__skill__title">Skills</h2><br>
-                <p class="about__skill__details">
-                    Adobe Illustrator / Photoshop<br> Adobe Premiere / AfterEffects<br> HTML / CSS / JavaScript / Python<br> Sketch
-                    <br> ProtoPie
-                    <br>
-                </p>
-            </div>
-            <img :src="skillImg" alt="" class="about__skill__img">
-        </div>
-
-        <div class="about__internship clearfix">
-            <div class="trim about__internship__img">
-                <img :src="internshipImg" alt="">
-            </div>
-            <div class="about__internship__text">
-                <h2 class="about__internship__title">INTERNSHIP 2015 - 2018</h2><br>
-                <p class="about__internship__details">
-                    2018 Nihonbashi β Creator<br>2018 Yahoo! 冬季インターンシップ<br> 2018 Goodpatch 冬季インターンシップ　最優秀賞受賞<br> 2017 DeNA 「Delight U for Student」<br> 2017 CyberAgent 「UIDA」　UI発明賞受賞<br> 2017 CyberAgent Technical Creator Challenge<br> 2017 電通「アイディアの学校」　金賞受賞<br> 2016 チームラボ株式会社<br>                    2015 株式会社ライフイズテック
-                </p>
-            </div>
-        </div>
-
-        <!-- <a href="" class="about__contact">Contact Me!</a> -->
-    </section>
-
-
+<section class="TheAbout">
+    <img :src="profileImg" alt="" class="TheAbout_ProfileImg">
+    <div class="TheAbout_Profile">
+      <h2 class="TheAbout_Heading">🙌 Hi, I’m Ryosuke Fujiki</h2>
+      <p class="TheAbout_Text">1996年シンガポール生まれ、東京育ち。
+        2015年より慶應義塾大学環境情報学部に通い、2018年春に大学４年生に進学する。HCI, 
+        UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO など
+        の展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画
+        立案から ”ものづくり” をすることが得意なクリエイター。</p>
+    </div>
+    <div class="TheAbout_Detail">
+      <div class="TheAbout_Award TheAbout_Content">
+        <h2 class="TheAbout_Heading">🏆 AWARDS</h2>
+        <p class="TheAbout_Text">
+          2019 SFC Student Award 受賞<br>
+          2018 UIST Student Inovation Contest Most Creative Award<br>
+          2018 UIST Student Inovation Contest People’s Choice Award<br>
+          2018 Goodpatch Winter Internship 最優秀賞 受賞<br>
+          2017 CyberAgent UIDA UI発明賞 受賞<br>
+          2017 電通「アイディアの学校」 金賞 受賞。</p>
+      </div>
+      <div class="TheAbout_Skill TheAbout_Content">
+        <h2 class="TheAbout_Heading">✏️ SKILLS</h2>
+        <p class="TheAbout_Text">
+          Adobe Illustrator/Photoshop/Premire/AfterEffects<br>
+          HTML/CSS/Javascript/Vue.js/Nuxt.js/Python<br>
+          Arduino/RapberryPi<br>
+          Sketch/Adobe XD/ProtoPie<br>
+        </p>
+      </div>
+    </div>
+    <div class="TheAbout_Experience">
+      <div class="TheAbout_Education TheAbout_Content">
+        <h2 class="TheAbout_Heading">🎓 EDUCATION</h2>
+        <p class="TheAbout_Text">2015-2019 慶應義塾大学環境情報学部</p>
+      </div>
+      <div class="TheAbout_Work TheAbout_Content">
+        <h2 class="TheAbout_Heading">💻 WORKS</h2>
+        <p class="TheAbout_Text">
+          2018 NIHONBASHI β Creator<br>
+          2018 Yahoo! 冬季インターンシップ<br>
+          2018 Goodpatch 冬季インターンシップ<br>
+          2017 DeNA 「Delight U for Student」<br>
+          2017 CyberAgent 「UIDA」　<br>
+          2017 CyberAgent Technical Creator Challenge<br>
+          2017 電通「アイディアの学校」　<br>
+          2016 チームラボ株式会社<br>
+          2015 株式会社ライフイズテック</p>
+      </div>
+    </div>
   </section>
+
 </template>
 
 <script>
@@ -70,6 +78,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+$heading-color: #272727;
+$heading-size: 24px;
+$text-color: #9B9B9B;
+$text-size: 16px;
+
+.TheAbout{
+  padding-top: 240px;
+  display: flex;
+  // margin: 0 auto;
+  width: 1200px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.TheAbout_ProfileImg{
+  width: 480px;
+  height: 320px;
+}
+
+.TheAbout_Profile{
+  width: 480px;
+}
+
+.TheAbout_Heading{
+  font-size: $heading-size;
+  color: $heading-color;
+  font-weight: 600;
+}
+.TheAbout_Text{
+  font-family: "Noto Sans JP";
+  color: $text-color;
+  font-size: $text-size;
+  line-height: 48px;
+}
+
+
+.TheAbout_Content{
+  margin-top: 48px;
+}
+
+
+
 .clearfix:after {
   display: block;
   clear: both;
