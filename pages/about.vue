@@ -78,10 +78,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 *{
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD
 
 
 $heading-color: #272727;
@@ -143,6 +145,8 @@ $text-size: 16px;
   font-weight: 700;
   font-style: italic;
 }
+
+
 
 
 .trim {
