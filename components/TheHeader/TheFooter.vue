@@ -1,6 +1,6 @@
 <template>
 <footer class="TheFooter">
-    © 2018 Ryosuke Fujiki
+    © 2019 Ryosuke Fujiki
 </footer>
 </template>
 
