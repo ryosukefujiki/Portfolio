@@ -164,7 +164,7 @@ $blackColor: #272727;
 
 @media screen and (max-width: 1024px) {
     /* 1024pxまでの幅の場合に適応される */
-    .TheHeaderTitle{
+    .TheHeader_TitleImg{
       left: 64px;
     }
 
@@ -180,6 +180,16 @@ $blackColor: #272727;
 }
 @media screen and (max-width: 768px) {
     /* 768pxまでの幅の場合に適応される */
+    .TheHeader_TitleImg{
+      left: 56px;
+    }
+    .TheHeader_Toggle{
+      right: 56px;
+
+    }
+    .TheHeader_Toggle span {
+      right: 78px;
+    }
 }
 @media screen and (max-width: 480px) {
     /* 480pxまでの幅の場合に適応される */
@@ -276,27 +286,29 @@ $blackColor: #272727;
 }
 @media screen and (max-width: 320px) {
     /* 320pxまでの幅の場合に適応される */
-    .TheHeader_Title{
+    .TheHeader_TitleImg{
       top: 24px;
+      left: 4px;
     }
 
     .TheHeader_Toggle{
       top: 24px;
-
+      right: 4px;
     }
 
     .TheHeader_Toggle span {
-      top: 48px;
+      top: 32px;
+      right: 22px;
     }
 
     .TheHeader_Toggle span:nth-of-type(1) {
-      top: 46px;
+      top: 44px;
     }
     .TheHeader_Toggle span:nth-of-type(2) {
-      top: 54px;
+      top: 50px;
     }
     .TheHeader_Toggle span:nth-of-type(3) {
-      top: 62px;
+      top: 56px;
     }
 }
 </style>

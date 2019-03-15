@@ -24,4 +24,22 @@ export default {
   width: 100%;
   margin-top: 120px;
 }
+
+
+@media screen and (max-width: 1024px) {
+    /* 1024pxまでの幅の場合に適応される */
+    .TheFooter{
+       margin-top: 220px;
+    }
+}
+@media screen and (max-width: 768px) {
+  .TheFooter{
+       margin-top: 120px;
+    }
+}
+@media screen and (max-width: 480px) {
+  .TheFooter{
+       margin-top: 60px;
+    }
+}
 </style>

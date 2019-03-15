@@ -15,8 +15,8 @@
         <h2 class="TheAbout_Heading">🏆 AWARDS</h2>
         <p class="TheAbout_Text">
           2019 SFC STUDENT AWARD<br>
-          2018 UIST Student Inovation Contest Most Creative Award<br>
-          2018 UIST Student Inovation Contest People Choice Award<br>
+          2018 UIST Student Inovation Contest Most Creative <span class="hide-text">Award</span><br>
+          2018 UIST Student Inovation Contest People Choice <span class="hide-text">Award</span><br>
           2018 Goodpatch Winter Internship 最優秀賞<br>
           2017 CyberAgent UIDA UI発明賞<br>
           2017 電通「アイディアの学校」 金賞</p>
@@ -50,6 +50,7 @@
           2015 株式会社ライフイズテック</p>
       </div>
     </div>
+    <div class="TheAbout_Contact">
     <div class="TheAbout_Social TheAbout_Content">
       <div class="TheAbout_ItemIcons">
         <a href="https://dribbble.com/bighappy" class="TheAbout_ItemIcon TheAbout_ItemIcon_Dribbble" target="_blank">
@@ -63,9 +64,10 @@
         </a>
        </div>
     </div>
-    <div class="TheAbout_Social TheAbout_Content">
+    <div class="TheAbout_Email TheAbout_Content">
       <h2 class="TheAbout_Heading">📩 DROP ME A LINE !</h2>
       <a class="TheAbout_Text">ryosukefujiki625 ＠ gmail.com</a>
+    </div>
     </div>
   </section>
 
@@ -109,8 +111,10 @@ $hover-color: #D2DADF;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 240px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin: 0 auto;
+  width: 1000px;
+  // margin-left: 120px;
+  // margin-right: 120px;
 }
 .TheAbout_Heading{
   color: $heading-color;
@@ -118,6 +122,7 @@ $hover-color: #D2DADF;
   font-style: normal;
   font-size: $heading-size;
   // letter-spacing: 0.5px;
+  padding-top: 12px;
 }
 .TheAbout_Text{
   color: $text-color;
@@ -140,7 +145,16 @@ $hover-color: #D2DADF;
   width: 480px;
 }
 
+.TheAbout_Contact{
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
+.TheAbout_Email .TheAbout_Heading{
+  padding-top: 0px;
+}
 .TheAbout_ItemIcons{
   display: flex;
   justify-content: space-between;
@@ -169,15 +183,126 @@ $hover-color: #D2DADF;
 
 @media screen and (max-width: 1024px) {
     /* 1024pxまでの幅の場合に適応される */
+    .TheAbout{
+      width: 800px;
+    }
+    .TheAbout_Content{
+      margin-top: 48px;
+      width: 360px;
+    }
+    .TheAbout_Profile{
+      width: 360px;
+    }
+    .TheAbout_Heading{
+      font-size: 20px;
+    }
+    .TheAbout_Text{
+      font-size: 14px;
+      line-height: 28px;
+    }
+    .TheAbout_Contact{
+      width: 800px;
+    }
 }
 @media screen and (max-width: 768px) {
     /* 768pxまでの幅の場合に適応される */
+    .TheAbout{
+      width: 640px;
+      padding-top: 200px;
+    }
+    .TheAbout_Content{
+      margin-top: 48px;
+      width: 300px;
+    }
+    .TheAbout_Profile{
+      width: 300px;
+    }
+    .TheAbout_Heading{
+      font-size: 18px;
+      padding-top: 6px;
+    }
+    .TheAbout_Text{
+      font-size: 12px;
+      line-height: 24px;
+    }
+    .TheAbout_Contact{
+      width: 640px;
+    }
 }
 @media screen and (max-width: 480px) {
     /* 480pxまでの幅の場合に適応される */
+    .TheAbout{
+      width: 320px;
+      padding-top: 120px;
+    }
+    .TheAbout_Profile{
+      width: 320px;
+    }
+    .TheAbout_Heading{
+      font-size: 18px;
+      padding-top: 24px;
+    }
+    .TheAbout_Text{
+      margin-top: 12px;
+      line-height: 28px;
+    }
+    .TheAbout_Content{
+      margin-top: 12px;
+      width: 320px;
+    }
+    .TheAbout_Contact{
+      width: 320px;
+      flex-direction: column-reverse;
+    }
+    .TheAbout_Contact .TheAbout_Heading{
+      padding-top: 24px;
+    }
+
+    .TheAbout_ItemIcons{
+      margin-top: 24px;
+      justify-content: space-around;
+      width: auto;
+    }
+    .hide-text{
+      display: none;
+    }
+
+    .TheAbout_ItemIcon_Dribbble{
+      font-size: 30px;
+    }
+    .TheAbout_ItemIcon_Facebook{
+      font-size: 32px;
+    }
+    .TheAbout_ItemIcon_Instagram{
+      font-size: 32px;
+    }
+
+    .TheAbout_Social{
+      display: none;
+    }
 }
 @media screen and (max-width: 320px) {
     /* 320pxまでの幅の場合に適応される */
+    .TheAbout{
+      width: 300px;
+      padding-top: 120px;
+    }
+    .TheAbout_Profile{
+      width: 300px;
+    }
+    .TheAbout_Heading{
+      font-size: 18px;
+      padding-top: 24px;
+    }
+    .TheAbout_Text{
+      font-size: 10px;
+      margin-top: 12px;
+      line-height: 28px;
+    }
+    .TheAbout_Content{
+      margin-top: 12px;
+      width: 300px;
+    }
 }
 
 </style>
