@@ -2,8 +2,8 @@
 <div class="TheHome">
   <TheHero class="TheHero"></TheHero>
   <div class="TheHome_Container">
-     <div class="TheHome_Work">
-            <a href="hive.html">
+        <div class="TheHome_Work">
+            <a @click="routing('/hive')">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="TheHome_Work">
-            <a href="hive.html">
+            <a @click="routing('/lineandball')">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="TheHome_Work">
-            <a href="hive.html">
+            <a @click="routing('/familybook')">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -39,7 +39,7 @@
         </div>
 
         <div class="TheHome_Work">
-            <a href="hive.html">
+            <a @click="routing('/playfulfes')">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="TheHome_Work">
-            <a href="hive.html">
+            <a @click="routing('/scrapboard')">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -61,8 +61,6 @@
                 <p class="TheHome_WorkTitle">Scrap Board</p>
             </a>
         </div>
-  
-  
   </div>
    <TheFooter></TheFooter>
 </div>
@@ -76,6 +74,11 @@ export default {
   components: {
     TheHero,
     TheFooter,
+  },
+  methods: {
+    routing(url){
+      this.$router.push(url)
+    },
   },
   data () {
     return {
@@ -144,8 +147,8 @@ $background-color: #FCFCFC;
   transition-timing-function:ease-out;
 }
 
-.TheHome_Work:hover .TheHome_WorkBg{
-  box-shadow: 0px 0px 20px 0px rgba(155,155,155,0.2);
+.TheHome_Work:hover{
+  cursor: pointer;
 }
 
 .TheHome_Work:hover .TheHome_WorkBg{
