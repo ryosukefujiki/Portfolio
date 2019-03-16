@@ -7,7 +7,7 @@
     <!-- </div> -->
     <!-- <TheFirstview></TheFirstview>
     <TheAudio></TheAudio> -->
-    <TheFooter></TheFooter>
+    <!-- <TheFooter></TheFooter> -->
 </div>
 </template>
 
@@ -24,6 +24,10 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
+.default{
+  height: 100%;
+}
+
 </style>
 
