@@ -41,10 +41,10 @@
         <h2 class="TheAbout_Heading">💻 WORKS</h2>
         <p class="TheAbout_Text">
           2018 NIHONBASHI β Creator<br>
-          2018 Yahoo! 冬季インターンシップ<br>
-          2018 Goodpatch 冬季インターンシップ<br>
+          2018 Yahoo! Internship<br>
+          2018 Goodpatch Internship<br>
           2017 DeNA Delight U for Student<br>
-          2017 CyberAgent UIDA　<br>
+          2017 CyberAgent UIDA<br>
           2017 CyberAgent Technical Creator Challenge<br>
           2017 電通 アイディアの学校　<br>
           2016 チームラボ株式会社<br>
