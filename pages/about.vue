@@ -1,6 +1,7 @@
 <template>
 
 <section class="TheAbout">
+  <div class="TheAbout_Coutainer">
     <TheProfileImg></TheProfileImg>
     <!-- <img :src="profileImg" alt="" class="TheAbout_ProfileImg"> -->
     <div class="TheAbout_Profile">
@@ -69,17 +70,21 @@
       <a class="TheAbout_Text">ryosukefujiki625 ＠ gmail.com</a>
     </div>
     </div>
+</div>
+    <TheFooter></TheFooter>
   </section>
 
 </template>
 
 <script>
 import TheProfileImg from '~/components/TheAbout/TheProfileImg.vue'
+import TheFooter from '~/components/TheHeader/TheFooter.vue'
 import {mapGetters} from 'vuex'
 
 export default {
   components: {
     TheProfileImg,
+    TheFooter,
   },
   data () {
     return {
@@ -107,6 +112,9 @@ $text-size: 16px;
 $hover-color: #D2DADF;
 
 .TheAbout{
+  
+}
+.TheAbout_Coutainer{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
