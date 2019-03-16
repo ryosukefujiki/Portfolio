@@ -1,59 +1,139 @@
 <template>
-<div class="container">
-  <h1 class="heading"><span class="text--letterspace">Work</span>s</h1>
+<div class="TheHome">
+  <TheHero class="TheHero"></TheHero>
+  <div class="TheHome_Container">
+     <div class="TheHome_Work">
+            <a href="hive.html">
+                <div class="TheHome_WorkBg">
+                </div>
+                <div class="TheHome_WorkTrim">
+                    <img :src="hiveHomeImg" alt="" class="TheHome_WorkImg">
+                </div>
+                <p class="TheHome_WorkCategory">UI / UX Design</p>
+                <p class="TheHome_WorkTitle">Hive</p>
+            </a>
+        </div>
+
+        <div class="TheHome_Work">
+            <a href="hive.html">
+                <div class="TheHome_WorkBg">
+                </div>
+                <div class="TheHome_WorkTrim">
+                    <img :src="lineandballHomeImg" alt="" class="TheHome_WorkImg">
+                </div>
+                <p class="TheHome_WorkCategory">Game Design</p>
+                <p class="TheHome_WorkTitle">LINE and BALL</p>
+            </a>
+        </div>
+
+        <div class="TheHome_Work">
+            <a href="hive.html">
+                <div class="TheHome_WorkBg">
+                </div>
+                <div class="TheHome_WorkTrim">
+                    <img :src="familybookHomeImg" alt="" class="TheHome_WorkImg">
+                </div>
+                <p class="TheHome_WorkCategory">Planning</p>
+                <p class="TheHome_WorkTitle">かぞくが、ものがたり。</p>
+            </a>
+        </div>
+
+        <div class="TheHome_Work">
+            <a href="hive.html">
+                <div class="TheHome_WorkBg">
+                </div>
+                <div class="TheHome_WorkTrim">
+                    <img :src="playfulfesHomeImg" alt="" class="TheHome_WorkImg">
+                </div>
+                <p class="TheHome_WorkCategory">Web Design</p>
+                <p class="TheHome_WorkTitle">プレイフルフェス2018Winter</p>
+            </a>
+        </div>
+
+        <div class="TheHome_Work">
+            <a href="hive.html">
+                <div class="TheHome_WorkBg">
+                </div>
+                <div class="TheHome_WorkTrim">
+                    <img :src="scrapboardHomeImg" alt="" class="TheHome_WorkImg">
+                </div>
+                <p class="TheHome_WorkCategory">UI / UX Design</p>
+                <p class="TheHome_WorkTitle">Scrap Board</p>
+            </a>
+        </div>
+  
+  
+  </div>
+   <TheFooter></TheFooter>
 </div>
 </template>
 
 <script>
+import TheHero from '~/components/TheHome/TheHero.vue'
+import TheFooter from '~/components/TheHeader/TheFooter.vue'
 
 export default {
   components: {
-
-  }
+    TheHero,
+    TheFooter,
+  },
+  data () {
+    return {
+      hiveHomeImg: '/home/hive_home.png',
+      lineandballHomeImg: '/home/lineandball_home.png',
+      familybookHomeImg: '/home/familybook_home.png',
+      playfulfesHomeImg: '/home/playfulfes_home.png ',
+      scrapboardHomeImg: '/home/scrapboard_home.png',
+    }
+  },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+$background-color: #FCFCFC;
+
+.TheHome{
+  height: 100%;
+  margin-bottom: 48px;
+  background: $background-color;
+}
 
 .heading{
   font-size: 48px;
   color: #272727;
   display: block;
-  margin: 0px auto;
-  margin-top: 280px;
+  padding-top: 320px;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
-.work__contents{
+.TheHome_Container{
   margin: 0 auto;
-  width: 720px;
-  padding-bottom: 200px;
-  /* background: #f1f1f1; */
-
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 
 
-.swiper-slide{
+.TheHome_Work{
   position: relative;
   padding-top: 30px;
 	margin-top: 120px;
   float: left;
 }
 
-.swiper-slide-right{
- margin-left: 80px;
-}
 
-.swiper-slide a{
+.TheHome_Work a{
   text-decoration: none;
 }
 
 
-.contents__bg{
+.TheHome_WorkBg{
   position: absolute;
   width: 340px;
   height: 260px;
@@ -64,11 +144,15 @@ export default {
   transition-timing-function:ease-out;
 }
 
-.swiper-slide:hover .contents__bg{
+.TheHome_Work:hover .TheHome_WorkBg{
   box-shadow: 0px 0px 20px 0px rgba(155,155,155,0.2);
 }
 
-.trim{
+.TheHome_Work:hover .TheHome_WorkBg{
+  box-shadow: 0px 0px 20px 0px rgba(155,155,155,0.2);
+}
+
+.TheHome_WorkTrim{
   z-index: 4;
   overflow: hidden;
   width: 320px;
@@ -79,7 +163,7 @@ export default {
 	top: 10px;
 }
 
-.trim img {
+.TheHome_WorkImg {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -95,12 +179,12 @@ export default {
   transform: scale(1.2);
 }
 
-.swiper-slide:hover .trim img{
+.TheHome_WorkTrim:hover .TheHome_WorkImg{
   -webkit-transform: scale(1.0);
   transform: scale(1.0);
 }
 
-.contents__title{
+.TheHome_WorkCategory{
   font-size: 18px;
   color: #4a4a4a;
   /* letter-spacing: 4px; */
@@ -110,7 +194,7 @@ export default {
   text-decoration: none;
 }
 
-.contents__category{
+.TheHome_WorkTitle{
   font-size: 14px;
   margin-top: 8px;
   color: #9b9b9b;
@@ -125,33 +209,23 @@ export default {
 
 @media screen and (max-width: 1024px) {
     /* 1024pxまでの幅の場合に適応される */
-    .heading{
-      margin: 320px auto;
-    }
-    .work__contents{
-      margin: 0 auto;
-      width: 720px;
-      padding-bottom: 200px;
-      /* background: #f1f1f1; */
-
+    .TheHome_Container{
+       width: 800px;
     }
 
 }
 @media screen and (max-width: 768px) {
     /* 768pxまでの幅の場合に適応される */
-    .work__contents{
-      margin: 0 auto;
-      width: 670px;
-      padding-bottom: 200px;
-      /* background: #f1f1f1; */
-
+    .TheHome_Container{
+      width: 640px;
     }
-    .contents__bg{
+
+    .TheHome_WorkBg{
       width: 670px;
       height: 419px;
     }
 
-    .trim{
+    .TheHome_WorkTrim{
       width: 626px;
       height: 375px;
       position: relative;
@@ -166,33 +240,25 @@ export default {
 
     .heading{
       font-size: 32px;
-      margin: 40px auto;
-      margin-top: 200px;
       font-family: 'Noto Sans', sans-serif;
     }
 
 
-    .swiper-slide{
+    .TheHome_Work{
       padding-top: 30px;
     	margin-top: 60px;
     }
-    .swiper-slide-right{
-     margin-left: 0px;
-    }
 
-    .work__contents{
-      margin: 0 auto;
+    .TheHome_Container{
       width: 320px;
-      padding-bottom: 200px;
-      /* background: #f1f1f1; */
-
     }
-    .contents__bg{
+
+    .TheHome_WorkBg{
       width: 320px;
       height: 240px;
     }
 
-    .trim{
+    .TheHome_WorkTrim{
       width: 300px;
       height: 225px;
       position: relative;
@@ -204,22 +270,16 @@ export default {
 }
 @media screen and (max-width: 320px) {
     /* 320pxまでの幅の場合に適応される */
-    .work__contents{
-      margin: 0 auto;
-      width: 280px;
-      padding-bottom: 200px;
-      /* background: #f1f1f1; */
-
+    .TheHome_Container{
+      width: 300px;
     }
-    .contents__bg{
+
+    .TheHome_WorkBg{
       width: 280px;
       height: 210px;
     }
-    .swiper-slide-right{
-     margin-left: 0px;
-    }
 
-    .trim{
+    .TheHome_WorkTrim{
       width: 260px;
       height: 195px;
       position: relative;
@@ -227,7 +287,7 @@ export default {
     	top: 7px;
     }
 
-    .trim img {
+    .TheHome_WorkImg {
       position: absolute;
       top: 50%;
       left: 50%;
