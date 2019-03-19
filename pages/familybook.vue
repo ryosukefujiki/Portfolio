@@ -357,5 +357,121 @@ body,
     align-items: flex-start;
 }
 
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+    .TheWork_HeroNumber{
+        font-size: 16px;
+      left: 24px;
+      bottom: 94px;
+    }
+    .TheWork_HeroHeading{
+        font-size: 22px;
+      left: 24px;
+      bottom: 60px;
+    }
+    .TheWork_HeroCategory{
+        font-size: 14px;
+      left: 24px;
+      bottom: 32px;
+    }
+
+    .TheWork_Contents{
+      margin: 0 auto;
+      width: 320px;
+    }
+
+    .TheWork_Content{
+      width: 100%;
+      margin-top: 64px;
+    }
+
+    .Content_Right_Subtitle{
+      font-size: 12px;
+      color: #9b9b9b;
+      font-weight: lighter;
+    }
+
+    .Content_Subtitle{
+      font-size: 12px;
+      color: #9b9b9b;
+      margin-bottom: 16px;
+      font-weight: lighter;
+    }
+
+    .Content_Title{
+      font-size: 18px;
+      color: #272727;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 24px;
+    }
+
+    .Content_Overview .Overview_Text{
+        width: 320px;
+    }
+    .Overview_Text{
+      width: 320px;
+      font-size: 12px;
+      line-height: 32px;
+      color: #272727;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .Content_Award{
+      margin-top: 32px;
+    }
+
+    .Content_Details, .Content_Tool, .Content_Team{
+      display: none;
+    }
+
+    .familybookImg{
+      background: rgba(39, 39, 39, 0.1) url("/home/familybook_home.png");
+      background-blend-mode: multiply;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment:scroll;
+      background-size: cover
+    }
+
+    .TheWork_Img_Big{
+      width: 320px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+   
+
+
+    .TheWork_Contents{
+      margin: 0 auto;
+      width: 300px;
+    }
+    .Content_Overview .Overview_Text{
+        width: 300px;
+    }
+    .Overview_Text{
+      width: 300px;
+    }
+    .TheWork_Img_Small{
+      width: 300px;
+    }
+    .TheWork_Img_Big{
+      width: 300px;
+    }
+
+    .TheOther_Works{
+      justify-content: center;
+    }
+
+}
+
 </style>
 

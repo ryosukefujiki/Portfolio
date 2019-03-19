@@ -121,7 +121,7 @@ export default {
 @media screen and (max-width: 480px) {
     .TheHome_Work{
       padding-top: 30px;
-    	margin-top: 60px;
+    	margin-bottom: 32px;
     }
 
 
