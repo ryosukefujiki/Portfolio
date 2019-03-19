@@ -115,7 +115,7 @@ $background-color: #FCFCFC;
 
 .TheHome_Container{
   margin: 0 auto;
-  width: 900px;
+  width: 860px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -128,6 +128,7 @@ $background-color: #FCFCFC;
   padding-top: 30px;
 	margin-top: 120px;
   float: left;
+  width: 340px;
 }
 
 
@@ -220,21 +221,22 @@ $background-color: #FCFCFC;
 @media screen and (max-width: 768px) {
     /* 768pxまでの幅の場合に適応される */
     .TheHome_Container{
-      width: 640px;
+      width: 720px;
+      margin: 0 auto;
     }
 
-    .TheHome_WorkBg{
-      width: 670px;
-      height: 419px;
-    }
+    // .TheHome_WorkBg{
+    //   width: 670px;
+    //   height: 419px;
+    // }
 
-    .TheHome_WorkTrim{
-      width: 626px;
-      height: 375px;
-      position: relative;
-    	left: 22px;
-    	top: 22px;
-    }
+    // .TheHome_WorkTrim{
+    //   width: 626px;
+    //   height: 375px;
+    //   position: relative;
+    // 	left: 22px;
+    // 	top: 22px;
+    // }
 
 }
 @media screen and (max-width: 480px) {
@@ -275,6 +277,10 @@ $background-color: #FCFCFC;
     /* 320pxまでの幅の場合に適応される */
     .TheHome_Container{
       width: 300px;
+      margin: 0 auto;
+    }
+    .TheHome_Work{
+      width: 280px;
     }
 
     .TheHome_WorkBg{
