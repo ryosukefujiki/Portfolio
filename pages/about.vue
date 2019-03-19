@@ -1,7 +1,7 @@
 <template>
 
 <section class="TheAbout">
-  <div class="TheAbout_Coutainer">
+  <div class="TheAbout_Container">
     <TheProfileImg></TheProfileImg>
     <!-- <img :src="profileImg" alt="" class="TheAbout_ProfileImg"> -->
     <div class="TheAbout_Profile">
@@ -111,10 +111,8 @@ $text-color: #9B9B9B;
 $text-size: 16px;
 $hover-color: #D2DADF;
 
-.TheAbout{
-  
-}
-.TheAbout_Coutainer{
+
+.TheAbout_Container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -191,7 +189,8 @@ $hover-color: #D2DADF;
 
 @media screen and (max-width: 1024px) {
     /* 1024pxまでの幅の場合に適応される */
-    .TheAbout{
+    
+    .TheAbout_Container{
       width: 800px;
     }
     .TheAbout_Content{
@@ -214,9 +213,9 @@ $hover-color: #D2DADF;
 }
 @media screen and (max-width: 768px) {
     /* 768pxまでの幅の場合に適応される */
-    .TheAbout{
+    
+    .TheAbout_Container{
       width: 640px;
-      padding-top: 200px;
     }
     .TheAbout_Content{
       margin-top: 48px;
@@ -239,9 +238,9 @@ $hover-color: #D2DADF;
 }
 @media screen and (max-width: 480px) {
     /* 480pxまでの幅の場合に適応される */
-    .TheAbout{
+
+    .TheAbout_Container{
       width: 320px;
-      padding-top: 120px;
     }
     .TheAbout_Profile{
       width: 320px;
@@ -292,7 +291,6 @@ $hover-color: #D2DADF;
 @media screen and (max-width: 320px) {
     /* 320pxまでの幅の場合に適応される */
     .TheAbout{
-      width: 300px;
       padding-top: 120px;
     }
     .TheAbout_Profile{
