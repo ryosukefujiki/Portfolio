@@ -21,6 +21,7 @@ import TheLineandballButton from '~/components/TheHome/TheLineandballButton.vue'
 import ThePlayfulfesButton from '~/components/TheHome/ThePlayfulfesButton.vue'
 import TheScrapboardButton from '~/components/TheHome/TheScrapboardButton.vue'
 
+
 export default {
   components: {
     TheHero,

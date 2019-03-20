@@ -2,6 +2,7 @@
   <div class="default">
     <!-- <TheBackground></TheBackground> -->
     <!-- <div id="scrollArea"> -->
+    <TheFamilybookTransition></TheFamilybookTransition>
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
@@ -14,11 +15,14 @@
 <script>
 import TheHeader from '~/components/TheHeader/TheHeader.vue'
 import TheFooter from '~/components/TheHeader/TheFooter.vue'
+import TheFamilybookTransition from '~/components/TheTransition/TheFamilybookTransition.vue'
+
 
 export default {
   components: {
     TheHeader,
     TheFooter,
+    TheFamilybookTransition,
   },
 }
 </script>
