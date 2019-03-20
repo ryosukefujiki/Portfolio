@@ -200,8 +200,9 @@ body,
   height: 100%;
 }
 .FamilybookImg {
-  background: rgba(39, 39, 39, 0.1) url("/home/familybook_home.png");
-  background-blend-mode: multiply;
+  background: url("/home/familybook_home.png");
+  //  background: rgba(39, 39, 39, 0.1) url("/home/familybook_home.png");
+  // background-blend-mode: multiply;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;

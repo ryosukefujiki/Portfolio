@@ -23,9 +23,9 @@ computed: {
     async entered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       console.log("TheTransitionComponent")
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
-      await this.$delay(600)
+      await this.$delay(550)
       this.$router.push("/familybook")
-      await this.$delay(600)
+      await this.$delay(550)
       this.leave()
       await this.$delay(1000)
       this.set()
@@ -46,7 +46,7 @@ computed: {
     enter () { // `entered`が`true`になったとき発火
     console.log("発火")
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.6, {
+        TweenMax.to(this.$refs.background, 0.55, {
           x: '0%',
           ease: Expo.easeOut
         })
@@ -54,7 +54,7 @@ computed: {
     },
     leave () { // `entered`が`false`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.6, {
+        TweenMax.to(this.$refs.background, 0.55, {
           x: '100%',
           ease: Expo.easeIn
         })
