@@ -1,17 +1,25 @@
 export const state = () => ({
-    entered: false,
+    familybookEntered: false,
+    aboutEntered: false,
+    homeEntered: false,
   })
   
   export const getters = {
-    entered: state => state.entered,
+    familybookEntered: state => state.familybookEntered,
+    aboutEntered: state => state.aboutEntered,
+    homeEntered: state => state.homeEntered,
   }
   // 上記はアロー関数　stateを引数にとって、state.enteredの値をgetterからアクセスできるようにしている
   
   export const mutations = {
-    click (state) {
-      state.entered = !state.entered
-      console.log("Vuex Store")
-      // this.$router.push("/familybook")
+    familybookClick (state) {
+      state.familybookEntered = !state.familybookEntered
+    },
+    aboutClick (state) {
+      state.aboutEntered = !state.aboutEntered
+    },
+    homeClick (state) {
+      state.homeEntered = !state.homeEntered
     }
   }
   

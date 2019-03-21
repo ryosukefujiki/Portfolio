@@ -3,12 +3,12 @@
         <nav>
             <ul class="TheNav_List">
                 <li class="TheNav_Item">
-                    <a @click="routing('/')" class="text--letterspace">
+                    <a @click="routing('home')" class="text--letterspace">
                         Home
                     </a>
                 </li>
                 <li class="TheNav_Item">
-                    <a @click="routing('/about')" class="text--letterspace">
+                    <a @click="routing('about')" class="text--letterspace">
                         About
                     </a>
                 </li>
@@ -36,13 +36,29 @@
 </template>
 
 <script>
+import {mapGetters, mapMutations} from 'vuex'
+
 export default {
   props: ['headerActive'],
+  computed: {
+    ...mapGetters({
+      aboutEntered: 'index/aboutEntered'
+    })
+  },
   methods: {
     routing(url){
-      this.$router.push(url)
+      // this.$router.push(url)
       this.$parent.toggleMenu()
+      if(url == 'home' && this.$route.path != '/'){
+        this.$store.commit('homeClick')
+      }
+      if(url == 'about' && this.$route.path != '/about'){
+        this.$store.commit('aboutClick')
+      }
     },
+    // ...mapMutations({
+    //   aboutClick: 'aboutClick',
+    // }),
   },
 }
 </script>

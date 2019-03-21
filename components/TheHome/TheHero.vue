@@ -19,7 +19,7 @@ html,body,#__nuxt,#__layout{
     display: block;
     width: 100%;
     height: 100%;
-    background: #d8d8d8;
+    background: #FFFFFA;
 }
 </style>
 

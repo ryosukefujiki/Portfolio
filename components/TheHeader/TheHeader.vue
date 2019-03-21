@@ -35,7 +35,10 @@ export default {
       this.headerActive = !this.headerActive
     },
     routing(url){
-      this.$router.push(url)
+      // this.$router.push(url)
+      if(this.$route.path != '/'){
+        this.$store.commit('homeClick')
+      }
       if (this.headerActive == true){
         this.toggleMenu()
       }

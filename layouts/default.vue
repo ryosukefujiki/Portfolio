@@ -3,6 +3,8 @@
     <!-- <TheBackground></TheBackground> -->
     <!-- <div id="scrollArea"> -->
     <TheFamilybookTransition></TheFamilybookTransition>
+    <TheAboutTransition></TheAboutTransition>
+    <TheHomeTransition></TheHomeTransition>
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
@@ -16,6 +18,8 @@
 import TheHeader from '~/components/TheHeader/TheHeader.vue'
 import TheFooter from '~/components/TheHeader/TheFooter.vue'
 import TheFamilybookTransition from '~/components/TheTransition/TheFamilybookTransition.vue'
+import TheAboutTransition from '~/components/TheTransition/TheAboutTransition.vue'
+import TheHomeTransition from '~/components/TheTransition/TheHomeTransition.vue'
 
 
 export default {
@@ -23,6 +27,8 @@ export default {
     TheHeader,
     TheFooter,
     TheFamilybookTransition,
+    TheAboutTransition,
+    TheHomeTransition,
   },
 }
 </script>

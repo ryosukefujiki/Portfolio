@@ -1,8 +1,7 @@
 <template>
-<div class='TheTransition TheFamilybookTransition'>
+<div class='TheTransition TheHomeTransition'>
     <div class='TheTransition_Background' ref='background'>
-        <p class='TheTransition_Category' ref='category'>Planning</p>
-        <p class='TheTransition_Title' ref='title'>かぞくが、ものがたり。</p>
+        <p class='TheTransition_Category' ref='category'>Home</p>
     </div>
 </div>
 </template>
@@ -16,15 +15,15 @@ import {TweenMax, Expo, Elastic} from 'gsap'
 export default {
 computed: {
     ...mapGetters({
-      entered: 'familybookEntered'
+      homeEntered: 'homeEntered'
     })
   },
   watch: {
-    async entered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+    async homeEntered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       console.log("TheTransitionComponent")
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
-      this.$router.push("/familybook")
+      this.$router.push("/")
       await this.$delay(550)
       this.leave()
       await this.$delay(1000)
@@ -87,7 +86,7 @@ computed: {
 .TheTransition_Background {
     width: 100%;
     height: 100%;
-    background: #82C3E0;
+    background: #FCFCFC;
     transform: translateX(-100%);
     transform-origin: left center;
 
@@ -100,7 +99,7 @@ computed: {
 
 
 .TheTransition_Category {
-    color: #ffffff;
+    color: #D2DADF;
     text-align: center;
     font-size: 28px;
     z-index: 12;
@@ -108,7 +107,7 @@ computed: {
     font-family: "Noto Sans", sans-serif;
   }
 .TheTransition_Title {
-    color: #ffffff;
+    color: #787878;
     text-align: center;
     z-index: 12;
     font-size: 20px;

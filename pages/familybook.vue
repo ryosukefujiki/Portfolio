@@ -3,7 +3,7 @@
     <div class="TheWork_HeroImg FamilybookImg">
       <p class="TheWork_HeroNumber">01 - 05</p>
       <h1 class="TheWork_HeroHeading">かぞくが、ものがたり。</h1>
-      <p class="TheWork_HeroCategory">UI Design / UX Design / Logo Design</p>
+      <p class="TheWork_HeroCategory">Planning / Graphic Design</p>
     </div>
 
     <section class="TheWork_Contents">
