@@ -47,6 +47,7 @@ computed: {
           ease: Expo.easeIn
         })
       })
+      this.$store.commit('familybook/familybookMove')
     },
     async set (){
       requestAnimationFrame(() => {

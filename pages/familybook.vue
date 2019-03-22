@@ -1,9 +1,11 @@
 <template>
   <div class="TheWork">
     <div class="TheWork_HeroImg FamilybookImg">
-      <p class="TheWork_HeroNumber">01 - 05</p>
-      <h1 class="TheWork_HeroHeading">かぞくが、ものがたり。</h1>
-      <p class="TheWork_HeroCategory">Planning / Graphic Design</p>
+      <p class="TheWork_HeroNumber TheWork_Title">
+        <span class="TheWork_TitleText">01 - 05</span><span class="TheWork_HeroNumberBg"></span>
+      </p>
+      <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">かぞくが、ものがたり。</span><span class="TheWork_HeroNumberBg"></span></h1>
+      <p class="TheWork_HeroCategory TheWork_Title"><span class="TheWork_TitleText">Planning / Graphic Design</span><span class="TheWork_HeroNumberBg"></span></p>
     </div>
 
     <section class="TheWork_Contents">
@@ -148,6 +150,8 @@ import TheFamilybookButton from '~/components/TheHome/TheFamilybookButton.vue'
 import TheLineandballButton from '~/components/TheHome/TheLineandballButton.vue'
 import ThePlayfulfesButton from '~/components/TheHome/ThePlayfulfesButton.vue'
 import TheScrapboardButton from '~/components/TheHome/TheScrapboardButton.vue'
+import {mapGetters} from 'vuex'
+import {TweenMax, Elastic, Expo, Back} from 'gsap'
 
 export default {
     components: {
@@ -180,6 +184,68 @@ export default {
       research04Img: 'familybook/research04.png',
     }
   },
+  computed: {
+    ...mapGetters({
+      familybookMoved: 'familybook/familybookMoved'
+    })
+  },
+  watch: {
+     async familybookMoved (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+      this.opacityEnter()
+      await this.$delay(500)
+      this.backgroundEnter()
+      await this.$delay(500)
+      this.opacityLeave()
+      // await this.$delay(300)
+      this.backgroundLeave()
+    }
+   },
+   methods: {
+     opacityEnter () {
+       console.log("opacityEnter")
+       requestAnimationFrame(() => {
+        TweenMax.to('.TheWork_TitleText', 0, {
+          opacity: 0,
+          ease: Expo.easeOut,
+        })
+      })
+     },
+     backgroundEnter(){
+       console.log("backgroundEnter")
+       requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheWork_HeroNumberBg', 0.3, {
+          width: '102%',
+          // x: '100%',
+          ease: Expo.easeOut,
+          startAt: {
+            width: '0%',
+            // x: '0%',
+          }
+        }, 0.1)
+      })
+     },
+     opacityLeave () {
+       console.log("opacityLeave")
+       requestAnimationFrame(() => {
+        TweenMax.to('.TheWork_TitleText', 0.5, {
+          opacity: 1,
+          ease: Expo.easeOut,
+        })
+      })
+     },
+     backgroundLeave(){
+       console.log("backgroundEnter")
+       requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheWork_HeroNumberBg', 0.5, {
+          x: '100%',
+          ease: Expo.easeIn,
+          startAt: {
+            x: '0%',
+          }
+        }, 0.1)
+      })
+     },
+   }
 };
 </script>
 
@@ -209,6 +275,47 @@ body,
   background-size: cover;
 }
 
+// .TheWork_HeroNumberBg{
+//   background: #ffffff;
+//   width: 100%;
+//   height: 100%;
+//   display: block;
+// }
+
+.TheWork_Title{
+  overflow: hidden;
+}
+
+.TheWork_HeroNumberBg{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 120%;
+  background-color:#ffffff;
+  // animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);
+  // animation-fill-mode: both;
+  // width: 100%;
+  z-index: 2;
+}
+@keyframes secondaryImageOverlayIn {
+    0% {
+      width: 0;
+    }
+    100% {
+      width:  100%;
+    }
+  }
+  @keyframes secondaryImageOverlayOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(102%);
+    }
+  }
+
+
 .TheWork_HeroNumber {
   font-family: Georgia;
   color: #ffffff;
@@ -217,6 +324,7 @@ body,
   left: 80px;
   bottom: 170px;
   font-family: "Noto Sans", sans-serif;
+  overflow:hidden;
 }
 .TheWork_HeroHeading {
   font-weight: 500;
@@ -234,10 +342,11 @@ body,
   color: #ffffff;
   position: absolute;
   left: 78px;
-  bottom: 60px;
+  bottom: 48px;
   /* letter-spacing: 4px; */
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
+  padding-bottom: 12px;
 }
 
 .TheWork_Contents {
@@ -367,19 +476,19 @@ body,
 
 @media screen and (max-width: 480px) {
     .TheWork_HeroNumber{
-        font-size: 16px;
+      font-size: 16px;
       left: 24px;
       bottom: 94px;
     }
     .TheWork_HeroHeading{
-        font-size: 22px;
-      left: 24px;
+      font-size: 22px;
+      left: 22px;
       bottom: 60px;
     }
     .TheWork_HeroCategory{
-        font-size: 14px;
+      font-size: 14px;
       left: 24px;
-      bottom: 32px;
+      bottom: 20px;
     }
 
     .TheWork_Contents{
