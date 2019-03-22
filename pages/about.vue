@@ -112,7 +112,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      aboutMoved: 'aboutMoved'
+      aboutMoved: 'about/aboutMoved'
     })
   },
    watch: {

@@ -15,7 +15,7 @@ import {TweenMax, Expo, Elastic} from 'gsap'
 export default {
 computed: {
     ...mapGetters({
-      aboutEntered: 'aboutEntered'
+      aboutEntered: 'about/aboutEntered'
     })
   },
   watch: {
@@ -45,7 +45,7 @@ computed: {
           ease: Expo.easeIn
         })
       })
-      this.$store.commit('aboutMove')
+      this.$store.commit('about/aboutMove')
     },
     async set (){
       requestAnimationFrame(() => {

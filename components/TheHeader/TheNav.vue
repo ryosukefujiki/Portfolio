@@ -42,7 +42,7 @@ export default {
   props: ['headerActive'],
   computed: {
     ...mapGetters({
-      aboutEntered: 'index/aboutEntered'
+      aboutEntered: 'about/aboutEntered'
     })
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
         this.$store.commit('homeClick')
       }
       if(url == 'about' && this.$route.path != '/about'){
-        this.$store.commit('aboutClick')
+        this.$store.commit('about/aboutClick')
       }
     },
     // ...mapMutations({
