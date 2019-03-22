@@ -27,7 +27,8 @@ module.exports = {
 
   plugins: [
     '~/plugins/mixin',
-    '~plugins/scroll.js'
+    '~plugins/scroll.js',
+    '~/plugins/vue-scrollto.js'
   ],
   /*
   ** Build configuration

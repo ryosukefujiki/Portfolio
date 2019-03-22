@@ -6,6 +6,7 @@
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">かぞくが、ものがたり。</span><span class="TheWork_HeroNumberBg"></span></h1>
       <p class="TheWork_HeroCategory TheWork_Title"><span class="TheWork_TitleText">Planning / Graphic Design</span><span class="TheWork_HeroNumberBg"></span></p>
+      <TheScrollBtn v-scroll-to="'#anchor'"></TheScrollBtn>
     </div>
 
     <section class="TheWork_Contents">
@@ -13,7 +14,7 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">敬老の日を盛り上げるアイディア</h2>
+            <h2 class="Content_Title" id="anchor">敬老の日を盛り上げるアイディア</h2>
             <p
               class="Overview_Text"
             >電通 Internship 2017 アイディアの学校 にて開催された「敬老の日を盛り上げるアイディアを考える」がテーマのコンペティションで 最優秀賞 をいただいた作品です。敬老の日に家族でとりくむ参加型のプロダクトを制作しました。この絵本ほとんどが空白のページでできており、祖父母との対話を通じ、家族にまつわるストーリーを子供が絵本で完成させるというプロダクトです。</p>
@@ -144,6 +145,7 @@
 </template>
 
 <script>
+import TheScrollBtn from '~/components/TheHeader/TheScrollBtn.vue'
 import TheFooter from '~/components/TheHeader/TheFooter.vue'
 import TheHiveButton from '~/components/TheHome/TheHiveButton.vue'
 import TheFamilybookButton from '~/components/TheHome/TheFamilybookButton.vue'
@@ -155,6 +157,7 @@ import {TweenMax, Elastic, Expo, Back} from 'gsap'
 
 export default {
     components: {
+        TheScrollBtn,
         TheFooter,
         TheHiveButton,
         TheFamilybookButton,
@@ -220,12 +223,12 @@ export default {
     },
     targetMove(){
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.TheWork_Section', 5, {
+        TweenMax.staggerTo('.TheWork_Section', 4, {
           y: 0,
           opacity: 1,
           ease: Elastic.easeOut.config(1, 0.3),
           startAt: {
-            y: '40px',
+            y: '30px',
             opacity: 0
           }
         }, 0.1)
