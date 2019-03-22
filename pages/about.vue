@@ -2,16 +2,16 @@
 
 <section class="TheAbout">
   <div class="TheAbout_Container">
-    <TheProfileImg></TheProfileImg>
+    <TheProfileImg class="TheAbout_Section"></TheProfileImg>
     <!-- <img :src="profileImg" alt="" class="TheAbout_ProfileImg"> -->
-    <div class="TheAbout_Profile">
+    <div class="TheAbout_Profile TheAbout_Section">
       <h2 class="TheAbout_Heading">🙌 Hi, I’m Ryosuke Fujiki</h2>
       <p class="TheAbout_Text">1996年シンガポール生まれ、東京育ち。
         2015年より慶應義塾大学環境情報学部に通い、2019年春に卒業。HCI,
         UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO など
         の展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画立案から ”ものづくり” をすることが得意なクリエイター。</p>
     </div>
-    <div class="TheAbout_Detail">
+    <div class="TheAbout_Detail TheAbout_Section">
       <div class="TheAbout_Award TheAbout_Content">
         <h2 class="TheAbout_Heading">🏆 AWARDS</h2>
         <p class="TheAbout_Text">
@@ -32,7 +32,7 @@
         </p>
       </div>
     </div>
-    <div class="TheAbout_Experience">
+    <div class="TheAbout_Experience TheAbout_Section">
       <div class="TheAbout_Education TheAbout_Content">
         <h2 class="TheAbout_Heading">🎓 EDUCATION</h2>
         <p class="TheAbout_Text">2015-2019 慶應義塾大学環境情報学部</p>
@@ -51,7 +51,7 @@
           2015 株式会社ライフイズテック</p>
       </div>
     </div>
-    <div class="TheAbout_Contact">
+    <div class="TheAbout_Contact TheAbout_Section">
     <div class="TheAbout_Social TheAbout_Content">
       <div class="TheAbout_ItemIcons">
         <a href="https://dribbble.com/bighappy" class="TheAbout_ItemIcon TheAbout_ItemIcon_Dribbble" target="_blank">
@@ -80,6 +80,7 @@
 import TheProfileImg from '~/components/TheAbout/TheProfileImg.vue'
 import TheFooter from '~/components/TheHeader/TheFooter.vue'
 import {mapGetters} from 'vuex'
+import {TweenMax, Elastic, Expo, Back} from 'gsap'
 
 export default {
   components: {
@@ -94,8 +95,27 @@ export default {
     }
   },
   computed: {
-    count () { return this.$store.state.counter.count }
+    ...mapGetters({
+      aboutMoved: 'aboutMoved'
+    })
   },
+   watch: {
+     async aboutMoved (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+      await this.$delay(100)
+      console.log("呼ばれた！")
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheAbout_Section', 5, {
+          y: 0,
+          opacity: 1,
+          ease: Elastic.easeOut.config(1, 0.3),
+          startAt: {
+            y: '40px',
+            opacity: 0
+          }
+        }, 0.1)
+      })
+    }
+   },
   methods: {
     addCount (e) {
       this.$store.commit('counter/add')
@@ -116,7 +136,7 @@ $hover-color: #D2DADF;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 240px;
+  padding-top: 160px;
   margin: 0 auto;
   width: 1000px;
   // margin-left: 120px;
@@ -192,6 +212,7 @@ $hover-color: #D2DADF;
     
     .TheAbout_Container{
       width: 800px;
+      padding-top: 260px;
     }
     .TheAbout_Content{
       margin-top: 48px;
@@ -216,6 +237,7 @@ $hover-color: #D2DADF;
     
     .TheAbout_Container{
       width: 640px;
+      padding-top: 160px;
     }
     .TheAbout_Content{
       margin-top: 48px;
@@ -241,6 +263,7 @@ $hover-color: #D2DADF;
 
     .TheAbout_Container{
       width: 320px;
+      padding-top: 120px;
     }
     .TheAbout_Profile{
       width: 320px;
@@ -290,8 +313,10 @@ $hover-color: #D2DADF;
 }
 @media screen and (max-width: 320px) {
     /* 320pxまでの幅の場合に適応される */
-    .TheAbout{
-      padding-top: 120px;
+    .TheAbout_Container{
+      width: 300px;
+      margin: 0 auto;
+      padding-top: 100px;
     }
     .TheAbout_Profile{
       width: 300px;
@@ -307,6 +332,9 @@ $hover-color: #D2DADF;
     }
     .TheAbout_Content{
       margin-top: 12px;
+      width: 300px;
+    }
+    .TheAbout_Contact{
       width: 300px;
     }
 }

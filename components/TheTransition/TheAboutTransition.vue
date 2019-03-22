@@ -20,7 +20,6 @@ computed: {
   },
   watch: {
     async aboutEntered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
-      console.log("TheTransitionComponent")
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
       this.$router.push("/about")
@@ -46,6 +45,7 @@ computed: {
           ease: Expo.easeIn
         })
       })
+      this.$store.commit('aboutMove')
     },
     async set (){
       requestAnimationFrame(() => {
