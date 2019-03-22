@@ -118,7 +118,6 @@ export default {
    watch: {
      async aboutMoved (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       await this.$delay(120)
-      console.log("呼ばれた！")
       requestAnimationFrame(() => {
         TweenMax.staggerTo('.TheAbout_Section', 5, {
           y: 0,
@@ -183,7 +182,7 @@ $hover-color: #D2DADF;
 }
 
 .TheAbout_Content{
-  margin-top: 48px;
+  margin-top: 24px;
   width: 480px;
 }
 
@@ -328,7 +327,7 @@ $hover-color: #D2DADF;
       line-height: 28px;
     }
     .TheAbout_Content{
-      margin-top: 12px;
+      margin-top: 4px;
       width: 320px;
     }
     .TheAbout_Contact{
@@ -382,7 +381,7 @@ $hover-color: #D2DADF;
       line-height: 28px;
     }
     .TheAbout_Content{
-      margin-top: 12px;
+      margin-top: 2px;
       width: 300px;
     }
     .TheAbout_Contact{
