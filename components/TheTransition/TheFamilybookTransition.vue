@@ -16,7 +16,7 @@ import {TweenMax, Expo, Elastic} from 'gsap'
 export default {
 computed: {
     ...mapGetters({
-      entered: 'familybookEntered'
+      entered: 'familybook/familybookEntered'
     })
   },
   watch: {

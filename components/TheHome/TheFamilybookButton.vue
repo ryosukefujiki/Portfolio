@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      familybookEntered: 'index/familybookEntered'
+      familybookEntered: 'familybook/familybookEntered'
     })
   },
   methods: {
@@ -28,7 +28,7 @@ export default {
       this.$router.push(url)
     },
     ...mapMutations({
-      familybookClick: 'familybookClick',
+      familybookClick: 'familybook/familybookClick',
     }),
   },
   data () {

@@ -1,15 +1,15 @@
 export const state = () => ({
-    homeEntered: false,
+    familybookEntered: false,
   })
   
   export const getters = {
-    homeEntered: state => state.homeEntered,
+    familybookEntered: state => state.familybookEntered,
   }
   // 上記はアロー関数　stateを引数にとって、state.enteredの値をgetterからアクセスできるようにしている
   
   export const mutations = {
-    homeClick (state) {
-      state.homeEntered = !state.homeEntered
-    }
+    familybookClick (state) {
+      state.familybookEntered = !state.familybookEntered
+    },
   }
   
