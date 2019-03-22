@@ -26,7 +26,8 @@ module.exports = {
   loading: { color: '#3B8070' },
 
   plugins: [
-    '~/plugins/mixin'
+    '~/plugins/mixin',
+    '~plugins/scroll.js'
   ],
   /*
   ** Build configuration

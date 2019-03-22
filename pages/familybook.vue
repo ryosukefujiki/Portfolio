@@ -1,7 +1,7 @@
 <template>
-  <div class="TheWork">
+  <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg FamilybookImg">
-      <p class="TheWork_HeroNumber TheWork_Title">
+      <p class="TheWork_HeroNumber TheWork_Title" id="scrollTarget">
         <span class="TheWork_TitleText">01 - 05</span><span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">かぞくが、ものがたり。</span><span class="TheWork_HeroNumberBg"></span></h1>
@@ -11,7 +11,7 @@
     <section class="TheWork_Contents">
       <div class="TheWork_Content TheWork_Overview">
         <div class="TheWork_Overview_Leftside">
-          <div class="Content_Overview">
+          <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
             <h2 class="Content_Title">敬老の日を盛り上げるアイディア</h2>
             <p
@@ -19,7 +19,7 @@
             >電通 Internship 2017 アイディアの学校 にて開催された「敬老の日を盛り上げるアイディアを考える」がテーマのコンペティションで 最優秀賞 をいただいた作品です。敬老の日に家族でとりくむ参加型のプロダクトを制作しました。この絵本ほとんどが空白のページでできており、祖父母との対話を通じ、家族にまつわるストーリーを子供が絵本で完成させるというプロダクトです。</p>
           </div>
 
-          <div class="Content_Award">
+          <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Award</p>
             <h2 class="Content_Title">「アイディアの学校」 金賞 受賞</h2>
             <p class="Overview_Text">
@@ -33,21 +33,21 @@
         </div>
 
         <div class="TheWork_Overview_RightSide">
-          <div class="Content_Details">
+          <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
             <p class="Overview_Text">制作日 : 2017年8月
               <br>制作期間: 2weeks
             </p>
           </div>
 
-          <div class="Content_Tool">
+          <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
             <p class="Overview_Text">Adobe Illustrator
               <br>Adobe Photoshop
             </p>
           </div>
 
-          <div class="Content_Team">
+          <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Credit (2)</p>
             <p class="Overview_Text">藤木 良祐
               <br>
@@ -61,10 +61,10 @@
           </div>
         </div>
 
-        <img :src="familybookHomeImg" alt class="TheWork_Img TheWork_Img_Big">
-        <img :src="familybookOpenImg" alt class="TheWork_Img TheWork_Img_Big">
+        <img :src="familybookHomeImg" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
+        <img :src="familybookOpenImg" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
       </div>
-      <div class="TheWork_Content TheWork_Process">
+      <div class="TheWork_Content TheWork_Process TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Process</p>
                 <h2 class="Content_Title">敬老の日は、「かぞくの日」</h2>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="TheWork_Content TheWork_Contents">
+        <div class="TheWork_Content TheWork_Contents TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Contents</p>
                 <h2 class="Content_Title">世界に一つだけの絵本</h2>
@@ -100,7 +100,7 @@
 
             </div>
         </div>
-        <div class="TheWork_Content TheWork_Research">
+        <div class="TheWork_Content TheWork_Research TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">User Research</p>
                 <h2 class="Content_Title">6歳の女の子の実施例</h2>
@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <div class="TheWork_Content TheWork_TheOther">
+        <div class="TheWork_Content TheWork_TheOther TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">The Other Works</p>
                 <h2 class="Content_Title">その他の作品について</h2>
@@ -164,6 +164,8 @@ export default {
     },
     data () {
     return {
+      scrollY: 0,
+      targetY: 0,
       familybookHomeImg: '/familybook/familybook_home.png',
       familybookOpenImg: '/familybook/openbook.png',
       page01Img: 'familybook/page01.jpg',
@@ -184,23 +186,51 @@ export default {
       research04Img: 'familybook/research04.png',
     }
   },
+  // mounted() {
+  //   window.addEventListener('scroll', this.handleScroll)
+  //   this.targetY = document.getElementById("scrollTarget").getBoundingClientRect().top + window.pageYOffset
+  // },
   computed: {
     ...mapGetters({
+      familybookFadeIn: 'familybook/familybookFadeIn',
       familybookMoved: 'familybook/familybookMoved'
     })
   },
   watch: {
-     async familybookMoved (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+     async familybookFadeIn (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       this.opacityEnter()
       await this.$delay(500)
       this.backgroundEnter()
       await this.$delay(500)
       this.opacityLeave()
-      // await this.$delay(300)
       this.backgroundLeave()
+    },
+    async familybookMoved (val) {
+      this.targetMove()
     }
    },
    methods: {
+     handleScroll: function(evt, el) {
+      console.log(window.scrollY)
+      if (window.scrollY > 50) {
+          console.log("超えた！")
+          this.$store.commit('familybook/familybookMove')
+      }
+      return window.scrollY > 50
+    },
+    targetMove(){
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheWork_Section', 5, {
+          y: 0,
+          opacity: 1,
+          ease: Elastic.easeOut.config(1, 0.3),
+          startAt: {
+            y: '40px',
+            opacity: 0
+          }
+        }, 0.1)
+      })
+    },
      opacityEnter () {
        console.log("opacityEnter")
        requestAnimationFrame(() => {
@@ -215,11 +245,9 @@ export default {
        requestAnimationFrame(() => {
         TweenMax.staggerTo('.TheWork_HeroNumberBg', 0.3, {
           width: '102%',
-          // x: '100%',
           ease: Expo.easeOut,
           startAt: {
             width: '0%',
-            // x: '0%',
           }
         }, 0.1)
       })
@@ -233,6 +261,12 @@ export default {
         })
       })
      },
+    //  handleScroll() {
+    //     this.scrollY = window.scrollY;
+    //     if(this.targetY <= this.scrollY){
+    //       console.log("超えた！")
+    //     }
+    //  },
      backgroundLeave(){
        console.log("backgroundEnter")
        requestAnimationFrame(() => {
@@ -284,6 +318,10 @@ body,
 
 .TheWork_Title{
   overflow: hidden;
+}
+
+.TheWork_Section{
+  opacity: 0;
 }
 
 .TheWork_HeroNumberBg{

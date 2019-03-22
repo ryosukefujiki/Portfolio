@@ -16,11 +16,11 @@ import {TweenMax, Expo, Elastic} from 'gsap'
 export default {
 computed: {
     ...mapGetters({
-      entered: 'familybook/familybookEntered'
+      familybookEntered: 'familybook/familybookEntered'
     })
   },
   watch: {
-    async entered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+    async familybookEntered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       console.log("TheTransitionComponent")
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
@@ -47,7 +47,7 @@ computed: {
           ease: Expo.easeIn
         })
       })
-      this.$store.commit('familybook/familybookMove')
+      this.$store.commit('familybook/familybookFadeIn')
     },
     async set (){
       requestAnimationFrame(() => {
