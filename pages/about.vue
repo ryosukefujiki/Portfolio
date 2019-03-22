@@ -9,7 +9,7 @@
       <p class="TheAbout_Text">1996年シンガポール生まれ、東京育ち。
         2015年より慶應義塾大学環境情報学部に通い、2019年春に卒業。HCI,
         UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO など
-        の展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画立案から ”ものづくり” をすることが得意なクリエイター。</p>
+        の展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画立案から ”ものづくり” をすることが得意。</p>
     </div>
     <div class="TheAbout_Detail TheAbout_Section">
       <div class="TheAbout_Award TheAbout_Content">
@@ -70,8 +70,24 @@
       <a class="TheAbout_Text">ryosukefujiki625 ＠ gmail.com</a>
     </div>
     </div>
-</div>
-    <TheFooter></TheFooter>
+  </div>
+  <TheFooter></TheFooter>
+  <div class="TheAbout_Backgroud">
+      <!-- <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(300,300)">
+          <path
+            d="M132.3,-87.8C171.7,-56,204.3,-0.9,197.4,51.3C190.5,103.6,144.1,153.2,94.7,164.7C45.3,176.3,-7.1,149.9,-59.1,124.2C-111.1,98.6,-162.8,73.8,-177.3,33.8C-191.7,-6.2,-169,-61.4,-133.2,-92.4C-97.5,-123.4,-48.7,-130.2,-1.2,-129.3C46.4,-128.3,92.8,-119.7,132.3,-87.8Z"></path>
+        </g>
+      </svg> -->
+      <svg
+  viewBox="0 0 600 600"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(300,300)">
+    <path d="M155.7,-214C195.8,-185.2,218.2,-131.7,225.8,-80.1C233.3,-28.4,226,21.3,210.1,67.7C194.2,114,169.7,156.9,133.2,169.2C96.8,181.6,48.4,163.3,3,159.1C-42.3,154.9,-84.6,164.8,-116.2,150.9C-147.7,137,-168.5,99.2,-187.6,57C-206.7,14.8,-224.1,-31.8,-201.4,-54.2C-178.7,-76.6,-115.8,-74.7,-75.5,-103.5C-35.3,-132.2,-17.6,-191.6,20.1,-219.2C57.8,-246.9,115.6,-242.8,155.7,-214Z"/>
+  </g>
+</svg>
+  </div>
   </section>
 
 </template>
@@ -101,7 +117,7 @@ export default {
   },
    watch: {
      async aboutMoved (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
-      await this.$delay(100)
+      await this.$delay(120)
       console.log("呼ばれた！")
       requestAnimationFrame(() => {
         TweenMax.staggerTo('.TheAbout_Section', 5, {
@@ -206,6 +222,41 @@ $hover-color: #D2DADF;
 .TheAbout_ItemIcon_Instagram{
   font-size: 34px;
 }
+
+.TheAbout_Backgroud{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -10;
+  padding: 120px;
+  // fill: #D2DADF;
+  // fill: #f1f1f1;
+  fill: #f9f9f9;
+  // filter: blur(4px);
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+
+@keyframes move {
+  0%   { transform: scale(1)   translate(10px, -30px); }
+  40%  { transform: scale(0.8, 1) translate(20px, -30px) rotate(160deg); }
+  80%  { transform: scale(1.3) translate(0px, 50px) rotate(-20deg); }
+  100% { transform: scale(1)   translate(10px, -30px); }
+}
+
+// .TheHero_Bg {
+//   position: absolute;
+//   top: 200px;
+//   left: 200px;
+//   fill: #023F92;
+//   width: 50vmax;
+//   z-index: -1;
+  
+// }
 
 @media screen and (max-width: 1024px) {
     /* 1024pxまでの幅の場合に適応される */

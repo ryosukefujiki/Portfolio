@@ -8,7 +8,7 @@
 export default {
     data () {
     return {
-      profileImg: '/about/profile.png',
+      profileImg: '/about/profile3.png',
     }
   },
 }
@@ -18,6 +18,7 @@ export default {
 .TheAbout_ProfileImg{
   width: 480px;
   height: 320px;
+  box-shadow: 0px 0px 4px 0px rgba(155,155,155,0.2);
 }
 
 
