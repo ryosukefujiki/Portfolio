@@ -6,15 +6,15 @@
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">かぞくが、ものがたり。</span><span class="TheWork_HeroNumberBg"></span></h1>
       <p class="TheWork_HeroCategory TheWork_Title"><span class="TheWork_TitleText">Planning / Graphic Design</span><span class="TheWork_HeroNumberBg"></span></p>
-      <TheScrollBtn v-scroll-to="'#anchor'"></TheScrollBtn>
+      <TheScrollBtn v-scroll-to="'#anchor'" class="TheScrollBtn_Ref"></TheScrollBtn>
     </div>
 
     <section class="TheWork_Contents">
-      <div class="TheWork_Content TheWork_Overview">
+      <div class="TheWork_Content TheWork_Overview" id="anchor">
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title" id="anchor">敬老の日を盛り上げるアイディア</h2>
+            <h2 class="Content_Title">敬老の日を盛り上げるアイディア</h2>
             <p
               class="Overview_Text"
             >電通 Internship 2017 アイディアの学校 にて開催された「敬老の日を盛り上げるアイディアを考える」がテーマのコンペティションで 最優秀賞 をいただいた作品です。敬老の日に家族でとりくむ参加型のプロダクトを制作しました。この絵本ほとんどが空白のページでできており、祖父母との対話を通じ、家族にまつわるストーリーを子供が絵本で完成させるというプロダクトです。</p>
@@ -232,6 +232,15 @@ export default {
             opacity: 0
           }
         }, 0.1)
+      })
+      requestAnimationFrame(() => {
+        TweenMax.to('.TheScrollBtn_Ref', 1.0, {
+          opacity: 0,
+          ease: Expo.easeOut,
+          startAt: {
+            opacity: 1
+          }
+        })
       })
     },
      opacityEnter () {

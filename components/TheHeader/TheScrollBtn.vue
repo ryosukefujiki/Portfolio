@@ -60,14 +60,41 @@ $blackColor: #272727;
   right: 95px;
   transform-origin: bottom right;
   transform: rotateZ(-45deg);
+//   animation: hoppingLeft 2s infinite;
 }
+
+// @keyframes hoppingLeft{
+// 0% {
+//     transform: rotateZ(-45deg) translate(0, 0);
+//   }
+//   20% {
+//     transform: rotateZ(-45deg) translate(0, 10px);
+//   }
+//   40% {
+//     transform: rotateZ(-45deg) translate(0, 0);
+//   }
+// }
 
 .TheScrollBtn span:nth-of-type(2) {
   right: 99px;
   bottom: 89px;
   transform-origin: top left;
   transform: rotateZ(45deg);
+//   animation: hoppingRight 2s infinite;
 }
+
+
+// @keyframes hoppingRight{
+//  0% {
+//     transform: rotateZ(45deg) translate(0, 0);
+//   }
+//   20% {
+//    transform: rotateZ(45deg) translate(0, 10px);
+//   }
+//   40% {
+//    transform: rotateZ(45deg) translate(0, 0);
+//   }
+// }
 
 
 .TheScrollBtn:hover span{
@@ -78,152 +105,91 @@ $blackColor: #272727;
 
 @media screen and (max-width: 1024px) {
     /* 1024pxまでの幅の場合に適応される */
-    .TheHeader_TitleImg{
-      left: 64px;
-    }
 
-    .TheHeader_Toggle{
+    .TheScrollBtn{
       right: 64px;
 
     }
 
-    .TheHeader_Toggle span {
-      right: 86px;
+    .TheScrollBtn span:nth-of-type(1) {
+      right: 85px;
+    }
+    .TheScrollBtn span:nth-of-type(2) {
+      right: 89px;
     }
 
 }
 @media screen and (max-width: 768px) {
     /* 768pxまでの幅の場合に適応される */
-    .TheHeader_TitleImg{
-      left: 56px;
-    }
-    .TheHeader_Toggle{
+
+    .TheScrollBtn{
       right: 56px;
 
     }
-    .TheHeader_Toggle span {
-      right: 78px;
+    .TheScrollBtn span:nth-of-type(1) {
+      right: 76px;
+    }
+    .TheScrollBtn span:nth-of-type(2) {
+      right: 81px;
     }
 }
 @media screen and (max-width: 480px) {
     /* 480pxまでの幅の場合に適応される */
 
-    .TheHeader_TitleImg{
-      height: 52px;
-    }
 
-    .TheHeader_ToggleImg{
-      height: 52px;
-    }
 
-    .TheHeader_TitleImg{
-      top: 38px;
-      left: 22px;
-    }
 
-    .TheHeader_Toggle{
-      top: 38px;
-      right: 21px;
+    .TheScrollBtn{
+      display: none;
 
     }
 
-    .TheHeader_Toggle span {
-      top: 38px;
-      right: 39px;
-      width: 16px;
-      height: 3px;
-      border-radius: 3px;
-    }
+
+    // .TheScrollBtn span {
+    //   bottom: 38px;
+    //   right: 39px;
+    //   width: 16px;
+    //   height: 3px;
+    //   border-radius: 3px;
+    // }
 
 
-    .TheHeader_Toggle span:nth-of-type(1) {
-      top: 57px;
-    }
-    .TheHeader_Toggle span:nth-of-type(2) {
-      top: 63px;
-    }
-    .TheHeader_Toggle span:nth-of-type(3) {
-      top: 69px;
-    }
-
-
-    @keyframes line1 {
-      0% {
-        transform: translateY(6px) rotate(45deg);
-      }
-      50% {
-        transform: translateY(6px) rotate(0);
-      }
-      100% {
-        transform: translateY(0) rotate(0);
-      }
-    }
-
-    @keyframes line2 {
-      0% {
-        transform: translateY(-6px) rotate(-45deg);
-      }
-      50% {
-        transform: translateY(-6px) rotate(0);
-      }
-      100% {
-        transform: translateY(0) rotate(0);
-      }
-    }
-
-    @keyframes active-line1 {
-      0% {
-        transform: translateY(0) rotate(0);
-      }
-      50% {
-        transform: translateY(6px) rotate(0);
-      }
-      100% {
-        transform: translateY(6px) rotate(45deg);
-      }
-    }
-
-    @keyframes active-line3 {
-      0% {
-        transform: translateY(0) rotate(0);
-      }
-      50% {
-        transform: translateY(-6px) rotate(0);
-      }
-      100% {
-        transform: translateY(-6px) rotate(-45deg);
-      }
-    }
-
+    // .TheScrollBtn span:nth-of-type(1) {
+    //   top: 57px;
+    // }
+    // .TheScrollBtn span:nth-of-type(2) {
+    //   top: 63px;
+    // }
+    // .TheScrollBtn span:nth-of-type(3) {
+    //   top: 69px;
+    // }
 
 
 }
 @media screen and (max-width: 320px) {
     /* 320pxまでの幅の場合に適応される */
-    .TheHeader_TitleImg{
-      top: 24px;
-      left: 4px;
+
+
+    .TheScrollBtn{
+      display: none;
+
     }
 
-    .TheHeader_Toggle{
-      top: 24px;
-      right: 4px;
-    }
 
-    .TheHeader_Toggle span {
-      top: 32px;
-      right: 22px;
-    }
+    // .TheHeader_Toggle span {
+    //   top: 32px;
+    //   right: 22px;
+    // }
 
-    .TheHeader_Toggle span:nth-of-type(1) {
-      top: 44px;
-    }
-    .TheHeader_Toggle span:nth-of-type(2) {
-      top: 50px;
-    }
-    .TheHeader_Toggle span:nth-of-type(3) {
-      top: 56px;
-    }
+    // .TheHeader_Toggle span:nth-of-type(1) {
+    //   top: 44px;
+    // }
+    // .TheHeader_Toggle span:nth-of-type(2) {
+    //   top: 50px;
+    // }
+    // .TheHeader_Toggle span:nth-of-type(3) {
+    //   top: 56px;
+    // }
 }
 </style>
 
