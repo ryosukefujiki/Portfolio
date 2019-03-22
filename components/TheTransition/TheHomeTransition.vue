@@ -1,7 +1,7 @@
 <template>
 <div class='TheTransition TheHomeTransition'>
     <div class='TheTransition_Background' ref='background'>
-        <p class='TheTransition_Category' ref='category'>Home</p>
+        <p class='TheTransition_Category text--letterspace' ref='category'>Home</p>
     </div>
 </div>
 </template>
@@ -86,7 +86,7 @@ computed: {
 .TheTransition_Background {
     width: 100%;
     height: 100%;
-    background: #FCFCFC;
+    background: #D2DADF;
     transform: translateX(-100%);
     transform-origin: left center;
 
@@ -99,15 +99,18 @@ computed: {
 
 
 .TheTransition_Category {
-    color: #D2DADF;
+    color: #FCFCFC;
     text-align: center;
     font-size: 28px;
     z-index: 12;
     font-weight: bold;
     font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 8px;
   }
 .TheTransition_Title {
-    color: #787878;
+    color: #FCFCFC;
     text-align: center;
     z-index: 12;
     font-size: 20px;
