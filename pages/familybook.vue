@@ -46,7 +46,7 @@
           </div>
 
           <div class="Content_Team">
-            <p class="Content_Right_Subtitle">Team(2)</p>
+            <p class="Content_Right_Subtitle">Credit (2)</p>
             <p class="Overview_Text">藤木 良祐
               <br>
               <span class="Overview_Text__task">- Design</span>
