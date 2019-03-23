@@ -2,7 +2,7 @@
   <div class="TheHero">
     <div class="TheHero_Img">
       <div class="TheHero_WorkTrim">
-        <img :src="lineandballHomeImg" alt class="TheHero_WorkImg">
+        <img :src="familybookHomeImg" alt class="TheHero_WorkImg">
         <div class="TheHero_WorkBg_FadeIn"></div>
       </div>
       <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
@@ -12,7 +12,7 @@
         <!-- <span class="TheHero_Bg"></span> -->
       </h1>
       <h2 class="TheHero_Heading TheHero_Heding_Copy">
-        <span class="">GAME</span><span class="TheHero_Bg"></span>
+        <span class="TheHero_Heading_Text">COMMUNICATION</span><span class="TheHero_Bg"></span>
       </h2>
       <p class="TheHero_AnchorText">Show me more →</p>
     </div>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   data() {
     return {
@@ -30,7 +32,96 @@ export default {
       lineandballHomeImg: '/home/lineandball_home.png',
       hiveHomeImg: '/home/hive_home.png',
     };
-  }
+  },
+  computed: {
+    ...mapGetters({
+      homeFadeIn: 'homeFadeIn',
+    })
+  },
+  watch: {
+     async homeFadeIn (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+      this.opacityEnter()
+      await this.$delay(300)
+      this.backgroundEnter()
+      await this.$delay(600)
+      this.opacityLeave()
+      this.backgroundLeave()
+    },
+   },
+   methods: {
+      opacityEnter () {
+       console.log("opacityEnter")
+       requestAnimationFrame(() => {
+        TweenMax.to('.TheHero_Heading_Text', 0, {
+          opacity: 0,
+          ease: Expo.easeOut,
+        })
+      })
+      requestAnimationFrame(() => {
+        TweenMax.to('.TheHero_WorkImg', 0, {
+          opacity: 0,
+          ease: Expo.easeOut,
+        })
+      })
+     },
+     backgroundEnter(){
+       console.log("backgroundEnter")
+       requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheHero_Bg', 0.2, {
+          width: '102%',
+          ease: Expo.easeOut,
+          startAt: {
+            width: '0%',
+          }
+        }, 0.1)
+      })
+       requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheHero_WorkBg_FadeIn', 0.2, {
+          width: '102%',
+          ease: Expo.easeOut,
+          startAt: {
+            width: '0%',
+          }
+        }, 0.1)
+      })
+     },
+     opacityLeave () {
+       console.log("opacityLeave")
+       requestAnimationFrame(() => {
+        TweenMax.to('.TheHero_Heading_Text', 0, {
+          opacity: 1,
+          ease: Expo.easeOut,
+        })
+      })
+      requestAnimationFrame(() => {
+        TweenMax.to('.TheHero_WorkImg', 0, {
+          opacity: 1,
+          ease: Expo.easeOut,
+        })
+      })
+     },
+     backgroundLeave(){
+       console.log("backgroundEnter")
+       requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheHero_Bg', 0.3, {
+          x: '100%',
+          ease: Expo.easeIn,
+          startAt: {
+            x: '0%',
+          }
+        }, 0.1)
+      })
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo('.TheHero_WorkBg_FadeIn', 0.3, {
+          x: '100%',
+          ease: Expo.easeIn,
+          startAt: {
+            x: '0%',
+          }
+        }, 0.1)
+      })
+     },
+   },
 };
 </script>
 
@@ -78,9 +169,9 @@ body,
   transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
 }
 
-.TheHero_Img:hover .TheHero_WorkBg_FadeIn{
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
-}
+// .TheHero_Img:hover .TheHero_WorkBg_FadeIn{
+//   transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+// }
 
 .TheHero_Img:hover .TheHero_WorkBg_Second{
   transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px);
@@ -103,8 +194,8 @@ body,
 }
 
 .TheHero_WorkBg_FadeIn{
-  width: 600px;
-  height: 450px;
+  width: 0%;
+  height: 100%;
   border-radius: 20px;
   background: #82C3E0;
   position: absolute;
@@ -112,11 +203,11 @@ body,
   left: 0;
   box-shadow: 0px 0px 10px 0px rgba(155, 155, 155, 0.2);
   transition: 0.3s;
-  z-index: 6;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+  z-index: 7;
+  // transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px);
 
-  animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);
-  animation-fill-mode: both;
+  // animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);
+  // animation-fill-mode: both;
 }
 
 .TheHero_WorkBg_Second {
@@ -173,9 +264,9 @@ body,
   top: 0;
   height: 120%;
   background-color: #82C3E0;
-  animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);
-  animation-fill-mode: both;
-  width: 100%;
+  // animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);
+  // animation-fill-mode: both;
+  width: 0%;
   z-index: 2;
 }
 

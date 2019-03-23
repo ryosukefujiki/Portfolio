@@ -46,6 +46,7 @@ computed: {
           ease: Expo.easeIn
         })
       })
+       this.$store.commit('homeFadeIn')
     },
     async set (){
       requestAnimationFrame(() => {
