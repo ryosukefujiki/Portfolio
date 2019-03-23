@@ -116,6 +116,7 @@ $background-color: #FCFCFC;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  z-index: 2;
 }
 
 .TheTransitionBtn{
