@@ -439,6 +439,10 @@ body,
   margin-top: 48px;
 }
 
+.link__text{
+  color: #4a4a4a;
+}
+
 .Content_Details,
 .Content_Tool,
 .Content_Team {
