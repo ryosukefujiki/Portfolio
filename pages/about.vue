@@ -16,8 +16,8 @@
         <h2 class="TheAbout_Heading">🏆 AWARDS</h2>
         <p class="TheAbout_Text">
           2019 SFC STUDENT AWARD<br>
-          2018 UIST Student Inovation Contest Most Creative <span class="hide-text">Award</span><br>
-          2018 UIST Student Inovation Contest People Choice <span class="hide-text">Award</span><br>
+          <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">2018 UIST Student Inovation Contest Most Creative <span class="hide-text">Award</span></a><br>
+          <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">2018 UIST Student Inovation Contest People Choice <span class="hide-text">Award</span></a><br>
           2018 Goodpatch Internship 最優秀賞<br>
           2017 CyberAgent UI Design Academy UI発明賞<br>
           2017 電通 アイディアの学校 金賞</p>
@@ -40,7 +40,7 @@
       <div class="TheAbout_Work TheAbout_Content">
         <h2 class="TheAbout_Heading">💻 WORKS</h2>
         <p class="TheAbout_Text">
-          2018 NIHONBASHI β Creator<br>
+          <a href="https://nihonbashi-beta.jp/" target="_blank" class="TheAbout_LinkColor">2018 NIHONBASHI β Creator</a><br>
           2018 Yahoo! Internship<br>
           2018 Goodpatch Internship<br>
           2017 DeNA Delight U for Student<br>
@@ -171,6 +171,10 @@ $hover-color: #D2DADF;
   font-size: $text-size;
   margin-top: 8px;
   line-height: 48px;
+}
+
+.TheAbout_LinkColor{
+  color: $text-color;
 }
 
 // .TheAbout_ProfileImg{
