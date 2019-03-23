@@ -10,11 +10,11 @@
       <h1 class="TheHero_Heading TheHero_Heding_Design">
         <span class>Design</span>
       </h1>
-      <h2 class="TheHero_Heading TheHero_Heding_Copy" v-bind:style="{width:backgroundWidth}">
+      <h2 class="TheHero_Heading TheHero_Heding_Copy">
         <span class="TheHero_Heading_Text">{{headingCopy}}</span>
         <span class="TheHero_Bg" v-bind:style="{background:backgroundColor}"></span>
       </h2>
-      <p class="TheHero_AnchorText">Show me more →</p>
+      <p class="TheHero_AnchorText">Show me more<span class="TheHero_Arrow"> →</span></p>
     </div>
     <!-- <h2 class="TheHero_Heading">
         <span class="TheHero_Heding_Copy">RELATION</span><span class="TheHero_Bg"></span>
@@ -415,6 +415,10 @@ body,
   font-family: "Noto Sans", sans-serif;
   // font-weight: 200;
   font-size: 24px;
+}
+
+.TheHero_Arrow{
+  vertical-align: -2px;
 }
 
 @keyframes secondaryImageOverlayIn {
