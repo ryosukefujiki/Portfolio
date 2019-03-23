@@ -1,14 +1,14 @@
 <template>
   <div class="TheHero">
-    <div class="TheHero_Work">
-      <a>
-        <div class="TheHero_WorkBg"></div>
+      <div class="TheHero_Img">
         <div class="TheHero_WorkTrim">
           <img :src="familybookHomeImg" alt class="TheHero_WorkImg">
         </div>
-      </a>
+        <!-- <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div> -->
+        <!-- <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div> -->
+        <h1 class="TheHero_Heading"><span class="TheHero_Heding_Design">Design</span><br>COMMUNICATION</h1>
+      </div>
   </div>
-    </div>
 </template>
 
 <script>
@@ -33,59 +33,75 @@ body,
   display: block;
   width: 100%;
   height: 100%;
-  background: #fffffa;
+  background: #ffffff;
+  padding-top: 120px;
 }
 
-.TheHero_Work {
+.TheHero_Img{
+  width: 600px;
+  height: 450px;
+  margin: 0 auto;
   position: relative;
-  width: 340px;
-  top: 120px;
-  left: 200px;
-  // transform: rotateX(20deg) rotateZ(40deg) rotateY(20deg);
-  // transform: skewY(8deg) rotateX(10deg) rotateZ(0deg) rotateY(30deg);
-  // transform: skewY(8deg);
-  // transform: rotateX(45deg) rotateZ(-30deg) translateY(0%);
-  // transform: rotateX(45deg) rotateZ(-30deg)
-  transform: rotateX(30deg) rotateY(-10deg) rotateZ(0deg) translateZ(-60px);
-  perspective: 1000px;
-}
-
-.TheHero_WorkBg {
-  position: absolute;
-  width: 340px;
-  height: 260px;
-  border-radius: 20px;
-  background: #fcfcfc;
-  box-shadow: 0px 0px 4px 0px rgba(155, 155, 155, 0.2);
-  transition: 0.2s;
-  transition-timing-function: ease-out;
 }
 
 .TheHero_WorkTrim {
-  z-index: 4;
   overflow: hidden;
-  width: 320px;
-  height: 240px;
+  width: 600px;
+  height: 450px;
   border-radius: 20px;
-  position: relative;
-  left: 10px;
-  top: 10px;
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  box-shadow: 0px 0px 20px 0px rgba(155,155,155,0.2);
+}
+
+.TheHero_WorkBg{
+  width: 600px;
+  height: 450px;
+  border-radius: 20px;
+  background:#f1f1f1;
+  position: absolute;
+  top: 20px;
+  left: -16px;
+  box-shadow: 0px 0px 10px 0px rgba(155,155,155,0.2);
+}
+
+.TheHero_WorkBg_Second{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-12px) translateY(16px);
+  z-index: 4;
+}
+.TheHero_WorkBg_Third{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-24px) translateY(32px);
+  z-index: 3;
 }
 
 .TheHero_WorkImg {
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   width: auto;
   height: 100%;
+}
 
-  transition: 0.2s;
-  transition-timing-function: ease-out;
-
-  transform-origin: center;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+.TheHero_Heading{
+  font-size: 120px;
+  width: 90%;
+  position: absolute;
+  top: 80px;
+  left: -240px;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #D2DADF;
+  // color: #ffffff;
+  line-height: 160px;
+  text-shadow: rgba(155,155,155,0.2) 0 0 4px;
+  z-index: 8;
 }
 
 

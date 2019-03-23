@@ -110,7 +110,7 @@ $background-color: #FCFCFC;
 }
 
 .TheHome_Container{
-  padding-top: 120px;
+  // padding-top: 40px;
   margin: 0 auto;
   width: 860px;
   display: flex;
