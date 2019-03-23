@@ -142,18 +142,7 @@ $background-color: #FCFCFC;
       margin: 0 auto;
     }
 
-    // .TheHome_WorkBg{
-    //   width: 670px;
-    //   height: 419px;
-    // }
 
-    // .TheHome_WorkTrim{
-    //   width: 626px;
-    //   height: 375px;
-    //   position: relative;
-    // 	left: 22px;
-    // 	top: 22px;
-    // }
 
 }
 @media screen and (max-width: 480px) {
@@ -201,8 +190,6 @@ $background-color: #FCFCFC;
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       width: auto;
       height: 100%;

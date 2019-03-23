@@ -415,6 +415,7 @@ body,
   font-family: "Noto Sans", sans-serif;
   // font-weight: 200;
   font-size: 24px;
+   z-index: 8;
 }
 
 .TheHero_Arrow{
@@ -438,52 +439,128 @@ body,
   }
 }
 
+
+@media screen and (max-width: 1024px) {
+  .TheHero{
+    padding-top: 400px;
+  }
+  .TheHero_Heading{
+    font-size: 100px;
+    line-height: 132px;
+    top: 240px;
+    left: -144px;
+  }
+  .TheHero_AnchorText{
+    color: #9b9b9b;
+    top: 256px;
+    left: -136px;
+  font-size: 24px;
+  }
+  .TheHero_Heding_Copy{
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .TheHero{
+    padding-top: 240px;
+  }
+  .TheHero_Heading{
+    font-size: 80px;
+    line-height: 100px;
+    top: 320px;
+    left: -48px;
+  }
+  .TheHero_AnchorText{
+    color: #9b9b9b;
+    top: 336px;
+    left: -48px;
+    font-size: 24px;
+  }
+  .TheHero_Heding_Copy{
+    width: 688px;
+  }
+}
+
 @media screen and (max-width: 480px) {
-  .TheHero_Work {
-    padding-top: 30px;
-    margin-bottom: 32px;
+  .TheHero{
+    padding-top: 240px;
   }
-
+  .TheHero_Img{
+    width: 300px;
+  }
+  
   .TheHero_WorkBg {
-    width: 320px;
-    height: 240px;
+    width: 300px;
+    height: 225px;
+    left: 0px;
+    top: 8px;
   }
-
   .TheHero_WorkTrim {
     width: 300px;
     height: 225px;
     position: relative;
-    left: 10px;
-    top: 7px;
+    left: 0px;
+    top: 8px;
+  }
+  .TheHero_Heading{
+    width: 300px;
+    font-size: 40px;
+    line-height: 56px;
+    position: relative;
+    top: -48px;
+    left:-24px;
+  }
+  .TheHero_AnchorText{
+    color: #9b9b9b;
+    position: relative;
+    top: -44px;
+    left: -24px;
+    font-size: 16px;
+  }
+  .TheHero_Heding_Copy{
+    width: 344px;
   }
 }
 @media screen and (max-width: 320px) {
-  .TheHero_Work {
-    width: 280px;
+  .TheHero{
+    padding-top: 160px;
   }
-
   .TheHero_WorkBg {
-    width: 280px;
-    height: 210px;
+    left: 8px;
   }
-
   .TheHero_WorkTrim {
-    width: 260px;
-    height: 195px;
-    position: relative;
-    left: 10px;
-    top: 7px;
+    left: 8px;
   }
-
-  .TheHero_WorkImg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: 100%;
+  .TheHero_Heading{
+    width: 240px;
+    left:-20px;
+    font-size: 28px;
+    line-height: 44px;
+  }
+  .TheHero_AnchorText{
+    width: 240px;
+    left: -20px;
+  }
+  .TheHero_Heding_Copy{
+    width: 240px;
+  }
+  .TheHero_Img{
+    width: 240px;
+  }
+  
+  .TheHero_WorkBg {
+    width: 240px;
+    height: 180px;
+    left: 0px;
+    top: 8px;
+  }
+  .TheHero_WorkTrim {
+    width: 240px;
+    height: 180px;
+    position: relative;
+    left: 0px;
+    top: 8px;
   }
 }
 </style>
