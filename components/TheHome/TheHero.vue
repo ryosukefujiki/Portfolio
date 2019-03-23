@@ -1,127 +1,265 @@
 <template>
   <div class="TheHero">
-    <div class="TheHero_Img">
+    <div class="TheHero_Img" @click="heroClick()">
       <div class="TheHero_WorkTrim">
-        <img :src="familybookHomeImg" alt class="TheHero_WorkImg">
-        <div class="TheHero_WorkBg_FadeIn"></div>
+        <img :src=homeImg class="TheHero_WorkImg">
+        <div v-bind:style="{background:backgroundColor}" class="TheHero_WorkBg_FadeIn"></div>
       </div>
       <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
       <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div>
       <h1 class="TheHero_Heading TheHero_Heding_Design">
-        <span class="">Design</span>
-        <!-- <span class="TheHero_Bg"></span> -->
+        <span class>Design</span>
       </h1>
-      <h2 class="TheHero_Heading TheHero_Heding_Copy">
-        <span class="TheHero_Heading_Text">COMMUNICATION</span><span class="TheHero_Bg"></span>
+      <h2 class="TheHero_Heading TheHero_Heding_Copy" v-bind:style="{width:backgroundWidth}">
+        <span class="TheHero_Heading_Text">{{headingCopy}}</span>
+        <span class="TheHero_Bg" v-bind:style="{background:backgroundColor}"></span>
       </h2>
       <p class="TheHero_AnchorText">Show me more →</p>
     </div>
-      <!-- <h2 class="TheHero_Heading">
+    <!-- <h2 class="TheHero_Heading">
         <span class="TheHero_Heding_Copy">RELATION</span><span class="TheHero_Bg"></span>
-      </h2> -->
+    </h2>-->
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
+      homeImg: "/home/familybook_home.png",
       familybookHomeImg: "/home/familybook_home.png",
-      lineandballHomeImg: '/home/lineandball_home.png',
-      hiveHomeImg: '/home/hive_home.png',
+      lineandballHomeImg: "/home/lineandball_home.png",
+      hiveHomeImg: "/home/hive_home.png",
+      intervalId: undefined,
+      familybookFlag: true,
+      lineandballFlag: false,
+      backgroundColor: "#9EE970",
+      familybookColor: "#82c3e0",
+      lineandballColor: "#9EE970",
+      headingCopy: "COMMUNICATION",
+      backgroundWidth: "1024px",
+      familybookWidth: "1024px",
+      lineandballWidth: "360px",
     };
+  },
+  mounted() {
+    let self = this;
+    // var hoge = 0
+    this.intervalId = setInterval(function() {
+      // hoge++
+      // console.log(hoge)
+      self.saySomething()
+    }, 5000);
   },
   computed: {
     ...mapGetters({
-      homeFadeIn: 'homeFadeIn',
+      homeFadeIn: "homeFadeIn"
     })
   },
   watch: {
-     async homeFadeIn (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+    async homeFadeIn(val) {
+      // ステートの`entered`が切り替わるたび、この処理が実行される
+      this.backgroundColor = this.familybookColor
+      // this.backgroundWidth = this.familybookWidth
       this.opacityEnter()
       await this.$delay(300)
       this.backgroundEnter()
       await this.$delay(600)
       this.opacityLeave()
       this.backgroundLeave()
+      await this.$delay(600)
+      // this.opacityEnter()
+      this.resetOpacity()
+      await this.$delay(600)
+      this.reset()
+      await this.$delay(600)
+      this.resetOpacity2()
+      this.backgroundColor = this.lineandballColor
+      // this.backgroundWidth = this.lineandballWidth
+    }
+  },
+  methods: {
+    heroClick(){
+      if(this.homeImg == this.familybookHomeImg){
+         this.$store.commit('familybook/familybookClick')
+      }else if(this.homeImg == this.lineandballHomeImg){
+         this.$store.commit('familybook/familybookClick')
+      }
     },
-   },
-   methods: {
-      opacityEnter () {
-       console.log("opacityEnter")
-       requestAnimationFrame(() => {
-        TweenMax.to('.TheHero_Heading_Text', 0, {
+    async saySomething() {
+      console.log("methodsから読んでる")
+      this.backgroundEnter()
+      await this.$delay(600)
+      this.changeImage()
+      this.opacityLeave()
+      this.backgroundLeave()
+      await this.$delay(600)
+      // this.opacityEnter()
+      this.resetOpacity()
+      await this.$delay(600)
+      this.reset()
+      await this.$delay(600)
+      this.resetOpacity2()
+      // this.opacityLeave()
+      this.changeColor()
+    },
+    changeColor(){
+      if(this.backgroundColor == this.familybookColor){
+        this.backgroundColor = this.lineandballColor
+        // this.backgroundWidth = this.familybookWidth
+      }else if(this.backgroundColor == this.lineandballColor){
+        this.backgroundColor = this.familybookColor
+        // this.backgroundWidth = this.lineandballWidth
+      }
+    },
+    changeImage() {
+      if(this.homeImg == this.familybookHomeImg){
+        this.homeImg = this.lineandballHomeImg
+        this.headingCopy = "GAME"
+      }else if(this.homeImg == this.lineandballHomeImg){
+        this.homeImg = this.familybookHomeImg
+        this.headingCopy = "COMMUNICATION"
+      }
+    },
+    opacityEnter() {
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_Heading_Text", 0, {
           opacity: 0,
-          ease: Expo.easeOut,
-        })
-      })
+          ease: Expo.easeOut
+        });
+      });
       requestAnimationFrame(() => {
-        TweenMax.to('.TheHero_WorkImg', 0, {
+        TweenMax.to(".TheHero_WorkImg", 0, {
           opacity: 0,
-          ease: Expo.easeOut,
-        })
-      })
-     },
-     backgroundEnter(){
-       console.log("backgroundEnter")
-       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.TheHero_Bg', 0.2, {
-          width: '102%',
-          ease: Expo.easeOut,
-          startAt: {
-            width: '0%',
-          }
-        }, 0.1)
-      })
-       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.TheHero_WorkBg_FadeIn', 0.2, {
-          width: '102%',
-          ease: Expo.easeOut,
-          startAt: {
-            width: '0%',
-          }
-        }, 0.1)
-      })
-     },
-     opacityLeave () {
-       console.log("opacityLeave")
-       requestAnimationFrame(() => {
-        TweenMax.to('.TheHero_Heading_Text', 0, {
-          opacity: 1,
-          ease: Expo.easeOut,
-        })
-      })
+          ease: Expo.easeOut
+        });
+      });
+    },
+    backgroundEnter() {
       requestAnimationFrame(() => {
-        TweenMax.to('.TheHero_WorkImg', 0, {
-          opacity: 1,
-          ease: Expo.easeOut,
-        })
-      })
-     },
-     backgroundLeave(){
-       console.log("backgroundEnter")
-       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.TheHero_Bg', 0.3, {
-          x: '100%',
-          ease: Expo.easeIn,
-          startAt: {
-            x: '0%',
-          }
-        }, 0.1)
-      })
+        TweenMax.staggerTo(
+          ".TheHero_WorkBg_FadeIn",
+          0.2,
+          {
+            width: "102%",
+            ease: Expo.easeOut,
+            startAt: {
+              width: "0%"
+            }
+          },
+          0.1
+        );
+      });
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.TheHero_WorkBg_FadeIn', 0.3, {
-          x: '100%',
-          ease: Expo.easeIn,
-          startAt: {
-            x: '0%',
-          }
-        }, 0.1)
-      })
-     },
-   },
+        TweenMax.staggerTo(
+          ".TheHero_Bg",
+          0.2,
+          {
+            width: "102%",
+            ease: Expo.easeOut,
+            startAt: {
+              width: "0%"
+            }
+          },
+          0.1
+        );
+      });
+    },
+    opacityLeave() {
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_Heading_Text", 0, {
+          opacity: 1,
+          ease: Expo.easeOut
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkImg", 0, {
+          opacity: 1,
+          ease: Expo.easeOut
+        });
+      });
+    },
+    backgroundLeave() {
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo(
+          ".TheHero_Bg",
+          0.3,
+          {
+            x: "100%",
+            ease: Expo.easeIn,
+            startAt: {
+              x: "0%"
+            }
+          },
+          0.1
+        );
+      });
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo(
+          ".TheHero_WorkBg_FadeIn",
+          0.3,
+          {
+            x: "100%",
+            ease: Expo.easeIn,
+            startAt: {
+              x: "0%"
+            }
+          },
+          0.1
+        );
+      });
+    },
+    resetOpacity() {
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkBg_FadeIn", 0, {
+          opacity: 0,
+          ease: Expo.easeOut
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_Bg", 0, {
+          opacity: 0,
+          ease: Expo.easeOut
+        });
+      });
+    },
+    resetOpacity2() {
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkBg_FadeIn", 0, {
+          opacity: 1,
+          ease: Expo.easeOut
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_Bg", 0, {
+          opacity: 1,
+          ease: Expo.easeOut
+        });
+      });
+    },
+    reset() {
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_Bg", 0.3, {
+          x: "0%",
+          width: "0%",
+          ease: Expo.easeOut
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkBg_FadeIn", 0.3, {
+          x: "0%",
+          width: "0%",
+          ease: Expo.easeOut
+        });
+      });
+    }
+  },
+  beforeDestroy() {
+    console.log("clearInterval");
+    clearInterval(this.intervalId);
+  }
 };
 </script>
 
@@ -150,7 +288,6 @@ body,
   cursor: pointer;
 }
 
-
 .TheHero_WorkTrim {
   overflow: hidden;
   width: 600px;
@@ -165,7 +302,7 @@ body,
   transition: 0.3s;
 }
 
-.TheHero_Img:hover .TheHero_WorkTrim{
+.TheHero_Img:hover .TheHero_WorkTrim {
   transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
 }
 
@@ -173,11 +310,11 @@ body,
 //   transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
 // }
 
-.TheHero_Img:hover .TheHero_WorkBg_Second{
+.TheHero_Img:hover .TheHero_WorkBg_Second {
   transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px);
 }
 
-.TheHero_Img:hover .TheHero_WorkBg_Third{
+.TheHero_Img:hover .TheHero_WorkBg_Third {
   transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px);
 }
 
@@ -193,11 +330,11 @@ body,
   transition: 0.3s;
 }
 
-.TheHero_WorkBg_FadeIn{
+.TheHero_WorkBg_FadeIn {
   width: 0%;
   height: 100%;
   border-radius: 20px;
-  background: #82C3E0;
+  background: #82c3e0;
   position: absolute;
   top: 0;
   left: 0;
@@ -245,32 +382,32 @@ body,
   z-index: 8;
 }
 
-.TheHero_Heding_Design{
+.TheHero_Heding_Design {
   color: #454545;
   width: 400px;
   height: auto;
 }
 
-.TheHero_Heding_Copy{
+.TheHero_Heding_Copy {
   width: 1024px;
   height: auto;
   text-shadow: rgba(125, 155, 155, 0.2) 0 0 8px;
 }
 
-.TheHero_Bg{
+.TheHero_Bg {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 120%;
-  background-color: #82C3E0;
+  background-color: #82c3e0;
   // animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);
   // animation-fill-mode: both;
   width: 0%;
   z-index: 2;
 }
 
-.TheHero_AnchorText{
+.TheHero_AnchorText {
   color: #9b9b9b;
   position: relative;
   top: 80px;
@@ -281,22 +418,21 @@ body,
 }
 
 @keyframes secondaryImageOverlayIn {
-    0% {
-      width: 0;
-    }
-    100% {
-      width:  100%;
-    }
+  0% {
+    width: 0;
   }
-  @keyframes secondaryImageOverlayOut {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(102%);
-    }
+  100% {
+    width: 100%;
   }
-
+}
+@keyframes secondaryImageOverlayOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(102%);
+  }
+}
 
 @media screen and (max-width: 480px) {
   .TheHero_Work {
