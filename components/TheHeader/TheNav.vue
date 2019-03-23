@@ -69,7 +69,7 @@ export default {
 
 /* TheNavに対するスタイル */
 .TheNav {
-  z-index: 5;
+  z-index: 9;
   position: fixed;
   background: rgba(255, 255, 255, 0.80);
   top: 0;
