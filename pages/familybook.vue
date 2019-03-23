@@ -1,7 +1,7 @@
 <template>
   <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg FamilybookImg">
-      <p class="TheWork_HeroNumber TheWork_Title" id="scrollTarget">
+      <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
         <span class="TheWork_TitleText">01 - 05</span><span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">かぞくが、ものがたり。</span><span class="TheWork_HeroNumberBg"></span></h1>
@@ -10,7 +10,7 @@
     </div>
 
     <section class="TheWork_Contents">
-      <div class="TheWork_Content TheWork_Overview" id="anchor">
+      <div class="TheWork_Content TheWork_Overview">
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
@@ -154,6 +154,7 @@ import ThePlayfulfesButton from '~/components/TheHome/ThePlayfulfesButton.vue'
 import TheScrapboardButton from '~/components/TheHome/TheScrapboardButton.vue'
 import {mapGetters} from 'vuex'
 import {TweenMax, Elastic, Expo, Back} from 'gsap'
+import VueScrollTo from 'vue-scrollto'
 
 export default {
     components: {
@@ -189,10 +190,6 @@ export default {
       research04Img: 'familybook/research04.png',
     }
   },
-  // mounted() {
-  //   window.addEventListener('scroll', this.handleScroll)
-  //   this.targetY = document.getElementById("scrollTarget").getBoundingClientRect().top + window.pageYOffset
-  // },
   computed: {
     ...mapGetters({
       familybookFadeIn: 'familybook/familybookFadeIn',
@@ -207,6 +204,8 @@ export default {
       await this.$delay(500)
       this.opacityLeave()
       this.backgroundLeave()
+      await this.$delay(2200)
+      VueScrollTo.scrollTo('#anchor', 500);
     },
     async familybookMoved (val) {
       this.targetMove()
@@ -214,9 +213,7 @@ export default {
    },
    methods: {
      handleScroll: function(evt, el) {
-      console.log(window.scrollY)
       if (window.scrollY > 50) {
-          console.log("超えた！")
           this.$store.commit('familybook/familybookMove')
       }
       return window.scrollY > 50
@@ -273,12 +270,6 @@ export default {
         })
       })
      },
-    //  handleScroll() {
-    //     this.scrollY = window.scrollY;
-    //     if(this.targetY <= this.scrollY){
-    //       console.log("超えた！")
-    //     }
-    //  },
      backgroundLeave(){
        console.log("backgroundEnter")
        requestAnimationFrame(() => {
