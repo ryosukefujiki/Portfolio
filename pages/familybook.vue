@@ -603,7 +603,7 @@ body,
       display: none;
     }
 
-    .familybookImg{
+    .FamilybookImg{
       background: rgba(39, 39, 39, 0.1) url("/home/familybook_home.png");
       background-blend-mode: multiply;
       background-position: center;
