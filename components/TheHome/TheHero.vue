@@ -15,6 +15,8 @@
         <span class="TheHero_Bg" v-bind:style="{background:backgroundColor}"></span>
       </h2>
       <p class="TheHero_AnchorText">Show me more<span class="TheHero_Arrow"> →</span></p>
+      <img :src=pointImg class="TheHero_PointImg TheHero_PointImg_Right">
+      <img :src=pointImg class="TheHero_PointImg TheHero_PointImg_Left">
     </div>
     <!-- <h2 class="TheHero_Heading">
         <span class="TheHero_Heding_Copy">RELATION</span><span class="TheHero_Bg"></span>
@@ -28,6 +30,7 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      pointImg: "/home/point.png",
       homeImg: "/home/familybook_home.png",
       familybookHomeImg: "/home/familybook_home.png",
       lineandballHomeImg: "/home/lineandball_home.png",
@@ -407,6 +410,22 @@ body,
   z-index: 2;
 }
 
+.TheHero_PointImg{
+  z-index: 2;
+  width: 240px;
+}
+.TheHero_PointImg_Right{
+  position: relative;
+  top: -360px;
+  right: -520px;
+}
+.TheHero_PointImg_Left{
+  position: relative;
+  top: -80px;
+  left: -400px;
+  transform: rotateZ(90deg);
+}
+
 .TheHero_AnchorText {
   color: #9b9b9b;
   position: relative;
@@ -459,6 +478,21 @@ body,
   .TheHero_Heding_Copy{
     width: 900px;
   }
+  .TheHero_PointImg{
+  z-index: 2;
+  width: 320px;
+}
+.TheHero_PointImg_Right{
+  position: relative;
+  top: -400px;
+  right: -440px;
+}
+.TheHero_PointImg_Left{
+  position: relative;
+  top: -200px;
+  left: -160px;
+  transform: rotateZ(90deg);
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -480,11 +514,26 @@ body,
   .TheHero_Heding_Copy{
     width: 688px;
   }
+  .TheHero_PointImg{
+  z-index: 2;
+  width: 280px;
+}
+.TheHero_PointImg_Right{
+  position: relative;
+  top: -280px;
+  right: -320px;
+}
+.TheHero_PointImg_Left{
+  position: relative;
+  top: 120px;
+  left: -360px;
+  transform: rotateZ(90deg);
+}
 }
 
 @media screen and (max-width: 480px) {
   .TheHero{
-    padding-top: 240px;
+    padding-top: 220px;
   }
   .TheHero_Img{
     width: 300px;
@@ -521,10 +570,25 @@ body,
   .TheHero_Heding_Copy{
     width: 344px;
   }
+.TheHero_PointImg{
+  z-index: 2;
+  width: 160px;
+}
+.TheHero_PointImg_Right{
+  position: relative;
+  top: -400px;
+  right: -160px;
+}
+.TheHero_PointImg_Left{
+  position: relative;
+  top: -280px;
+  left: -40px;
+  transform: rotateZ(90deg);
+}
 }
 @media screen and (max-width: 320px) {
   .TheHero{
-    padding-top: 160px;
+    padding-top: 200px;
   }
   .TheHero_WorkBg {
     left: 8px;
@@ -562,6 +626,21 @@ body,
     left: 0px;
     top: 8px;
   }
+  .TheHero_PointImg{
+  z-index: 2;
+  width: 160px;
+}
+.TheHero_PointImg_Right{
+  position: relative;
+  top: -320px;
+  right: -100px;
+}
+.TheHero_PointImg_Left{
+  position: relative;
+  top: -280px;
+  left: -40px;
+  transform: rotateZ(90deg);
+}
 }
 </style>
 
