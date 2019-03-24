@@ -18,9 +18,6 @@
       <img :src=pointImg class="TheHero_PointImg TheHero_PointImg_Right">
       <img :src=pointImg class="TheHero_PointImg TheHero_PointImg_Left">
     </div>
-    <!-- <h2 class="TheHero_Heading">
-        <span class="TheHero_Heding_Copy">RELATION</span><span class="TheHero_Bg"></span>
-    </h2>-->
   </div>
 </template>
 
@@ -305,7 +302,7 @@ body,
   background: #ffffff;
   padding-top: 120px;
   // position: relative;
-  -webkit-backface-visibility: hidden;
+  // -webkit-backface-visibility: hidden;
 }
 
 .TheHero_Img {
@@ -322,7 +319,7 @@ body,
   width: 600px;
   height: 450px;
   border-radius: 20px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(0px);
   position: absolute;
   top: 0;
   left: 0;
@@ -332,7 +329,7 @@ body,
 }
 
 .TheHero_Img:hover .TheHero_WorkTrim {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(0px);
 }
 
 // .TheHero_Img:hover .TheHero_WorkBg_FadeIn{
@@ -340,11 +337,11 @@ body,
 // }
 
 .TheHero_Img:hover .TheHero_WorkBg_Second {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px) translateZ(0px);
 }
 
 .TheHero_Img:hover .TheHero_WorkBg_Third {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px) translateZ(0px);
 }
 
 .TheHero_WorkBg {
@@ -380,14 +377,14 @@ body,
   position: absolute;
   top: 0px;
   left: 0px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-12px) translateY(16px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-12px) translateY(16px) translateZ(0px);
   z-index: 4;
 }
 .TheHero_WorkBg_Third {
   position: absolute;
   top: 0px;
   left: 0px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-24px) translateY(32px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-24px) translateY(32px) translateZ(0px);
   z-index: 3;
 }
 
@@ -409,7 +406,8 @@ body,
   top: 60px;
   left: -240px;
   z-index: 8;
-  -webkit-backface-visibility: hidden;
+  // -webkit-backface-visibility: hidden;
+   transform: translate3d(0px,0px,400px)
 }
 
 .TheHero_Heding_Design {
