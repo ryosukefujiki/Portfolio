@@ -49,3 +49,7 @@ table {
 ::selection {
 	background: #272727;
 }
+
+body{
+	font-family: 'Noto Sans JP', "Hiragino Kaku Gothic Pro", Verdana, Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Osaka", "ＭＳ Ｐゴシック", sans-serif;
+}

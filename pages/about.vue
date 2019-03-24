@@ -215,7 +215,7 @@ $hover-color: #d2dadf;
 }
 .TheAbout_Text {
   color: $text-color;
-  font-family: "Noto Sans JP";
+  font-family: 'Noto Sans JP', "Hiragino Kaku Gothic Pro", Verdana, Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Osaka", "ＭＳ Ｐゴシック", sans-serif;
   font-size: $text-size;
   margin-top: 8px;
   line-height: 48px;

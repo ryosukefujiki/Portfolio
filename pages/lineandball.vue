@@ -364,15 +364,14 @@ body,
   overflow:hidden;
 }
 .TheWork_HeroHeading {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 40px;
   color: #ffffff;
   display: block;
   position: absolute;
   left: 76px;
   bottom: 106px;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
-    "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-family: "Noto Sans", 'Noto Sans JP', sans-serif;
 }
 .TheWork_HeroCategory {
   font-size: 22px;

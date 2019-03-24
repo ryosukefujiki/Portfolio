@@ -121,4 +121,13 @@ computed: {
     "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
 
+@media screen and (max-width: 480px) {
+  .TheTransition_Category {
+    font-size: 20px;
+  }
+  .TheTransition_Title {
+    font-size: 14px;
+  }
+}
+
 </style>

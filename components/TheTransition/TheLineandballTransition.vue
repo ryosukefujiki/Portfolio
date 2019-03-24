@@ -117,8 +117,16 @@ computed: {
     font-size: 20px;
     margin-top: 20px;
     font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
-    "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+    font-family: 'Noto Sans JP', "Hiragino Kaku Gothic Pro", Verdana, Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Osaka", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+  .TheTransition_Category {
+    font-size: 20px;
+  }
+  .TheTransition_Title {
+    font-size: 14px;
+  }
 }
 
 </style>
