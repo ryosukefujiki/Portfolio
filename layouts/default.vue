@@ -4,6 +4,7 @@
     <!-- <div id="scrollArea"> -->
     <TheFamilybookTransition></TheFamilybookTransition>
     <TheHiveTransition></TheHiveTransition>
+    <TheScrapboardTransition></TheScrapboardTransition>
     <TheLineandballTransition></TheLineandballTransition>
     <TheAboutTransition></TheAboutTransition>
     <ThePlayfulfesTransition></ThePlayfulfesTransition>
@@ -22,6 +23,7 @@ import TheHeader from '~/components/TheHeader/TheHeader.vue'
 import TheFooter from '~/components/TheHeader/TheFooter.vue'
 import TheFamilybookTransition from '~/components/TheTransition/TheFamilybookTransition.vue'
 import TheHiveTransition from '~/components/TheTransition/TheHiveTransition.vue'
+import TheScrapboardTransition from '~/components/TheTransition/TheScrapboardTransition.vue'
 import ThePlayfulfesTransition from '~/components/TheTransition/ThePlayfulfesTransition.vue'
 import TheLineandballTransition from '~/components/TheTransition/TheLineandballTransition.vue'
 import TheAboutTransition from '~/components/TheTransition/TheAboutTransition.vue'
@@ -34,6 +36,7 @@ export default {
     TheFooter,
     TheFamilybookTransition,
     TheHiveTransition,
+    TheScrapboardTransition,
     ThePlayfulfesTransition,
     TheLineandballTransition,
     TheAboutTransition,
