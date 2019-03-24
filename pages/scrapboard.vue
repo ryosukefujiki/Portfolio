@@ -155,6 +155,19 @@ export default {
         ThePlayfulfesButton,
         TheScrapboardButton,
     },
+    head() {
+    return {
+      title: "ScrapBoard",
+      meta: [
+        { property: "og:title", content: "ScrapBoard | Ryosuke Fujiki Portfolio" },
+        { property: "og:url", content: "https://ryosukefujiki.design/scrapboard" },
+        {
+          property: "twitter:title",
+          content: "ScrapBoard | Ryosuke Fujiki Portfolio"
+        }
+      ]
+    };
+  },
     data () {
     return {
       scrollY: 0,

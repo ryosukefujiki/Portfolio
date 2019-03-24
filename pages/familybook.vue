@@ -166,8 +166,22 @@ export default {
         ThePlayfulfesButton,
         TheScrapboardButton,
     },
+    head() {
+    return {
+      title: "Familybook",
+      meta: [
+        { property: "og:title", content: "Familybook | Ryosuke Fujiki Portfolio" },
+        { property: "og:url", content: "https://ryosukefujiki.design/familybook" },
+        {
+          property: "twitter:title",
+          content: "Familybook | Ryosuke Fujiki Portfolio"
+        }
+      ]
+    };
+  },
     data () {
     return {
+
       scrollY: 0,
       targetY: 0,
       familybookHomeImg: '/familybook/familybook_home.png',

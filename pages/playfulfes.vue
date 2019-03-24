@@ -154,8 +154,22 @@ export default {
         ThePlayfulfesButton,
         TheScrapboardButton,
     },
+    head() {
+    return {
+      title: "Playfulfes",
+      meta: [
+        { property: "og:title", content: "LINEandBALL | Ryosuke Fujiki Portfolio" },
+        { property: "og:url", content: "https://ryosukefujiki.design/playfulfes" },
+        {
+          property: "twitter:title",
+          content: "Playfulfes | Ryosuke Fujiki Portfolio"
+        }
+      ]
+    };
+  },
     data () {
     return {
+      title: 'Playfulfes',
       scrollY: 0,
       targetY: 0,
       homeImg: '/playfulfes/playfulfes.png',
