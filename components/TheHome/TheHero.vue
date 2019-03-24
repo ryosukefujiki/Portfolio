@@ -302,6 +302,7 @@ body,
   height: 100%;
   background: #ffffff;
   padding-top: 120px;
+  box-sizing:border-box
   // position: relative;
   // -webkit-backface-visibility: hidden;
 }

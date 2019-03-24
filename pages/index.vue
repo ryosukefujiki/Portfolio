@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style lang="scss">
-$background-color: #fcfcfc;
+$background-color: #f9f9f9;
 
 .TheHome {
   height: 100%;
