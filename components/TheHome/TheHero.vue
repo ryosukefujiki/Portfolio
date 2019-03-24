@@ -323,7 +323,7 @@ body,
   width: 600px;
   height: 450px;
   border-radius: 20px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px)
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-20px) translateY(28px)
     translateZ(30px);
   position: absolute;
   top: 0;
@@ -351,7 +351,7 @@ body,
 }
 
 .TheHero_Img:hover .TheHero_WorkTrim {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px)
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-20px) translateY(28px)
     translateZ(30px);
 }
 
