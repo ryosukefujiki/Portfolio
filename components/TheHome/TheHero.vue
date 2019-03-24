@@ -592,11 +592,11 @@ body,
 }
 
 .TheHero_WorkBg_Second {
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-3px) translateY(4px) translateZ(20px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-5px) translateY(4px) translateZ(20px);
   z-index: 4;
 }
 .TheHero_WorkBg_Third {
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-6px) translateY(8px) translateZ(10px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-10px) translateY(8px) translateZ(10px);
   z-index: 3;
 }
 .TheHero_Img:hover .TheHero_WorkTrim {
@@ -604,11 +604,11 @@ body,
 }
 
 .TheHero_Img:hover .TheHero_WorkBg_Second {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-3px) translateY(4px) translateZ(20px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-5px) translateY(4px) translateZ(20px);
 }
 
 .TheHero_Img:hover .TheHero_WorkBg_Third {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-6px) translateY(8px) translateZ(10px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-10px) translateY(8px) translateZ(10px);
 }
 
 
