@@ -105,8 +105,9 @@ computed: {
     text-align: center;
     font-size: 28px;
     z-index: 12;
-    font-weight: bold;
     font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
   }
 .TheTransition_Title {
     color: #ffffff;
