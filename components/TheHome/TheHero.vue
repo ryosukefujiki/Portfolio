@@ -36,6 +36,7 @@ export default {
       playfulfesHomeImg: "/home/playfulfes_home.png",
       scrapboardHomeImg: "/home/scrapboard_home.png",
       hiveHomeImg: "/home/hive_home.png",
+      foxHomeImg: "/home/fox_home.png",
       intervalId: undefined,
       familybookFlag: true,
       lineandballFlag: false,
@@ -45,10 +46,12 @@ export default {
       playfulfesColor: "#EEC91D",
       scrapboardColor: "#FB8685",
       hiveColor: "#F7D24E",
+      // foxColor: "#F79CAE",
+      foxColor: "#F8C4D0",
       headingCopy: "COMMUNICATION",
-      backgroundWidth: "1024px",
-      familybookWidth: "1024px",
-      lineandballWidth: "360px"
+      // backgroundWidth: "1024px",
+      // familybookWidth: "1024px",
+      // lineandballWidth: "360px"
     };
   },
   mounted() {
@@ -129,6 +132,8 @@ export default {
       } else if (this.backgroundColor == this.scrapboardColor) {
         this.backgroundColor = this.hiveColor;
       } else if (this.backgroundColor == this.hiveColor) {
+        this.backgroundColor = this.foxColor;
+      }else if (this.backgroundColor == this.foxColor) {
         this.backgroundColor = this.familybookColor;
       }
     },
@@ -146,6 +151,9 @@ export default {
         this.homeImg = this.hiveHomeImg;
         this.headingCopy = "Logo";
       } else if (this.homeImg == this.hiveHomeImg) {
+        this.homeImg = this.foxHomeImg;
+        this.headingCopy = "HARDWARE";
+      }else if (this.homeImg == this.foxHomeImg) {
         this.homeImg = this.familybookHomeImg;
         this.headingCopy = "COMMUNICATION";
       }

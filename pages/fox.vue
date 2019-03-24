@@ -199,8 +199,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      fadeIn: "hive/fadeIn",
-      move: "hive/move"
+      fadeIn: "fox/fadeIn",
+      move: "fox/move"
     })
   },
   watch: {
@@ -222,7 +222,7 @@ export default {
   methods: {
     handleScroll: function(evt, el) {
       if (window.scrollY > 50) {
-        this.$store.commit("hive/move");
+        this.$store.commit("fox/move");
       }
       return window.scrollY > 50;
     },
