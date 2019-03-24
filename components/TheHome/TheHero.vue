@@ -558,7 +558,7 @@ body,
 
 @media screen and (max-width: 480px) {
   .TheHero{
-    padding-top: 220px;
+    padding-top: 200px;
   }
   .TheHero_Img{
     width: 300px;

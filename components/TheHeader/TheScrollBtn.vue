@@ -132,6 +132,7 @@ $blackColor: #272727;
   }
   .TheScrollBtn {
     right: 24px;
+    bottom: 12px;
   }
 
   .TheScrollBtn span {
@@ -144,11 +145,11 @@ $blackColor: #272727;
     transform: rotateY(0deg);
   }
   .TheScrollBtn span:nth-of-type(1) {
-    bottom: 95px;
+    bottom: 51px;
     right: 41px;
   }
   .TheScrollBtn span:nth-of-type(2) {
-    bottom: 94px;
+    bottom: 50px;
     right: 44px;
   }
 
