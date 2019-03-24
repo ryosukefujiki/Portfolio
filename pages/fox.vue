@@ -545,7 +545,7 @@ body,
 
 @media screen and (max-width: 480px) {
   .HiveImg {
-  background: url("/hive/hive.png");
+  background: url("/fox/fox_home.png");
   //   background: rgba(39, 39, 39, 0.1) url("/playfulfes/playfulfes.png");
   //   background-blend-mode: multiply;
   background-position: center;
