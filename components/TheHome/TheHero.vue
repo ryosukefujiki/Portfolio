@@ -102,6 +102,8 @@ export default {
         this.$store.commit("scrapboard/click");
       } else if (this.homeImg == this.hiveHomeImg) {
         this.$store.commit("hive/click");
+      } else if (this.homeImg == this.foxHomeImg) {
+        this.$store.commit("fox/click");
       }
     },
     async changeHero() {
@@ -143,13 +145,13 @@ export default {
         this.headingCopy = "GAME";
       } else if (this.homeImg == this.lineandballHomeImg) {
         this.homeImg = this.playfulfesHomeImg;
-        this.headingCopy = "Web";
+        this.headingCopy = "WEB";
       } else if (this.homeImg == this.playfulfesHomeImg) {
         this.homeImg = this.scrapboardHomeImg;
-        this.headingCopy = "User Interface";
+        this.headingCopy = "USER INTERFACE";
       } else if (this.homeImg == this.scrapboardHomeImg) {
         this.homeImg = this.hiveHomeImg;
-        this.headingCopy = "Logo";
+        this.headingCopy = "LOGO";
       } else if (this.homeImg == this.hiveHomeImg) {
         this.homeImg = this.foxHomeImg;
         this.headingCopy = "HARDWARE";
