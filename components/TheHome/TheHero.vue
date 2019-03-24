@@ -5,8 +5,8 @@
         <img :src=homeImg class="TheHero_WorkImg">
         <div v-bind:style="{background:backgroundColor}" class="TheHero_WorkBg_FadeIn"></div>
       </div>
-      <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
-      <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div>
+      <!-- <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
+      <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div> -->
       <h1 class="TheHero_Heading TheHero_Heding_Design">
         <span class>Design</span>
       </h1>
@@ -305,6 +305,7 @@ body,
   background: #ffffff;
   padding-top: 120px;
   // position: relative;
+  -webkit-backface-visibility: hidden;
 }
 
 .TheHero_Img {
@@ -313,6 +314,7 @@ body,
   margin: 0 auto;
   position: relative;
   cursor: pointer;
+  transform: translate3d(0px,0px,0px)
 }
 
 .TheHero_WorkTrim {
@@ -407,6 +409,7 @@ body,
   top: 60px;
   left: -240px;
   z-index: 8;
+  -webkit-backface-visibility: hidden;
 }
 
 .TheHero_Heding_Design {
