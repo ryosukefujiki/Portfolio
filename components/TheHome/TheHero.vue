@@ -34,6 +34,8 @@ export default {
       homeImg: "/home/familybook_home.png",
       familybookHomeImg: "/home/familybook_home.png",
       lineandballHomeImg: "/home/lineandball_home.png",
+      playfulfesHomeImg: "/home/playfulfes_home.png",
+      scrapboardHomeImg: "/home/scrapboard_home.png",
       hiveHomeImg: "/home/hive_home.png",
       intervalId: undefined,
       familybookFlag: true,
@@ -41,6 +43,9 @@ export default {
       backgroundColor: "#9EE970",
       familybookColor: "#82c3e0",
       lineandballColor: "#9EE970",
+      playfulfesColor: "#EEC91D",
+      scrapboardColor: "#FB8685",
+      hiveColor: "#F7D24E",
       headingCopy: "COMMUNICATION",
       backgroundWidth: "1024px",
       familybookWidth: "1024px",
@@ -53,7 +58,7 @@ export default {
     this.intervalId = setInterval(function() {
       // hoge++
       // console.log(hoge)
-      self.saySomething()
+      self.changeHero()
     }, 5000);
   },
   computed: {
@@ -89,10 +94,16 @@ export default {
          this.$store.commit('familybook/click')
       }else if(this.homeImg == this.lineandballHomeImg){
          this.$store.commit('lineandball/click')
+      }else if(this.homeImg == this.playfulfesHomeImg){
+         this.$store.commit('playfulfes/click')
+      }else if(this.homeImg == this.scrapboardHomeImg){
+         this.$store.commit('scrapboard/click')
+      }else if(this.homeImg == this.hiveHomeImg){
+         this.$store.commit('hive/click')
       }
     },
-    async saySomething() {
-      console.log("methodsから読んでる")
+    async changeHero() {
+      // console.log("methodsから読んでる")
       this.backgroundEnter()
       await this.$delay(600)
       this.changeImage()
@@ -111,10 +122,14 @@ export default {
     changeColor(){
       if(this.backgroundColor == this.familybookColor){
         this.backgroundColor = this.lineandballColor
-        // this.backgroundWidth = this.familybookWidth
       }else if(this.backgroundColor == this.lineandballColor){
+        this.backgroundColor = this.playfulfesColor
+      }else if(this.backgroundColor == this.playfulfesColor){
+        this.backgroundColor = this.scrapboardColor
+      }else if(this.backgroundColor == this.scrapboardColor){
+        this.backgroundColor = this.hiveColor
+      }else if(this.backgroundColor == this.hiveColor){
         this.backgroundColor = this.familybookColor
-        // this.backgroundWidth = this.lineandballWidth
       }
     },
     changeImage() {
@@ -122,6 +137,15 @@ export default {
         this.homeImg = this.lineandballHomeImg
         this.headingCopy = "GAME"
       }else if(this.homeImg == this.lineandballHomeImg){
+        this.homeImg = this.playfulfesHomeImg
+        this.headingCopy = "Web"
+      }else if(this.homeImg == this.playfulfesHomeImg){
+        this.homeImg = this.scrapboardHomeImg
+        this.headingCopy = "User Interface"
+      }else if(this.homeImg == this.scrapboardHomeImg){
+        this.homeImg = this.hiveHomeImg
+        this.headingCopy = "Logo"
+      }else if(this.homeImg == this.hiveHomeImg){
         this.homeImg = this.familybookHomeImg
         this.headingCopy = "COMMUNICATION"
       }
