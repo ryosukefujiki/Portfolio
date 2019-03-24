@@ -1,6 +1,6 @@
 <template>
    <div class="TheHome_Work">
-            <a @click="routing('/playfulfes')">
+            <a @click="click">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-
+import {mapGetters, mapMutations} from 'vuex'
 
 export default {
    components: {
@@ -22,6 +22,9 @@ export default {
     routing(url){
       this.$router.push(url)
     },
+    ...mapMutations({
+      click: 'playfulfes/click',
+    }),
   },
   data () {
     return {

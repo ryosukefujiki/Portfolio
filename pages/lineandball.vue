@@ -26,7 +26,7 @@
             <p class="Overview_Text">
               <a
                 class="link__text familybookText"
-                href="http://www.career.dentsu.jp/intern/2017/"
+                href="https://www.cyberagent.co.jp/careers/students/uida/"
                 target="_blank"
               >CyberAgent Internship UIDA　</a> UI発明賞　受賞
             </p>
@@ -61,8 +61,8 @@
           </div>
         </div>
 
-        <img :src="lineandballHomeImg" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
-        <img :src="lineandballHome2Img" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
+        <img :src="homeImg" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
+        <img :src="home2Img" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
       </div>
       <div class="TheWork_Content TheWork_Process TheWork_Section">
             <div class="Content_Process">
@@ -159,8 +159,8 @@ export default {
     return {
       scrollY: 0,
       targetY: 0,
-      lineandballHomeImg: '/lineandball/lineandball_home.png',
-      lineandballHome2Img: '/lineandball/lineandball_home2.png',
+      homeImg: '/lineandball/lineandball_home.png',
+      home2Img: '/lineandball/lineandball_home2.png',
       page01Img: 'lineandball/bouncing.png',
       page02Img: 'lineandball/fragile.png',
       page03Img: 'lineandball/slippery.png',

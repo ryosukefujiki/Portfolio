@@ -86,9 +86,9 @@ export default {
   methods: {
     heroClick(){
       if(this.homeImg == this.familybookHomeImg){
-         this.$store.commit('familybook/familybookClick')
+         this.$store.commit('familybook/click')
       }else if(this.homeImg == this.lineandballHomeImg){
-         this.$store.commit('familybook/familybookClick')
+         this.$store.commit('lineandball/click')
       }
     },
     async saySomething() {
