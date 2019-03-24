@@ -192,12 +192,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      familybookFadeIn: 'familybook/familybookFadeIn',
-      familybookMoved: 'familybook/familybookMoved'
+      fadeIn: 'familybook/fadeIn',
+      move: 'familybook/move'
     })
   },
   watch: {
-     async familybookFadeIn (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
+     async fadeIn (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       this.opacityEnter()
       await this.$delay(500)
       this.backgroundEnter()
@@ -207,14 +207,14 @@ export default {
       await this.$delay(2200)
       VueScrollTo.scrollTo('#anchor', 500);
     },
-    async familybookMoved (val) {
+    async move (val) {
       this.targetMove()
     }
    },
    methods: {
      handleScroll: function(evt, el) {
       if (window.scrollY > 50) {
-          this.$store.commit('familybook/familybookMove')
+          this.$store.commit('familybook/move')
       }
       return window.scrollY > 50
     },

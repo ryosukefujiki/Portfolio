@@ -1,6 +1,6 @@
 <template>
     <div class="TheHome_Work">
-            <a @click="familybookClick">
+            <a @click="click">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      familybookEntered: 'familybook/familybookEntered'
+      enter: 'familybook/enter'
     })
   },
   methods: {
@@ -28,7 +28,7 @@ export default {
       this.$router.push(url)
     },
     ...mapMutations({
-      familybookClick: 'familybook/familybookClick',
+      click: 'familybook/click',
     }),
   },
   data () {

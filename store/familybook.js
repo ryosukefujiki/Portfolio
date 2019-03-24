@@ -1,25 +1,25 @@
 export const state = () => ({
-    familybookEntered: false,
-    familybookFadeIn: false,
-    familybookMoved: false,
+    enter: false,
+    fadeIn: false,
+    move: false,
   })
   
   export const getters = {
-    familybookEntered: state => state.familybookEntered,
-    familybookMoved: state => state.familybookMoved,
-    familybookFadeIn: state => state.familybookFadeIn,
+    enter: state => state.enter,
+    move: state => state.move,
+    fadeIn: state => state.fadeIn,
   }
   // 上記はアロー関数　stateを引数にとって、state.enteredの値をgetterからアクセスできるようにしている
   
   export const mutations = {
-    familybookClick (state) {
-      state.familybookEntered = !state.familybookEntered
+    click (state) {
+      state.enter = !state.enter
     },
-    familybookMove(state){
-      state.familybookMoved = !state.familybookMoved
+    move(state){
+      state.move = !state.move
     },
-    familybookFadeIn(state){
-        state.familybookFadeIn = !state.familybookFadeIn
+    fadeIn(state){
+        state.fadeIn = !state.fadeIn
     }
   }
   

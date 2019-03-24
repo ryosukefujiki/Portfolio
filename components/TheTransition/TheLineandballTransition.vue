@@ -1,8 +1,8 @@
 <template>
-<div class='TheTransition TheFamilybookTransition'>
+<div class='TheTransition TheLineandballTransition'>
     <div class='TheTransition_Background' ref='background'>
-        <p class='TheTransition_Category' ref='category'>Planning</p>
-        <p class='TheTransition_Title' ref='title'>かぞくが、ものがたり。</p>
+        <p class='TheTransition_Category' ref='category'>Game Design</p>
+        <p class='TheTransition_Title' ref='title'>LINE and BALL</p>
     </div>
 </div>
 </template>
@@ -16,7 +16,7 @@ import {TweenMax, Expo, Elastic} from 'gsap'
 export default {
 computed: {
     ...mapGetters({
-      transitionEnter: 'familybook/enter'
+      transitionEnter: 'lineandball/enter'
     })
   },
   watch: {
@@ -24,7 +24,7 @@ computed: {
       console.log("TheTransitionComponent")
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
-      this.$router.push("/familybook")
+      this.$router.push("/lineandball")
       await this.$delay(550)
       this.leave()
       await this.$delay(1000)
@@ -47,7 +47,7 @@ computed: {
           ease: Expo.easeIn
         })
       })
-      this.$store.commit('familybook/fadeIn')
+      this.$store.commit('lineandball/fadeIn')
     },
     async set (){
       requestAnimationFrame(() => {
@@ -88,7 +88,7 @@ computed: {
 .TheTransition_Background {
     width: 100%;
     height: 100%;
-    background: #82C3E0;
+    background: #9EE970;
     transform: translateX(-100%);
     transform-origin: left center;
 
@@ -98,6 +98,8 @@ computed: {
     flex-direction: column;
     align-content: space-around;
 }
+
+
 
 
 .TheTransition_Category {

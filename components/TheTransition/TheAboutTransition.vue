@@ -13,7 +13,7 @@ import {mapGetters} from 'vuex'
 import {TweenMax, Expo, Elastic} from 'gsap'
 
 export default {
-computed: {
+  computed: {
     ...mapGetters({
       aboutEntered: 'about/aboutEntered'
     })
