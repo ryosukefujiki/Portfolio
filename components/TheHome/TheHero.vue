@@ -105,6 +105,7 @@ export default {
       await this.$delay(600)
       this.changeImage()
       this.opacityLeave()
+      await this.$delay(200)
       this.backgroundLeave()
       await this.$delay(600)
       // this.opacityEnter()
