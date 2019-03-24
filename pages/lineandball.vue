@@ -520,6 +520,15 @@ body,
 }
 
 @media screen and (max-width: 480px) {
+  .LineandballImg {
+//   background: url("/lineandball/lineandball_home.png");
+  background: rgba(39, 39, 39, 0.1) url("/lineandball/lineandball_home.png");
+  background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
     .TheWork_HeroNumber{
       font-size: 16px;
       left: 24px;

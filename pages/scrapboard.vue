@@ -524,6 +524,15 @@ body,
 }
 
 @media screen and (max-width: 480px) {
+  .ScrapboardImg {
+  background: url("/scrapboard/scrapboard.png");
+//   background: rgba(39, 39, 39, 0.1) url("/playfulfes/playfulfes.png");
+//   background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
     .TheWork_HeroNumber{
       font-size: 16px;
       left: 24px;
