@@ -122,10 +122,11 @@ computed: {
 
 @media screen and (max-width: 480px) {
   .TheTransition_Category {
-    font-size: 20px;
+    font-size: 22px;
   }
   .TheTransition_Title {
-    font-size: 14px;
+    margin-top: 8px;
+    font-size: 16px;
   }
 }
 </style>
