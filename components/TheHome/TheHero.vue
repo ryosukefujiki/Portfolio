@@ -5,8 +5,8 @@
         <img :src=homeImg class="TheHero_WorkImg">
         <div v-bind:style="{background:backgroundColor}" class="TheHero_WorkBg_FadeIn"></div>
       </div>
-      <!-- <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
-      <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div> -->
+      <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
+      <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div>
       <h1 class="TheHero_Heading TheHero_Heding_Design">
         <span class>Design</span>
       </h1>
@@ -321,7 +321,7 @@ body,
   width: 600px;
   height: 450px;
   border-radius: 20px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(0px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(30px);
   position: absolute;
   top: 0;
   left: 0;
@@ -331,7 +331,7 @@ body,
 }
 
 .TheHero_Img:hover .TheHero_WorkTrim {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(0px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(30px);
 }
 
 // .TheHero_Img:hover .TheHero_WorkBg_FadeIn{
@@ -339,11 +339,11 @@ body,
 // }
 
 .TheHero_Img:hover .TheHero_WorkBg_Second {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px) translateZ(0px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px) translateZ(20px);
 }
 
 .TheHero_Img:hover .TheHero_WorkBg_Third {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px) translateZ(0px);
+  transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px) translateZ(10px);
 }
 
 .TheHero_WorkBg {
@@ -379,14 +379,14 @@ body,
   position: absolute;
   top: 0px;
   left: 0px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-12px) translateY(16px) translateZ(0px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-12px) translateY(16px) translateZ(20px);
   z-index: 4;
 }
 .TheHero_WorkBg_Third {
   position: absolute;
   top: 0px;
   left: 0px;
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-24px) translateY(32px) translateZ(0px);
+  transform: rotateX(45deg) rotateZ(-20deg) translateX(-24px) translateY(32px) translateZ(10px);
   z-index: 3;
 }
 
