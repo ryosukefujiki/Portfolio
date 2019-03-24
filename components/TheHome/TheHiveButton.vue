@@ -1,6 +1,6 @@
 <template>
     <div class="TheHome_Work">
-            <a @click="routing('/hive')">
+            <a @click="click">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -14,14 +14,23 @@
 
 <script>
 
+import {mapGetters, mapMutations} from 'vuex'
 
 export default {
    components: {
+  },
+  computed: {
+    ...mapGetters({
+      enter: 'hive/enter'
+    })
   },
   methods: {
     routing(url){
       this.$router.push(url)
     },
+    ...mapMutations({
+      click: 'hive/click',
+    }),
   },
   data () {
     return {

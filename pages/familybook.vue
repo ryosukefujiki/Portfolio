@@ -468,6 +468,8 @@ body,
 .Overview_Text__task {
   font-weight: lighter;
   margin-top: 0;
+  font-size: 14px;
+  padding-left: 12px;
 }
 
 
