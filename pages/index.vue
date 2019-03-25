@@ -3,13 +3,13 @@
     <TheHero class="TheHero"></TheHero>
     <TheScrollBtn v-scroll-to="'#anchor'" class="TheScrollBtn_Ref"></TheScrollBtn>
     <div class="TheHome_Container" id="anchor">
-      <TheNorenButton class="TheTransitionBtn"></TheNorenButton>
       <TheFoxButton class="TheTransitionBtn"></TheFoxButton>
-      <TheHiveButton class="TheTransitionBtn"></TheHiveButton>
+      <TheNorenButton class="TheTransitionBtn"></TheNorenButton>
       <TheFamilybookButton class="TheTransitionBtn"></TheFamilybookButton>
-      <TheLineandballButton class="TheTransitionBtn"></TheLineandballButton>
       <ThePlayfulfesButton class="TheTransitionBtn"></ThePlayfulfesButton>
+      <TheLineandballButton class="TheTransitionBtn"></TheLineandballButton>
       <TheScrapboardButton class="TheTransitionBtn"></TheScrapboardButton>
+      <TheHiveButton class="TheTransitionBtn"></TheHiveButton>
     </div>
     <TheFooter></TheFooter>
   </div>

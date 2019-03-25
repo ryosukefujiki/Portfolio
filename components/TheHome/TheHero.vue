@@ -8,7 +8,7 @@
       <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
       <div class="TheHero_WorkBg TheHero_WorkBg_Third"></div>
       <h1 class="TheHero_Heading TheHero_Heding_Design">
-        <span class>Design</span>
+        <span>Design</span>
       </h1>
       <h2 class="TheHero_Heading TheHero_Heding_Copy">
         <span class="TheHero_Heading_Text">{{headingCopy}}</span>
