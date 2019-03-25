@@ -2,6 +2,7 @@
   <div class="default">
     <!-- <TheBackground></TheBackground> -->
     <!-- <div id="scrollArea"> -->
+    <TheNorenTransition></TheNorenTransition>
     <TheFoxTransition></TheFoxTransition>
     <TheFamilybookTransition></TheFamilybookTransition>
     <TheHiveTransition></TheHiveTransition>
@@ -22,6 +23,7 @@
 <script>
 import TheHeader from '~/components/TheHeader/TheHeader.vue'
 import TheFooter from '~/components/TheHeader/TheFooter.vue'
+import TheNorenTransition from '~/components/TheTransition/TheNorenTransition.vue'
 import TheFoxTransition from '~/components/TheTransition/TheFoxTransition.vue'
 import TheFamilybookTransition from '~/components/TheTransition/TheFamilybookTransition.vue'
 import TheHiveTransition from '~/components/TheTransition/TheHiveTransition.vue'
@@ -44,6 +46,7 @@ export default {
     TheLineandballTransition,
     TheAboutTransition,
     TheHomeTransition,
+    TheNorenTransition,
   },
 }
 </script>

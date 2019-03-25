@@ -37,6 +37,7 @@ export default {
       scrapboardHomeImg: "/home/scrapboard_home.png",
       hiveHomeImg: "/home/hive_home.png",
       foxHomeImg: "/home/fox_home.png",
+      norenHomeImg: "/noren/noren_white.png",
       intervalId: undefined,
       familybookFlag: true,
       lineandballFlag: false,
@@ -46,6 +47,7 @@ export default {
       playfulfesColor: "#EEC91D",
       scrapboardColor: "#FB8685",
       hiveColor: "#F7D24E",
+      norenColor: "#272C56",
       // foxColor: "#F79CAE",
       foxColor: "#F8C4D0",
       headingCopy: "COMMUNICATION",
@@ -104,6 +106,8 @@ export default {
         this.$store.commit("hive/click");
       } else if (this.homeImg == this.foxHomeImg) {
         this.$store.commit("fox/click");
+      }else if (this.homeImg == this.norenHomeImg) {
+        this.$store.commit("noren/click");
       }
     },
     async changeHero() {
@@ -136,6 +140,8 @@ export default {
       } else if (this.backgroundColor == this.hiveColor) {
         this.backgroundColor = this.foxColor;
       }else if (this.backgroundColor == this.foxColor) {
+        this.backgroundColor = this.norenColor;
+      }else if (this.backgroundColor == this.norenColor) {
         this.backgroundColor = this.familybookColor;
       }
     },
@@ -156,6 +162,9 @@ export default {
         this.homeImg = this.foxHomeImg;
         this.headingCopy = "HARDWARE";
       }else if (this.homeImg == this.foxHomeImg) {
+        this.homeImg = this.norenHomeImg;
+        this.headingCopy = "TRADITION";
+      }else if (this.homeImg == this.norenHomeImg) {
         this.homeImg = this.familybookHomeImg;
         this.headingCopy = "COMMUNICATION";
       }
