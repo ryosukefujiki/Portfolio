@@ -1,6 +1,6 @@
 <template>
   <div class="TheWork" v-scroll="handleScroll">
-    <div class="TheWork_HeroImg HiveImg">
+    <div class="TheWork_HeroImg NorenImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
         <span class="TheWork_TitleText">01 - 07</span>
         <span class="TheWork_HeroNumberBg"></span>
@@ -322,7 +322,7 @@ body,
   width: 100%;
   height: 100%;
 }
-.HiveImg {
+.NorenImg {
   background: url("/noren/noren_white.png");
   //   background: rgba(39, 39, 39, 0.1) url("/playfulfes/playfulfes.png");
   //   background-blend-mode: multiply;
@@ -541,7 +541,7 @@ body,
 }
 
 @media screen and (max-width: 480px) {
-  .HiveImg {
+  .NorenImg {
   background: url("/noren/noren_white.png");
   //   background: rgba(39, 39, 39, 0.1) url("/playfulfes/playfulfes.png");
   //   background-blend-mode: multiply;

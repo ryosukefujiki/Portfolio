@@ -1,6 +1,6 @@
 <template>
   <div class="TheWork" v-scroll="handleScroll">
-    <div class="TheWork_HeroImg HiveImg">
+    <div class="TheWork_HeroImg FoxImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
         <span class="TheWork_TitleText">01 - 06</span>
         <span class="TheWork_HeroNumberBg"></span>
@@ -325,7 +325,7 @@ body,
   width: 100%;
   height: 100%;
 }
-.HiveImg {
+.FoxImg {
   background: url("/fox/fox_home.png");
   //   background: rgba(39, 39, 39, 0.1) url("/playfulfes/playfulfes.png");
   //   background-blend-mode: multiply;
@@ -544,7 +544,7 @@ body,
 }
 
 @media screen and (max-width: 480px) {
-  .HiveImg {
+  .FoxImg {
   background: url("/fox/fox_home.png");
   //   background: rgba(39, 39, 39, 0.1) url("/playfulfes/playfulfes.png");
   //   background-blend-mode: multiply;
