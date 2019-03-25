@@ -636,13 +636,13 @@ body,
     font-size: 40px;
     line-height: 56px;
     position: relative;
-    top: -48px;
+    top: -64px;
     left: -24px;
   }
   .TheHero_AnchorText {
     color: #9b9b9b;
     position: relative;
-    top: -44px;
+    top: -60px;
     left: -24px;
     font-size: 16px;
   }
