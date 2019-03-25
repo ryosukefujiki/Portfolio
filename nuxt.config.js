@@ -9,6 +9,14 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' },
       { name: 'keywords', content: 'Ryosuke Fujiki,藤木 良祐,Ryosuke,Fujiki' },
+      { property: 'fb:app_id', content: '828074940735241' },
+      { property: 'og:description', content: 'Ryosuke Fujiki Portfolio' },
+      { property: 'og:image', content: 'https://ryosukefujiki.design/home/ogp.png' },
+      { property: 'og:site_name', content: 'Ryosuke Fujiki Portfolio' },
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:site', content: '@totepo18' },
+      { property: 'twitter:description', content: 'Ryosuke Fujiki Portfolio' },
+      { property: 'twitter:image', content: 'https://ryosukefujiki.design/home/ogp.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
