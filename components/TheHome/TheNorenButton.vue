@@ -34,7 +34,7 @@ export default {
   },
   data () {
     return {
-      hiveHomeImg: '/home/noren_white.png',
+      hiveHomeImg: '/home/noren_white_home.png',
     }
   },
 }

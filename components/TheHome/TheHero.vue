@@ -37,7 +37,7 @@ export default {
       scrapboardHomeImg: "/home/scrapboard_home.png",
       hiveHomeImg: "/home/hive_home.png",
       foxHomeImg: "/home/fox_home.png",
-      norenHomeImg: "/noren/noren_white.png",
+      norenHomeImg: "/home/noren_white_home.png",
       intervalId: undefined,
       familybookFlag: true,
       lineandballFlag: false,
