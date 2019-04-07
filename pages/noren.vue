@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <img :src="homeImg" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
+        <img :src="homeImg2" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
         <img :src="home2Img" alt class="TheWork_Img TheWork_Img_Big TheWork_Section">
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/QL0y93Rrcy0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       </div>
@@ -180,6 +180,7 @@ export default {
       scrollY: 0,
       targetY: 0,
       homeImg: "/noren/noren_white.png",
+      homeImg2: '/home/noren_white_home.png',
       process01Img: "/fox/process01.png",
       process02Img: "/fox/process02.png",
       home2Img: '/noren/noren_real.jpg',
