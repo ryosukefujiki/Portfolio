@@ -129,7 +129,7 @@
 
           <section class="TheOther_Works">
             <TheFamilybookButton></TheFamilybookButton>
-            <TheLineandballButton></TheLineandballButton>
+            <TheFoxButton></TheFoxButton>
             <ThePlayfulfesButton></ThePlayfulfesButton>
             <TheScrapboardButton></TheScrapboardButton>
           </section>
@@ -144,6 +144,7 @@
 import TheScrollBtn from "~/components/TheHeader/TheScrollBtn.vue";
 import TheFooter from "~/components/TheHeader/TheFooter.vue";
 import TheHiveButton from "~/components/TheHome/TheHiveButton.vue";
+import TheFoxButton from "~/components/TheHome/TheFoxButton.vue";
 import TheFamilybookButton from "~/components/TheHome/TheFamilybookButton.vue";
 import TheLineandballButton from "~/components/TheHome/TheLineandballButton.vue";
 import ThePlayfulfesButton from "~/components/TheHome/ThePlayfulfesButton.vue";
@@ -160,7 +161,8 @@ export default {
     TheFamilybookButton,
     TheLineandballButton,
     ThePlayfulfesButton,
-    TheScrapboardButton
+    TheScrapboardButton,
+    TheFoxButton
   },
   head() {
     return {

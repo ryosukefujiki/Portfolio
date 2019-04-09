@@ -132,7 +132,7 @@
 
           <section class="TheOther_Works">
             <TheFamilybookButton></TheFamilybookButton>
-            <TheLineandballButton></TheLineandballButton>
+            <TheNorenButton></TheNorenButton>
             <ThePlayfulfesButton></ThePlayfulfesButton>
             <TheScrapboardButton></TheScrapboardButton>
           </section>
@@ -151,6 +151,7 @@ import TheFamilybookButton from "~/components/TheHome/TheFamilybookButton.vue";
 import TheLineandballButton from "~/components/TheHome/TheLineandballButton.vue";
 import ThePlayfulfesButton from "~/components/TheHome/ThePlayfulfesButton.vue";
 import TheScrapboardButton from "~/components/TheHome/TheScrapboardButton.vue";
+import TheNorenButton from "~/components/TheHome/TheNorenButton.vue";
 import { mapGetters } from "vuex";
 import { TweenMax, Elastic, Expo, Back } from "gsap";
 import VueScrollTo from "vue-scrollto";
@@ -163,7 +164,8 @@ export default {
     TheFamilybookButton,
     TheLineandballButton,
     ThePlayfulfesButton,
-    TheScrapboardButton
+    TheScrapboardButton,
+    TheNorenButton,
   },
   head() {
     return {
