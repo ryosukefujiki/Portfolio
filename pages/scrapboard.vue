@@ -2,7 +2,7 @@
   <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg ScrapboardImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
-        <span class="TheWork_TitleText">05 - 05</span><span class="TheWork_HeroNumberBg"></span>
+        <span class="TheWork_TitleText">03 - 07</span><span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">Scrap Board</span><span class="TheWork_HeroNumberBg"></span></h1>
       <p class="TheWork_HeroCategory TheWork_Title"><span class="TheWork_TitleText">UI Design / UX Design</span><span class="TheWork_HeroNumberBg"></span></p>

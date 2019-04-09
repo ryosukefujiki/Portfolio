@@ -2,7 +2,7 @@
   <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg FoxImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
-        <span class="TheWork_TitleText">01 - 06</span>
+        <span class="TheWork_TitleText">06 - 07</span>
         <span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title">

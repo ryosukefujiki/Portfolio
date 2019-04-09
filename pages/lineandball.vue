@@ -2,7 +2,7 @@
   <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg LineandballImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
-        <span class="TheWork_TitleText">02 - 05</span><span class="TheWork_HeroNumberBg"></span>
+        <span class="TheWork_TitleText">02 - 07</span><span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">LINE and BALL</span><span class="TheWork_HeroNumberBg"></span></h1>
       <p class="TheWork_HeroCategory TheWork_Title"><span class="TheWork_TitleText">Game Design / Planning</span><span class="TheWork_HeroNumberBg"></span></p>

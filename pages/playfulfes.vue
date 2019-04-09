@@ -2,7 +2,7 @@
   <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg PlayfulfesImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
-        <span class="TheWork_TitleText">03 - 05</span><span class="TheWork_HeroNumberBg"></span>
+        <span class="TheWork_TitleText">05 - 07</span><span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title"><span class="TheWork_TitleText">プレイフルフェス 2018 Winter</span><span class="TheWork_HeroNumberBg"></span></h1>
       <p class="TheWork_HeroCategory TheWork_Title"><span class="TheWork_TitleText">Web Design / Visual Design</span><span class="TheWork_HeroNumberBg"></span></p>

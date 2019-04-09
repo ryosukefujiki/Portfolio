@@ -2,7 +2,7 @@
   <div class="TheWork" v-scroll="handleScroll">
     <div class="TheWork_HeroImg NorenImg">
       <p class="TheWork_HeroNumber TheWork_Title" id="anchor">
-        <span class="TheWork_TitleText">01 - 07</span>
+        <span class="TheWork_TitleText">07 - 07</span>
         <span class="TheWork_HeroNumberBg"></span>
       </p>
       <h1 class="TheWork_HeroHeading TheWork_Title">
