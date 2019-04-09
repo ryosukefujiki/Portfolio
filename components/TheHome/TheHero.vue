@@ -73,7 +73,45 @@ export default {
   watch: {
     async homeFadeIn(val) {
       // ステートの`entered`が切り替わるたび、この処理が実行される
-      this.backgroundColor = this.familybookColor;
+      // this.backgroundColor = this.familybookColor;
+      var random = Math.floor( Math.random () * 7) + 1;
+      switch( random ) {
+        case 1:
+          this.headingCopy = "COMMUNICATION";
+          this.homeImg = this.familybookHomeImg
+          this.backgroundColor = this.familybookColor;
+          break;
+        case 2:
+          this.headingCopy = "GAME";
+          this.homeImg = this.lineandballHomeImg
+          this.backgroundColor = this.lineandballColor;
+          break;
+        case 3:
+          this.headingCopy = "USER INTERFACE";
+          this.homeImg = this.playfulfesHomeImg
+          this.backgroundColor = this.playfulfesColor;
+          break;
+        case 4:
+          this.headingCopy = "WEB";
+          this.homeImg = this.scrapboardHomeImg
+          this.backgroundColor = this.scrapboardColor;
+          break;
+        case 5:
+          this.headingCopy = "LOGO";
+          this.homeImg = this.hiveHomeImg
+          this.backgroundColor = this.hiveColor;
+          break;
+        case 6:
+          this.headingCopy = "HARDWARE";
+          this.homeImg = this.foxHomeImg
+          this.backgroundColor = this.foxColor;
+          break;
+        case 7:
+          this.headingCopy = "TRADITION";
+          this.homeImg = this.norenHomeImg
+          this.backgroundColor = this.norenColor;
+          break;
+      }
       // this.backgroundWidth = this.familybookWidth
       this.opacityEnter();
       await this.$delay(300);
@@ -88,7 +126,29 @@ export default {
       this.reset();
       await this.$delay(600);
       this.resetOpacity2();
-      this.backgroundColor = this.lineandballColor;
+      switch( random ) {
+        case 1:
+          this.backgroundColor = this.lineandballColor;
+          break;
+        case 2:
+          this.backgroundColor = this.playfulfesColor;
+          break;
+        case 3:
+          this.backgroundColor = this.scrapboardColor;
+          break;
+        case 4:
+          this.backgroundColor = this.hiveColor;
+          break;
+        case 5:
+          this.backgroundColor = this.foxColor;
+          break;
+        case 6:
+          this.backgroundColor = this.norenColor;
+          break;
+        case 7:
+          this.backgroundColor = this.familybookColor;
+          break;
+      }
       // this.backgroundWidth = this.lineandballWidth
     }
   },
