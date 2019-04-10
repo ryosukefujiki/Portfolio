@@ -87,12 +87,12 @@ export default {
           this.backgroundColor = this.lineandballColor;
           break;
         case 3:
-          this.headingCopy = "USER INTERFACE";
+          this.headingCopy = "WEB";
           this.homeImg = this.playfulfesHomeImg
           this.backgroundColor = this.playfulfesColor;
           break;
         case 4:
-          this.headingCopy = "WEB";
+          this.headingCopy = "USER INTERFACE";
           this.homeImg = this.scrapboardHomeImg
           this.backgroundColor = this.scrapboardColor;
           break;
