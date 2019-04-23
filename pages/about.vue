@@ -11,6 +11,7 @@
           UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO など
           の展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画立案から ”ものづくり” をすることが得意。
         </p>
+        <!-- <TheFirstview></TheFirstview> -->
       </div>
       <div class="TheAbout_Detail TheAbout_Section">
         <div class="TheAbout_Award TheAbout_Content">
@@ -127,11 +128,13 @@ import TheProfileImg from "~/components/TheAbout/TheProfileImg.vue";
 import TheFooter from "~/components/TheHeader/TheFooter.vue";
 import { mapGetters } from "vuex";
 import { TweenMax, Elastic, Expo, Back } from "gsap";
+import TheFirstview from "~/components/TheFirstview.vue";
 
 export default {
   components: {
     TheProfileImg,
-    TheFooter
+    TheFooter,
+    TheFirstview
   },
   head() {
     return {
