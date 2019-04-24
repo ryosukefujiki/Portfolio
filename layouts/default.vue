@@ -14,8 +14,8 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <!-- <TheFirstview></TheFirstview>
-    <TheAudio></TheAudio> -->
+    <TheFirstview></TheFirstview>
+    <!-- <TheAudio></TheAudio>  -->
     <!-- <TheFooter></TheFooter> -->
 </div>
 </template>
@@ -32,7 +32,7 @@ import ThePlayfulfesTransition from '~/components/TheTransition/ThePlayfulfesTra
 import TheLineandballTransition from '~/components/TheTransition/TheLineandballTransition.vue'
 import TheAboutTransition from '~/components/TheTransition/TheAboutTransition.vue'
 import TheHomeTransition from '~/components/TheTransition/TheHomeTransition.vue'
-
+import TheFirstview from "~/components/TheFirstview.vue"
 
 export default {
   components: {
@@ -47,6 +47,7 @@ export default {
     TheAboutTransition,
     TheHomeTransition,
     TheNorenTransition,
+    TheFirstview,
   },
 }
 </script>
