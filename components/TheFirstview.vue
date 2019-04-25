@@ -1,5 +1,6 @@
 <template>
   <div class="TheFirstview" v-if='!killed'>
+    <p class="TheFirstview_Text TheFirstview_PercentText">{{number}}%</p>
     <p class="TheFirstview_Text">LOADING NOW ...</p>
     <BarLoader class="BarLoader"></BarLoader>
   </div>
@@ -10,6 +11,12 @@ import {mapGetters} from 'vuex'
 import { BarLoader } from '@saeris/vue-spinners'
 
 export default {
+  data(){
+    return {
+      number: 0,
+      intervalId: undefined,
+    }
+  },
   components: {
     BarLoader
   },
@@ -17,6 +24,19 @@ export default {
     ...mapGetters({
       killed: 'firstview/killed'
     })
+  },
+  mounted() {
+    let self = this;
+    this.intervalId = setInterval(function() {
+      self.number += 1
+      if(self.number == 100){
+       self.$store.commit("firstview/kill");
+      }
+    }, 100)
+  },
+  beforeDestroy() {
+    console.log("clearInterval");
+    clearInterval(this.intervalId);
   }
 }
 </script>
@@ -42,6 +62,9 @@ export default {
   font-weight: 700;
   font-style: italic;
   margin-bottom: 12px;
+}
+.TheFirstview_PercentText{
+  font-size: 24px;
 }
 .BarLoader{
   margin: 0 auto;
