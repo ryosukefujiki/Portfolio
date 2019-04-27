@@ -16,7 +16,7 @@ export default {
     return {
       number: 0,
       intervalId: undefined,
-      logoImg: "/home/logo.png",
+      logoImg: "/home/new_logo.png",
       nameImg: "/home/name.png",
       loadingText: "LOADING NOW ...",
     }
@@ -134,20 +134,20 @@ export default {
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   font-style: italic;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .TheFirstview_Logo{
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   display: inline-block;
   animation: rotate 3000ms ease-out 2;
 }
 .TheFirstview_Name{
-  padding-bottom: 6px;
+  padding-bottom: 16px;
   height: 20px;
   display: none;
   opacity: 0;
-  margin-left: 40px;
+  margin-left: 12px;
 }
 
 // @keyframes rotate {
