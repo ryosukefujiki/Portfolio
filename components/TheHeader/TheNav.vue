@@ -3,6 +3,9 @@
         <nav>
             <ul class="TheNav_List">
                 <li class="TheNav_Item">
+                  <p class="TheNav_Text"><img :src="logoImg" alt="" class="TheNav_Logo"></p>
+                </li>
+                <li class="TheNav_Item">
                     <a @click="routing('home')" class="text--letterspace">
                         Home
                     </a>
@@ -39,6 +42,11 @@
 import {mapGetters, mapMutations} from 'vuex'
 
 export default {
+  data(){
+    return {
+      logoImg: "/home/logo.png",
+    }
+  },
   props: ['headerActive'],
   computed: {
     ...mapGetters({
@@ -83,6 +91,21 @@ export default {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
   font-style: italic;
+}
+
+.TheNav_Text{
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.TheNav_Logo{
+  width: 42px;
+  height: 42px;
 }
 
 .TheNav.open {
@@ -138,7 +161,7 @@ export default {
   display: block;
   position: relative;
   opacity: 0;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   width: 200px;
   text-align: center;
 }
@@ -195,7 +218,7 @@ export default {
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    left: 20%;
+    left: -20%;
   }
   100% {
     opacity: 1;
