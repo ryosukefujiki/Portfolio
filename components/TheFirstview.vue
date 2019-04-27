@@ -94,7 +94,6 @@ export default {
     },
      async entered(val) {
        await this.$delay(1500);
-       console.log("呼ばれた")
        requestAnimationFrame(() => {
         TweenMax.to(".TheFirstview", 0.55, {
           x: '100%',

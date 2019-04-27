@@ -16,7 +16,6 @@ export const state = () => ({
       state.enter = !state.enter
     },
     move(state){
-      console.log("move")
       state.move = !state.move
     },
     fadeIn(state){

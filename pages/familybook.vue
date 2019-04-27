@@ -255,7 +255,6 @@ export default {
       })
     },
      opacityEnter () {
-       console.log("opacityEnter")
        requestAnimationFrame(() => {
         TweenMax.to('.TheWork_TitleText', 0, {
           opacity: 0,
@@ -264,7 +263,6 @@ export default {
       })
      },
      backgroundEnter(){
-       console.log("backgroundEnter")
        requestAnimationFrame(() => {
         TweenMax.staggerTo('.TheWork_HeroNumberBg', 0.3, {
           width: '102%',
@@ -276,7 +274,6 @@ export default {
       })
      },
      opacityLeave () {
-       console.log("opacityLeave")
        requestAnimationFrame(() => {
         TweenMax.to('.TheWork_TitleText', 0.5, {
           opacity: 1,
@@ -285,7 +282,6 @@ export default {
       })
      },
      backgroundLeave(){
-       console.log("backgroundEnter")
        requestAnimationFrame(() => {
         TweenMax.staggerTo('.TheWork_HeroNumberBg', 0.5, {
           x: '100%',

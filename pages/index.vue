@@ -56,15 +56,12 @@ export default {
       this.$router.push(url);
     },
     handleScroll: function(evt, el) {
-      console.log(window.scrollY);
       if (window.scrollY > 50) {
-        console.log("超えた！");
         this.$store.commit("homeMove");
       }
       return window.scrollY > 50;
     },
     targetMove() {
-      console.log("超えた！");
       requestAnimationFrame(() => {
         TweenMax.staggerTo(
           ".TheTransitionBtn",

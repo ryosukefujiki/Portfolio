@@ -20,7 +20,6 @@ computed: {
   },
   watch: {
     async homeEntered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
-      console.log("TheTransitionComponent")
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
       this.$router.push("/")

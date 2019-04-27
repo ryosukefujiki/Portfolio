@@ -27,11 +27,9 @@ export default {
   },
   methods: {
     profileBackImgOpen: function() {
-      console.log("open");
       this.$store.commit("about/profileOpen");
     },
     profileBackImgHidden: function() {
-      console.log("close");
       this.$store.commit("about/profileHidden");
     }
   },

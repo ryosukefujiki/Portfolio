@@ -58,10 +58,7 @@ export default {
   },
   mounted() {
     let self = this;
-    // var hoge = 0
     this.intervalId = setInterval(function() {
-      // hoge++
-      // console.log(hoge)
       self.changeHero();
     }, 5000);
   },
@@ -171,7 +168,6 @@ export default {
       }
     },
     async changeHero() {
-      // console.log("methodsから読んでる")
       this.backgroundEnter();
       await this.$delay(600);
       this.changeImage();
@@ -363,7 +359,6 @@ export default {
     }
   },
   beforeDestroy() {
-    console.log("clearInterval");
     clearInterval(this.intervalId);
   }
 };
