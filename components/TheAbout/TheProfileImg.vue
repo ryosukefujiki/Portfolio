@@ -1,5 +1,5 @@
 <template>
-  <div class="TheProfileImg" @mouseenter="profileBackImgOpen" @mouseleave="profileBackImgHidden">
+  <div class="TheProfileImg" @mouseenter="profileBackImgOpen" @touchstart="profileBackImgOpen" @mouseleave="profileBackImgHidden" @touchend="profileBackImgOpen">
     <div>
       <div class="TheAbout_ProfileTransition"></div>
       <img :src="profileBackImg" alt class="TheAbout_ProfileBackImg">
