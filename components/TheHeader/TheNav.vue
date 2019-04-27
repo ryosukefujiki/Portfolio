@@ -110,8 +110,8 @@ export default {
   margin-bottom: 12px;
 }
 .TheNav_Logo {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
 }
 
 .TheNav.open {
