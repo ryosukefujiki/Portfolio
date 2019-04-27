@@ -53,11 +53,11 @@ export default {
           ".TheFirstview_Logo",
           1,
           {
-            x: -40,
+            x: 0,
             opacity: 1,
             ease: Expo.easeOut,
             startAt: {
-              x: "0px",
+              x: "40px",
             }
           },
           0.1
@@ -147,6 +147,7 @@ export default {
   height: 20px;
   display: none;
   opacity: 0;
+  margin-left: 40px;
 }
 
 // @keyframes rotate {
@@ -166,9 +167,29 @@ export default {
   margin: 0 auto;
 }
 
-// .BarLoader div{
-//   color: red !important;
-// }
+@media screen and (max-width: 1024px) {
+  .TheFirstview{
+    padding-top: 640px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .TheFirstview{
+    padding-top: 480px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .TheFirstview{
+    padding-top: 320px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .TheFirstview{
+    padding-top: 280px;
+  }
+}
 </style>
 
 
