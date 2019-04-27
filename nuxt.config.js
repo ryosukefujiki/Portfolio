@@ -19,7 +19,8 @@ module.exports = {
       { property: 'twitter:image', content: 'https://ryosukefujiki.design/home/ogp.png' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: 'home/favicon.ico' },
+      { rel: 'apple-touch-icon', href: 'home/apple-touch-icon.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans:400,700i'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css'},
       { rel: "stylesheet", href:"https://use.fontawesome.com/releases/v5.6.1/css/all.css"}
