@@ -235,6 +235,10 @@ export default {
     .TheNav_ItemIcons{
    width: 160px;
 }
+.TheNav_Logo{
+  width: 32px;
+  height: 32px;
+}
 
     .TheNav nav {
       font-size: 28px;
