@@ -252,8 +252,8 @@ export default {
     width: 160px;
   }
   .TheNav_Logo {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   .TheNav nav {
