@@ -9,6 +9,7 @@ export default {
     data () {
     return {
       profileImg: '/about/profile3.png',
+      profileBackImg: '/about/profile_back.png',
     }
   },
 }
