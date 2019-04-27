@@ -1,23 +1,18 @@
 export const state = () => ({
-  started: false,
-  painted: false,
+  entered: false,
   completed: false,
   killed: false
 })
 
 export const getters = {
-  started: state => state.started,
-  painted: state => state.painted,
+  entered: state => state.entered,
   completed: state => state.completed,
   killed: state => state.killed
 }
 
 export const mutations = {
-  start (state) {
-    state.started = true
-  },
-  paint (state) {
-    state.painted = true
+  enter (state) {
+    state.entered = true
   },
   complete (state) {
     state.completed = true
