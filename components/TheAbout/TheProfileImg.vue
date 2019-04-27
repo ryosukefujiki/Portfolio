@@ -144,24 +144,56 @@ export default {
 
 @media screen and (max-width: 1024px) {
   /* 1024pxまでの幅の場合に適応される */
+  .TheAbout_ProfileBackImg {
+    width: 360px;
+    height: 240px;
+  }
+  .TheAbout_ProfileTransition {
+    width: 360px;
+    height: 240px;
+  }
   .TheAbout_ProfileImg {
     width: 360px;
     height: 240px;
   }
 }
 @media screen and (max-width: 768px) {
+  .TheAbout_ProfileBackImg {
+    width: 300px;
+    height: 200px;
+  }
+  .TheAbout_ProfileTransition {
+    width: 300px;
+    height: 200px;
+  }
   .TheAbout_ProfileImg {
     width: 300px;
     height: 200px;
   }
 }
 @media screen and (max-width: 480px) {
+  .TheAbout_ProfileBackImg {
+    width: 320px;
+    height: 212px;
+  }
+  .TheAbout_ProfileTransition {
+    width: 320px;
+    height: 212px;
+  }
   .TheAbout_ProfileImg {
     width: 320px;
     height: 212px;
   }
 }
 @media screen and (max-width: 320px) {
+  .TheAbout_ProfileBackImg {
+    width: 300px;
+    height: 200px;
+  }
+  .TheAbout_ProfileTransition {
+    width: 300px;
+    height: 200px;
+  }
   .TheAbout_ProfileImg {
     width: 300px;
     height: 200px;
