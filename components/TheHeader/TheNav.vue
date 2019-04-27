@@ -218,7 +218,7 @@ export default {
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    left: 20%;
+    left: -20%;
   }
   100% {
     opacity: 1;
