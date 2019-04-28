@@ -1,6 +1,5 @@
 <template>
   <div class="default">
-    <!-- <TheBackground></TheBackground> -->
     <!-- <div id="scrollArea"> -->
     <TheNorenTransition></TheNorenTransition>
     <TheFoxTransition></TheFoxTransition>
@@ -14,7 +13,7 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <TheFirstview></TheFirstview>
+    <!-- <TheFirstview></TheFirstview> -->
     <!-- <TheAudio></TheAudio>  -->
     <!-- <TheFooter></TheFooter> -->
 </div>
@@ -59,4 +58,5 @@ export default {
 }
 
 </style>
+
 

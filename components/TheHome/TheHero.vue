@@ -19,14 +19,19 @@
       </p>
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Right">
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Left">
+      <TheBackground class="TheBackground"></TheBackground>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import TheBackground from "~/components/TheHome/TheBackground.vue";
 
 export default {
+  components: {
+    TheBackground
+  },
   data() {
     return {
       pointImg: "/home/point.png",
@@ -779,6 +784,7 @@ body,
   }
 }
 </style>
+
 
 
 
