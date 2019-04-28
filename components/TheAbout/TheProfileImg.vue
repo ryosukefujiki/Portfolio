@@ -127,7 +127,7 @@ export default {
   }
   .TheAbout_ProfileTransition {
     width: 360px;
-    height: 240px;
+    height: 30px;
   }
   .TheAbout_ProfileImg {
     width: 360px;
@@ -141,7 +141,7 @@ export default {
   }
   .TheAbout_ProfileTransition {
     width: 300px;
-    height: 200px;
+    height: 25px;
   }
   .TheAbout_ProfileImg {
     width: 300px;
@@ -155,7 +155,7 @@ export default {
   }
   .TheAbout_ProfileTransition {
     width: 320px;
-    height: 212px;
+    height: 26.5px;
   }
   .TheAbout_ProfileImg {
     width: 320px;
@@ -169,7 +169,7 @@ export default {
   }
   .TheAbout_ProfileTransition {
     width: 300px;
-    height: 200px;
+    height: 25px;
   }
   .TheAbout_ProfileImg {
     width: 300px;
