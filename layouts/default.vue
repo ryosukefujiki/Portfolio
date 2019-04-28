@@ -14,7 +14,7 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <TheFirstview></TheFirstview>
+    <!-- <TheFirstview></TheFirstview> -->
     <!-- <TheAudio></TheAudio>  -->
     <!-- <TheFooter></TheFooter> -->
 </div>

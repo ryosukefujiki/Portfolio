@@ -1,9 +1,16 @@
 <template>
-  <div class="TheProfileImg" @mouseenter="profileBackImgOpen" @touchstart="profileBackImgOpen" @mouseleave="profileBackImgHidden" @touchend="profileBackImgOpen">
+  <div class="TheProfileImg" @mouseenter="profileBackImgOpen" @touchstart="profileBackImgOpen">
     <div>
       <div class="TheAbout_ProfileTransition"></div>
-      <img :src="profileBackImg" alt class="TheAbout_ProfileBackImg">
-      <img :src="profileImg" alt class="TheAbout_ProfileImg">
+      <div class="TheAbout_ProfileTransition"></div>
+      <div class="TheAbout_ProfileTransition"></div>
+      <div class="TheAbout_ProfileTransition"></div>
+      <div class="TheAbout_ProfileTransition"></div>
+      <div class="TheAbout_ProfileTransition"></div>
+      <div class="TheAbout_ProfileTransition"></div>
+      <div class="TheAbout_ProfileTransition"></div>
+      <img :src="profileBackImg" alt class="TheAbout_ProfileBackImg" v-if="profileImgFlag">
+      <img :src="profileImg" alt class="TheAbout_ProfileImg" v-if="!profileImgFlag">
     </div>
   </div>
 </template>
@@ -16,7 +23,8 @@ export default {
   data() {
     return {
       profileImg: "/about/profile3.png",
-      profileBackImg: "/about/profile_back.png"
+      profileBackImg: "/about/profile_back.png",
+      profileImgFlag: false,
     };
   },
   computed: {
@@ -36,67 +44,29 @@ export default {
   watch: {
     async opened(val) {
       requestAnimationFrame(() => {
-        TweenMax.to(".TheAbout_ProfileTransition", 0.55, {
+        TweenMax.staggerTo(".TheAbout_ProfileTransition", 0.4, {
           left: "0px",
           ease: Expo.easeOut,
-          delay: 0.1,
           startAt: {
             left: "-480px"
           }
-        });
+        },0.04);
       });
-      await this.$delay(400);
+      await this.$delay(550);
+      this.profileImgFlag = !this.profileImgFlag
+      await this.$delay(550);
       requestAnimationFrame(() => {
-        TweenMax.to(".TheAbout_ProfileBackImg", 0, {
-          opacity: 1,
-          ease: Expo.easeOut,
-          startAt: {
-            opacity: 0
-          }
-        });
-      });
-      await this.$delay(400);
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheAbout_ProfileTransition", 0.55, {
+        TweenMax.staggerTo(".TheAbout_ProfileTransition", 0.4, {
           left: "480px",
           ease: Expo.easeIn,
           startAt: {
             left: "0px"
           }
-        });
+        },0.04);
       });
     },
     async hiddened(val) {
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheAbout_ProfileTransition", 0.55, {
-          left: "0px",
-          ease: Expo.easeOut,
-          delay: 0.1,
-          startAt: {
-            left: "-480px"
-          }
-        });
-      });
-      await this.$delay(700);
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheAbout_ProfileBackImg", 0, {
-          opacity: 0,
-          ease: Expo.easeOut,
-          startAt: {
-            opacity: 1
-          }
-        });
-      });
-      await this.$delay(400);
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheAbout_ProfileTransition", 0.55, {
-          left: "480px",
-          ease: Expo.easeIn,
-          startAt: {
-            left: "0px"
-          }
-        });
-      });
+      
     }
   }
 };
@@ -127,11 +97,11 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  opacity: 0;
 }
+
 .TheAbout_ProfileTransition {
   width: 480px;
-  height: 320px;
+  height: 40px;
   position: absolute;
   top: 0;
   left: -480px;
@@ -139,6 +109,15 @@ export default {
   background: #222222;
   opacity: 1;
 }
+// .TheAbout_ProfileTransition_Second{
+//   width: 480px;
+//   height: 80px;
+//   position: absolute;
+//   top: 0px;
+//   left: -480px;
+//   z-index: 3;
+//   background: #9b9b9b;
+// }
 
 @media screen and (max-width: 1024px) {
   /* 1024pxまでの幅の場合に適応される */
