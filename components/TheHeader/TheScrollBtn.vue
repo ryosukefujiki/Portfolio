@@ -164,11 +164,11 @@ $blackColor: #272727;
     right: 4px;
   }
   .TheScrollBtn span:nth-of-type(1) {
-    bottom: 95px;
+    bottom: 51px;
     right: 21px;
   }
   .TheScrollBtn span:nth-of-type(2) {
-    bottom: 94px;
+    bottom: 50px;
     right: 25px;
   }
 }
