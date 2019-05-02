@@ -114,6 +114,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .TheFirstview{
   width: 100%;
   height: 100%;
@@ -123,7 +124,11 @@ export default {
   left: 0;
   z-index: 12;
   overflow: hidden;
-  padding-top: 320px;
+  // padding-top: 320px;
+  display: flex;
+  justify-content :center;
+  align-items: center;
+  flex-direction: column;
 }
 .TheFirstview_Text{
   margin: 0 auto;
@@ -164,30 +169,6 @@ export default {
 
 .BarLoader{
   margin: 0 auto;
-}
-
-@media screen and (max-width: 1024px) {
-  .TheFirstview{
-    padding-top: 640px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .TheFirstview{
-    padding-top: 480px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .TheFirstview{
-    padding-top: 320px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .TheFirstview{
-    padding-top: 280px;
-  }
 }
 </style>
 
