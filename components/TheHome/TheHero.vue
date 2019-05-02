@@ -532,12 +532,17 @@ body,
   position: relative;
   top: -360px;
   right: -520px;
+  transform: rotateZ(90deg);
+   transform: translate3d(0px, 0px, -400px);
 }
 .TheHero_PointImg_Left {
   position: relative;
   top: -80px;
   left: -400px;
-  transform: rotateZ(90deg);
+   transform: translate3d(0px, 0px, -400px);
+}
+.TheBackground{
+   transform: translate3d(0px, 0px, -400px);
 }
 
 .TheHero_AnchorText {
