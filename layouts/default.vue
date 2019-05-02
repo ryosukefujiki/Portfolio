@@ -1,6 +1,5 @@
 <template>
   <div class="default">
-    <!-- <TheBackground></TheBackground> -->
     <!-- <div id="scrollArea"> -->
     <TheNorenTransition></TheNorenTransition>
     <TheFoxTransition></TheFoxTransition>
@@ -59,4 +58,5 @@ export default {
 }
 
 </style>
+
 
