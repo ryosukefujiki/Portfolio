@@ -21,25 +21,28 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">曖昧な表現を理解するインターフェース</h2>
+            <h2 class="Content_Title" :style="headingStyle">曖昧な表現を理解するインターフェース</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >トップカンファレンスの1つである、UIST2018(ACM User Interface software and Technology Symposium)にて開催された Student Innovation Contest にて発表を行った作品。2018年度の Student Innovation Contest は、「ハンドフリーの新しいユーザーインターフェースを設計する」というテーマのコンペティションで、審査員が決定するMost Creativeな作品に送られる審査員賞と会場に足を運んだ人の投票で決定するPeople's Choiceの投票賞の二つの部門で最優秀賞を獲得した。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Award</p>
-            <h2 class="Content_Title">UIST Student Inovation Contest</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">UIST Student Inovation Contest</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="https://uist.acm.org/uist2018/"
                 target="_blank"
+                :style="textStyle"
               >MOST CREATIVE 最優秀賞</a> 受賞<br>
               <a
                 class="link__text familybookText"
                 href="https://uist.acm.org/uist2018/"
                 target="_blank"
+                :style="textStyle"
               >PEOPLE'S CHOICE 最優秀賞</a>  受賞
             </p>
           </div>
@@ -48,14 +51,14 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2019年7-11月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2019年7-11月
               <br>制作期間: 4 month
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Python
+            <p class="Overview_Text" :style="textStyle">Python
               <br>Processing
               <br>Arduino
               <br>Makeblock;
@@ -64,7 +67,7 @@
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Credit (3)</p>
-            <p class="Overview_Text">藤木 良祐
+            <p class="Overview_Text" :style="textStyle">藤木 良祐
               <br>
               <span class="Overview_Text__task">- Software</span>
               <br>天野 真
@@ -83,9 +86,10 @@
       <div class="TheWork_Content TheWork_Process TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">Process</p>
-          <h2 class="Content_Title">インタラクションデザイン</h2>
+          <h2 class="Content_Title" :style="headingStyle">インタラクションデザイン</h2>
           <p
             class="Content_Text"
+            :style="textStyle"
           >Makeblockを利用し人間の曖昧な表現（手のジェスチャー）だけで、わたあめの色と大きさをオーダーし、コンピューターが作ることができるシステムを開発した。人間同士では成り立つ「これくらいの大きさのものが欲しい」や「こんな感じの色味が欲しい」といった曖昧な表現を人間とコンピュータの間でも行える知覚的インターフェース。画像認識やファブリケーションの技術が向上に伴い、曖昧な表現で機械とインタラクションをする機会が増えていく。</p>
           <div class="Image_Container">
             <img :src="process01Img" alt class="TheWork_Img TheWork_Img_Small">
@@ -97,9 +101,10 @@
       <div class="TheWork_Content TheWork_Contents TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">Development</p>
-          <h2 class="Content_Title">システム</h2>
+          <h2 class="Content_Title" :style="headingStyle">システム</h2>
           <p
             class="Content_Text"
+            :style="textStyle"
           >開発は Python と Processing、Arduino、Makeblockを用いて行った。Pythonのプログラムでは、 Google Cloud Vision API を用いて感情分析を行い、画像認識によってユーザーの曖昧なジェスチャー認識を分析した。Processingでは画面遷移を行えるようにし、Arduinoによるソレノイド制御によってザラメの量を調節とMakeblockの制御を行った。</p>
 
           <div class="Image_Container">
@@ -192,17 +197,21 @@ export default {
       development02Img: "/fox/d2-min.jpg",
       development03Img: "/fox/d3-min.jpg",
       development04Img: "/fox/d4-min.jpg",
-      contentsImg: "/hive/contents.png"
-      //   sp01Img: 'hive/smartphone_01.png',
-      //   sp02Img: 'hive/smartphone_02.png',
-      //   sp03Img: 'hive/smartphone_03.png',
-      //   sp04Img: 'hive/smartphone_05.png',
+      contentsImg: "/hive/contents.png",
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     };
   },
   computed: {
     ...mapGetters({
       fadeIn: "fox/fadeIn",
-      move: "fox/move"
+      move: "fox/move",
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -219,7 +228,14 @@ export default {
     },
     async move(val) {
       this.targetMove();
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
   },
   methods: {
     handleScroll: function(evt, el) {

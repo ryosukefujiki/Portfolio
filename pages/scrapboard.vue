@@ -14,20 +14,22 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">美術館はしごアプリ</h2>
+            <h2 class="Content_Title" :style="headingStyle">美術館はしごアプリ</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >DeNA 主催による Delight U for Student における「美術館（展示）回遊アプリ」を制作するというテーマで制作した作品です。ユーザー中心設計に基づいた、プロトタイプ開発を行いました。具体的には、与えられたペルソナ・仮設価値シートから、ユーザー体験を考えUIに落とし込みました。新聞の切り抜きという意味を持つ「Scrap」をコンセプトとし、ユーザーが美術館や展示を「発見する」「保存する」「整理する」という行動をアプリの主要機能としました。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Resource</p>
-            <h2 class="Content_Title">プロトタイプ</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">プロトタイプ</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="https://prottapp.com/p/308d16"
                 target="_blank"
+                :style="textStyle"
               >https://prottapp.com/p/308d16</a> ProttURL
             </p>
           </div>
@@ -36,14 +38,14 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2017年12月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2017年12月
               <br>制作期間: 2week
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Sketch<br>
+            <p class="Overview_Text" :style="textStyle">Sketch<br>
             Adobe Illustrator<br>
             Adobe Photoshop
             </p>
@@ -51,7 +53,7 @@
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Personal Work</p>
-            <p class="Overview_Text">藤木 良祐
+            <p class="Overview_Text" :style="textStyle">藤木 良祐
               <br>
               <span class="Overview_Text__task">- UI Design</span>
               <br>
@@ -66,8 +68,8 @@
       <div class="TheWork_Content TheWork_Process TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Process</p>
-                <h2 class="Content_Title">ユーザー中心設計に基づくプロトタイプ開発</h2>
-                <p class="Content_Text">ユーザー中心設計のデザイン哲学に基づき、与えられたペルソナ・価値仮説シートからユーザーストーリーを構築しました。そしてそのユーザーゴールから、ユーザーが展示を「発見する」「保存する」「整理する」ことをアプリでの主要機能とし、ペルソナの課題を解決します。この3つの主要機能を、新聞や雑誌の切り抜きという意味を持つ Scrap をモチーフに表しました。</p>
+                <h2 class="Content_Title" :style="headingStyle">ユーザー中心設計に基づくプロトタイプ開発</h2>
+                <p class="Content_Text" :style="textStyle">ユーザー中心設計のデザイン哲学に基づき、与えられたペルソナ・価値仮説シートからユーザーストーリーを構築しました。そしてそのユーザーゴールから、ユーザーが展示を「発見する」「保存する」「整理する」ことをアプリでの主要機能とし、ペルソナの課題を解決します。この3つの主要機能を、新聞や雑誌の切り抜きという意味を持つ Scrap をモチーフに表しました。</p>
                 <div class="Image_Container">
                     <img :src="process01Img" alt="" class="TheWork_Img TheWork_Img_Small">
                     <img :src="process02Img" alt="" class="TheWork_Img TheWork_Img_Small">
@@ -78,8 +80,8 @@
         <div class="TheWork_Content TheWork_Contents TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Home Tab</p>
-                <h2 class="Content_Title">ユーザーの離脱を回避するUI設計</h2>
-                <p class="Content_Text">Homeタブはユーザーの好みの展示を発見するタブです。展示の詳細を閲覧でき、気に入った展示をボードに保存する機能を有しています。ユーザーが展示を保存したとき初めて会員登録を求めることで、ユーザーのアプリ離脱を回避します。また、Twitter,Instgram連携を取り入れることで、会員登録・ログインの過程をスムーズにします。</p>
+                <h2 class="Content_Title" :style="headingStyle">ユーザーの離脱を回避するUI設計</h2>
+                <p class="Content_Text" :style="textStyle">Homeタブはユーザーの好みの展示を発見するタブです。展示の詳細を閲覧でき、気に入った展示をボードに保存する機能を有しています。ユーザーが展示を保存したとき初めて会員登録を求めることで、ユーザーのアプリ離脱を回避します。また、Twitter,Instgram連携を取り入れることで、会員登録・ログインの過程をスムーズにします。</p>
 
                 <div class="Image_Container">
                     <img :src="sp01Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -92,8 +94,8 @@
         <div class="TheWork_Content TheWork_Research TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Search Tab</p>
-                <h2 class="Content_Title">自発的に探しやすい検索体験</h2>
-                <p class="Content_Text">ユーザーが自発的に展示を探すタブ。テキスト検索だけでなく、ユーザーがより探しやすい体験を届けられるよう、カテゴリ検索やトレンド検索、さらにフィルター検索を提案しました。</p>
+                <h2 class="Content_Title" :style="headingStyle">自発的に探しやすい検索体験</h2>
+                <p class="Content_Text" :style="textStyle">ユーザーが自発的に展示を探すタブ。テキスト検索だけでなく、ユーザーがより探しやすい体験を届けられるよう、カテゴリ検索やトレンド検索、さらにフィルター検索を提案しました。</p>
                 <div class="Image_Container">
                     <img :src="sp05Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
                     <img :src="sp06Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -104,8 +106,8 @@
         <div class="TheWork_Content TheWork_Research TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Board Tab</p>
-                <h2 class="Content_Title">ボード保存機能</h2>
-                <p class="Content_Text">保存した展示を整理するタブ。ユーザーがボードごとに保存した展示を閲覧、整理することができます。さらに今月に終わってしまう展示をプログラムが自動でボードを作成することで、ペルソナの抱いていた「行きたい展示を忘れてしまう」という課題を解決します。</p>
+                <h2 class="Content_Title" :style="headingStyle">ボード保存機能</h2>
+                <p class="Content_Text" :style="textStyle">保存した展示を整理するタブ。ユーザーがボードごとに保存した展示を閲覧、整理することができます。さらに今月に終わってしまう展示をプログラムが自動でボードを作成することで、ペルソナの抱いていた「行きたい展示を忘れてしまう」という課題を解決します。</p>
                 <div class="Image_Container">
                     <img :src="sp07Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
                     <img :src="sp08Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -118,7 +120,7 @@
         <div class="TheWork_Content TheWork_TheOther TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">The Other Works</p>
-                <h2 class="Content_Title">その他の作品について</h2>
+                <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
                 <section class="TheOther_Works">
                      <ThePlayfulfesButton></ThePlayfulfesButton>
@@ -186,12 +188,20 @@ export default {
       sp08Img: 'scrapboard/sp07.png',
       sp09Img: 'scrapboard/sp06.png',
       sp10Img: 'scrapboard/sp10.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     }
   },
   computed: {
     ...mapGetters({
       fadeIn: 'scrapboard/fadeIn',
-      move: 'scrapboard/move'
+      move: 'scrapboard/move',
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -207,7 +217,14 @@ export default {
     },
     async move (val) {
       this.targetMove()
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
    },
    methods: {
      handleScroll: function(evt, el) {

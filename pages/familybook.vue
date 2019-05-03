@@ -14,20 +14,22 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">敬老の日を盛り上げるアイディア</h2>
+            <h2 class="Content_Title" :style="headingStyle">敬老の日を盛り上げるアイディア</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >電通 Internship 2017 アイディアの学校 にて開催された「敬老の日を盛り上げるアイディアを考える」がテーマのコンペティションで 最優秀賞 をいただいた作品です。敬老の日に家族でとりくむ参加型のプロダクトを制作しました。この絵本ほとんどが空白のページでできており、祖父母との対話を通じ、家族にまつわるストーリーを子供が絵本で完成させるというプロダクトです。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Award</p>
-            <h2 class="Content_Title">「アイディアの学校」 金賞 受賞</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">「アイディアの学校」 金賞 受賞</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="http://www.career.dentsu.jp/intern/2017/"
                 target="_blank"
+                :style="textStyle"
               >電通インターンシップ2017 アイディアの学校</a> 金賞 受賞
             </p>
           </div>
@@ -36,21 +38,21 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2017年8月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2017年8月
               <br>制作期間: 2weeks
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Adobe Illustrator
+            <p class="Overview_Text" :style="textStyle">Adobe Illustrator
               <br>Adobe Photoshop
             </p>
           </div>
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Credit (2)</p>
-            <p class="Overview_Text">藤木 良祐
+            <p class="Overview_Text" :style="textStyle">藤木 良祐
               <br>
               <span class="Overview_Text__task">- Design</span>
               <br>
@@ -68,8 +70,8 @@
       <div class="TheWork_Content TheWork_Process TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Process</p>
-                <h2 class="Content_Title">敬老の日は、「かぞくの日」</h2>
-                <p class="Content_Text">敬老の日の抱える課題を私たちは、「核家族化する現代において祖父母が家族の文脈から離れてしまっていること」と捉え、「敬老の日に祖父母と家族の関係性を取り戻す」ための解決策として、参加型の未完成の絵本を提案しました。敬老の日を、かぞくの日として捉え直す視点を評価いただきました。</p>
+                <h2 class="Content_Title" :style="headingStyle">敬老の日は、「かぞくの日」</h2>
+                <p class="Content_Text" :style="textStyle">敬老の日の抱える課題を私たちは、「核家族化する現代において祖父母が家族の文脈から離れてしまっていること」と捉え、「敬老の日に祖父母と家族の関係性を取り戻す」ための解決策として、参加型の未完成の絵本を提案しました。敬老の日を、かぞくの日として捉え直す視点を評価いただきました。</p>
                 <div class="Image_Container">
                     <img :src="process01Img" alt="" class="TheWork_Img TheWork_Img_Small ">
                     <img :src="process02Img" alt="" class="TheWork_Img TheWork_Img_Small  ">
@@ -82,8 +84,8 @@
         <div class="TheWork_Content TheWork_Contents TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Contents</p>
-                <h2 class="Content_Title">世界に一つだけの絵本</h2>
-                <p class="Content_Text">絵本の構成するページのほとんどが、下図のように空白でできています。子どもが祖父母に、いつもは聞けない話を聞いて、一つの作品に仕上げるプロダクトです。それにより、世界にたったの一つだけの絵本が生まれます。「家族のなりたち」や、「パパとママの出会い」、「パパとママの昔話」などのテーマで構成されています。</p>
+                <h2 class="Content_Title" :style="headingStyle">世界に一つだけの絵本</h2>
+                <p class="Content_Text" :style="textStyle">絵本の構成するページのほとんどが、下図のように空白でできています。子どもが祖父母に、いつもは聞けない話を聞いて、一つの作品に仕上げるプロダクトです。それにより、世界にたったの一つだけの絵本が生まれます。「家族のなりたち」や、「パパとママの出会い」、「パパとママの昔話」などのテーマで構成されています。</p>
 
                 <div class="Image_Container">
                     <img :src="page01Img" alt="" class="TheWork_Img TheWork_Img_Small ">
@@ -104,8 +106,8 @@
         <div class="TheWork_Content TheWork_Research TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">User Research</p>
-                <h2 class="Content_Title">6歳の女の子の実施例</h2>
-                <p class="Content_Text">プロダクトの実用性を検証するため、実際に6歳児の女の子がいる家庭で、「かぞくが、ものがたり。」を使っていただきました。子どもの創造性を活かすお絵かきのページと、ある程度のストーリーの枠組みを用意することで、子どものモチベーションのバランスを保つことが確認できました。</p>
+                <h2 class="Content_Title" :style="headingStyle">6歳の女の子の実施例</h2>
+                <p class="Content_Text" :style="textStyle">プロダクトの実用性を検証するため、実際に6歳児の女の子がいる家庭で、「かぞくが、ものがたり。」を使っていただきました。子どもの創造性を活かすお絵かきのページと、ある程度のストーリーの枠組みを用意することで、子どものモチベーションのバランスを保つことが確認できました。</p>
 
                 <div class="Image_Container ">
                     <img :src="page03Img" alt="" class="TheWork_Img TheWork_Img_Small " width="320px" height="228.05px">
@@ -125,7 +127,7 @@
         <div class="TheWork_Content TheWork_TheOther TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">The Other Works</p>
-                <h2 class="Content_Title">その他の作品について</h2>
+                <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
                 <section class="TheOther_Works">
                      <TheHiveButton></TheHiveButton>
@@ -181,7 +183,6 @@ export default {
   },
     data () {
     return {
-
       scrollY: 0,
       targetY: 0,
       familybookHomeImg: '/familybook/familybook_home.png',
@@ -202,12 +203,20 @@ export default {
       research02Img: 'familybook/research02.png',
       research03Img: 'familybook/research03.png',
       research04Img: 'familybook/research04.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     }
   },
   computed: {
     ...mapGetters({
       fadeIn: 'familybook/fadeIn',
-      move: 'familybook/move'
+      move: 'familybook/move',
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -223,7 +232,14 @@ export default {
     },
     async move (val) {
       this.targetMove()
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
    },
    methods: {
      handleScroll: function(evt, el) {
@@ -521,6 +537,11 @@ body,
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+
+.TheAbout_Heading_Black{
+  color: #d8d8d8;
 }
 
 

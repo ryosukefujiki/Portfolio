@@ -106,12 +106,10 @@ export default {
 </script>
 
 <style lang="scss">
-$background-color: #f9f9f9;
 
 .TheHome {
   height: 100%;
   margin-bottom: 48px;
-  background: $background-color;
 }
 
 .heading {

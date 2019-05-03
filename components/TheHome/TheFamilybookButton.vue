@@ -6,8 +6,8 @@
                 <div class="TheHome_WorkTrim">
                     <img :src="familybookHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
-                <p class="TheHome_WorkCategory">Planning</p>
-                <p class="TheHome_WorkTitle">かぞくが、ものがたり。</p>
+                <p class="TheHome_WorkCategory" :style="headingStyle">Planning</p>
+                <p class="TheHome_WorkTitle" :style="textStyle">かぞくが、ものがたり。</p>
             </a>
         </div>
 </template>
@@ -20,7 +20,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      enter: 'familybook/enter'
+      enter: 'familybook/enter',
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn",
     })
   },
   methods: {
@@ -34,12 +36,34 @@ export default {
   data () {
     return {
       familybookHomeImg: '/home/familybook_home.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['text-color'],
+      }
     }
+  },
+  watch: {
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['text-color']
+    },
+    async langEn(val){
+
+    },
   },
 }
 </script>
 
 <style lang="scss">
+
+$heading-color: #272727;
+$heading-black-color: #ffffff;
+$text-color: #9b9b9b;
+$text-black-color: #e2e2e2;
+$hover-color: #d2dadf;
+$hover-black-color: #d2dadf;
 
 .TheHome_Work{
   position: relative;

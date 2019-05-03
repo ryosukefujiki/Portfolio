@@ -21,20 +21,22 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">語りかける未来の暖簾</h2>
+            <h2 class="Content_Title" :style="headingStyle">語りかける未来の暖簾</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >バスキュールと三井不動産によるnihonbashi βプロジェクトのクリエイターに選ばれ、制作した作品です。「未来ののれん」をデザインするというテーマで、学生の身ながら社会人エンジニア・デザイナー・プランナーに混じり、日本橋の有名店の「のれん」を題材に、最先端のテクノロジーや自由なアイデアを掛け合わせ、来街者に新しい体験を提供するインスタレーションを制作しました。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Exhibition</p>
-            <h2 class="Content_Title">未来ののれん展</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">未来ののれん展</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="https://nihonbashi-beta.jp/noren/"
                 target="_blank"
+                :style="textStyle"
               >未来ののれん展 2018.11.1~2018.11.11</a><br>
             </p>
           </div>
@@ -43,21 +45,21 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2019年8-11月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2019年8-11月
               <br>制作期間: 4 month
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Python
+            <p class="Overview_Text" :style="textStyle">Python
               <br>Adobe Illustrator
             </p>
           </div>
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Credit (4)</p>
-            <p class="Overview_Text">藤木
+            <p class="Overview_Text" :style="textStyle">藤木
               <br>
               <span class="Overview_Text__task">- Engineer</span>
               <br>深谷
@@ -125,7 +127,7 @@
       <div class="TheWork_Content TheWork_TheOther TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">The Other Works</p>
-          <h2 class="Content_Title">その他の作品について</h2>
+          <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
           <section class="TheOther_Works">
             <TheFamilybookButton></TheFamilybookButton>
@@ -190,17 +192,21 @@ export default {
       development02Img: "/fox/d2-min.jpg",
       development03Img: "/fox/d3-min.jpg",
       development04Img: "/fox/d4-min.jpg",
-      contentsImg: "/hive/contents.png"
-      //   sp01Img: 'hive/smartphone_01.png',
-      //   sp02Img: 'hive/smartphone_02.png',
-      //   sp03Img: 'hive/smartphone_03.png',
-      //   sp04Img: 'hive/smartphone_05.png',
+      contentsImg: "/hive/contents.png",
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     };
   },
   computed: {
     ...mapGetters({
       fadeIn: "noren/fadeIn",
-      move: "noren/move"
+      move: "noren/move",
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -217,7 +223,14 @@ export default {
     },
     async move(val) {
       this.targetMove();
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
   },
   methods: {
     handleScroll: function(evt, el) {

@@ -14,20 +14,22 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">鮮やかに解くパズルゲームアプリ</h2>
+            <h2 class="Content_Title" :style="headingStyle">鮮やかに解くパズルゲームアプリ</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >CyberAgent Internship 2017 UIDA にて開催された「新しいパズルゲームの企画とUIを考える」がテーマのインターンシップで UI発明賞 をいただいた作品です。点と点を結び、自由に線を描くことで、ボールをゴールへと転がします。色の組み合わせで、描かれる線の性質が変わり「壊れる」「跳ねる」などの様々な性質を作り出し、パズルを解き明かす多様なパターンを生み出します。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Award</p>
-            <h2 class="Content_Title">「UIDA」 UI発明賞 受賞</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">「UIDA」 UI発明賞 受賞</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="https://www.cyberagent.co.jp/careers/students/uida/"
                 target="_blank"
+                :style="textStyle"
               >CyberAgent Internship UIDA　</a> UI発明賞　受賞
             </p>
           </div>
@@ -36,14 +38,14 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2017年8月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2017年8月
               <br>制作期間: 1week
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Adobe Illustrator
+            <p class="Overview_Text" :style="textStyle">Adobe Illustrator
                 Adobe Photoshop<br>
                 Sketch<br>
                 Prott<br>
@@ -52,7 +54,7 @@
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Personal Work</p>
-            <p class="Overview_Text">藤木 良祐
+            <p class="Overview_Text" :style="textStyle">藤木 良祐
               <br>
               <span class="Overview_Text__task">- Design</span>
               <br>
@@ -67,8 +69,8 @@
       <div class="TheWork_Content TheWork_Process TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Game Tutorial</p>
-                <h2 class="Content_Title">指から色鮮やかな「LINE」を作り出す</h2>
-                <p class="Content_Text">画面上に存在する点と点を結ぶことで、「LINE」が引かれます。「LINE」の引き方や、どの点と結びつけるかで、無限の選択肢と答えが用意されています。「LINE」が引かれると、右上の数字が1つ減り、数が0になると、「BALL」が転がります。「BALL」がゴールにたどり着くことのできる「LINE」を探りあて描き明かすパズルゲームです。</p>
+                <h2 class="Content_Title" :style="headingStyle">指から色鮮やかな「LINE」を作り出す</h2>
+                <p class="Content_Text" :style="textStyle">画面上に存在する点と点を結ぶことで、「LINE」が引かれます。「LINE」の引き方や、どの点と結びつけるかで、無限の選択肢と答えが用意されています。「LINE」が引かれると、右上の数字が1つ減り、数が0になると、「BALL」が転がります。「BALL」がゴールにたどり着くことのできる「LINE」を探りあて描き明かすパズルゲームです。</p>
                 <div class="Image_Container">
                     <img :src="process01Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
                     <img :src="process02Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -81,8 +83,8 @@
         <div class="TheWork_Content TheWork_Contents TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Variety</p>
-                <h2 class="Content_Title">5種類の「LINE」の性質</h2>
-                <p class="Content_Text">様々な色の点を結ぶことで、多種多様な性質をもつ「LINE」を生み出すことができます。黄色の点同士を結ぶと「飛び跳ねる性質をもつLINE」を作り、青色の点同士を結ぶと「壊れ砕ける性質をもつLINE」を作り出します。さらに、赤色と黄色の点を結ぶと「摩擦抵抗の少ない性質をもつLINEを作り、青色と黄色の点を結ぶと「粘着性をもつLINE」を作り出します。</p>
+                <h2 class="Content_Title" :style="headingStyle">5種類の「LINE」の性質</h2>
+                <p class="Content_Text" :style="textStyle">様々な色の点を結ぶことで、多種多様な性質をもつ「LINE」を生み出すことができます。黄色の点同士を結ぶと「飛び跳ねる性質をもつLINE」を作り、青色の点同士を結ぶと「壊れ砕ける性質をもつLINE」を作り出します。さらに、赤色と黄色の点を結ぶと「摩擦抵抗の少ない性質をもつLINEを作り、青色と黄色の点を結ぶと「粘着性をもつLINE」を作り出します。</p>
 
                 <div class="Image_Container">
                     <img :src="page01Img" alt="" class="TheWork_Img TheWork_Img_Small ">
@@ -99,8 +101,8 @@
         <div class="TheWork_Content TheWork_Research TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Game Design</p>
-                <h2 class="Content_Title">レベル調整</h2>
-                <p class="Content_Text">画面上に広がる「LINE」の色や数を調整することによって、ゲームの難易度を操作することが可能です。点の種類や色を増やせば増やすほど、生み出すことのできる「LINE」の選択肢が増え、複雑性と難易度を上げることができます。</p>
+                <h2 class="Content_Title" :style="headingStyle">レベル調整</h2>
+                <p class="Content_Text" :style="textStyle">画面上に広がる「LINE」の色や数を調整することによって、ゲームの難易度を操作することが可能です。点の種類や色を増やせば増やすほど、生み出すことのできる「LINE」の選択肢が増え、複雑性と難易度を上げることができます。</p>
 
                 <div class="Image_Container ">
                     <img :src="page05Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -114,7 +116,7 @@
         <div class="TheWork_Content TheWork_TheOther TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">The Other Works</p>
-                <h2 class="Content_Title">その他の作品について</h2>
+                <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
                 <section class="TheOther_Works">
                      <TheHiveButton></TheHiveButton>
@@ -184,12 +186,20 @@ export default {
       process02Img: 'lineandball/iPhone02.png',
       process03Img: 'lineandball/iPhone03.png',
       process04Img: 'lineandball/iPhone04.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     }
   },
   computed: {
     ...mapGetters({
       fadeIn: 'lineandball/fadeIn',
-      move: 'lineandball/move'
+      move: 'lineandball/move',
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -205,7 +215,14 @@ export default {
     },
     async move (val) {
       this.targetMove()
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
    },
    methods: {
      handleScroll: function(evt, el) {

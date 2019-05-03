@@ -4,8 +4,8 @@
       <TheProfileImg class="TheAbout_Section"></TheProfileImg>
       <!-- <img :src="profileImg" alt="" class="TheAbout_ProfileImg"> -->
       <div class="TheAbout_Profile TheAbout_Section">
-        <h2 class="TheAbout_Heading">🙌 Hi, I’m Ryosuke Fujiki</h2>
-        <p class="TheAbout_Text">
+        <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🙌 Hi, I’m Ryosuke Fujiki</h2>
+        <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
           1996年シンガポール生まれ、東京育ち。
           2015年より慶應義塾大学環境情報学部に通い、2019年春に卒業。HCI,
           UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO など
@@ -15,8 +15,8 @@
       </div>
       <div class="TheAbout_Detail TheAbout_Section">
         <div class="TheAbout_Award TheAbout_Content">
-          <h2 class="TheAbout_Heading">🏆 AWARDS</h2>
-          <p class="TheAbout_Text">
+          <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🏆 AWARDS</h2>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
             2019 SFC STUDENT AWARD
             <br>
             <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">
@@ -34,8 +34,8 @@
           </p>
         </div>
         <div class="TheAbout_Skill TheAbout_Content">
-          <h2 class="TheAbout_Heading">✏️ SKILLS</h2>
-          <p class="TheAbout_Text">
+          <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">✏️ SKILLS</h2>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
             Adobe Illustrator/Photoshop/Premiere/AfterEffects
             <br>HTML/CSS/JavaScript/Vue.js/Nuxt.js/Python
             <br>Arduino/RaspberryPi/Processing
@@ -46,12 +46,12 @@
       </div>
       <div class="TheAbout_Experience TheAbout_Section">
         <div class="TheAbout_Education TheAbout_Content">
-          <h2 class="TheAbout_Heading">🎓 EDUCATION</h2>
-          <p class="TheAbout_Text">2015-2019 慶應義塾大学環境情報学部</p>
+          <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🎓 EDUCATION</h2>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">2015-2019 慶應義塾大学環境情報学部</p>
         </div>
         <div class="TheAbout_Work TheAbout_Content">
-          <h2 class="TheAbout_Heading">💻 WORKS</h2>
-          <p class="TheAbout_Text">
+          <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">💻 WORKS</h2>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
             <a
               href="https://nihonbashi-beta.jp/"
               target="_blank"
@@ -75,6 +75,7 @@
               href="https://dribbble.com/bighappy"
               class="TheAbout_ItemIcon TheAbout_ItemIcon_Dribbble"
               target="_blank"
+              v-bind:class="{TheAbout_Heading_Black:colorBlack}"
             >
               <i class="fab fa-dribbble"></i>
             </a>
@@ -82,6 +83,7 @@
               href="https://www.facebook.com/rfujiki0625"
               class="TheAbout_ItemIcon TheAbout_ItemIcon_Facebook"
               target="_blank"
+              v-bind:class="{TheAbout_Heading_Black:colorBlack}"
             >
               <i class="fab fa-facebook-square"></i>
             </a>
@@ -89,19 +91,20 @@
               href="https://www.instagram.com/ryosukefujiki/"
               class="TheAbout_ItemIcon TheAbout_ItemIcon_Instagram"
               target="_blank"
+              v-bind:class="{TheAbout_Heading_Black:colorBlack}"
             >
               <i class="fab fa-instagram"></i>
             </a>
           </div>
         </div>
         <div class="TheAbout_Email TheAbout_Content">
-          <h2 class="TheAbout_Heading">📩 DROP ME A LINE !</h2>
-          <a class="TheAbout_Text">ryosukefujiki625 ＠ gmail.com</a>
+          <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">📩 DROP ME A LINE !</h2>
+          <a class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">ryosukefujiki625 ＠ gmail.com</a>
         </div>
       </div>
     </div>
     <TheFooter></TheFooter>
-    <div class="TheAbout_Backgroud">
+    <div class="TheAbout_Backgroud" v-bind:class="{TheAbout_Background_Black:colorBlack}">
       <svg viewBox="0 0 100 100">
         <path>
           <animate
@@ -166,6 +169,7 @@
           ></animate>
         </path>
       </svg>
+      <div class="TheBackgroundInside" v-if="colorBlack"></div>
     </div>
   </section>
 </template>
@@ -209,8 +213,6 @@ export default {
   mounted() {
     let self = this;
     this.intervalId = setInterval(function() {
-      console.log(self.number);
-      console.log(self.data);
       self.number += 1;
       if (self.number == 4) {
         requestAnimationFrame(() => {
@@ -250,7 +252,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      aboutMoved: "about/aboutMoved"
+      aboutMoved: "about/aboutMoved",
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -273,6 +277,12 @@ export default {
           0.1
         );
       });
+    },
+    async colorBlack(val){
+      console.log("aboutのcolorBlack")
+    },
+    async langEn(val){
+
     }
   },
   methods: {
@@ -285,10 +295,15 @@ export default {
 
 <style lang="scss" scoped>
 $heading-color: #272727;
-$heading-size: 24px;
+$heading-black-color: #ffffff;
 $text-color: #9b9b9b;
-$text-size: 16px;
+$text-black-color: #e2e2e2;
 $hover-color: #d2dadf;
+$hover-black-color: #7e7e7e;
+$heading-size: 24px;
+$text-size: 16px;
+
+
 
 .TheAbout_Container {
   display: flex;
@@ -378,12 +393,38 @@ $hover-color: #d2dadf;
   top: 0px;
   left: 0px;
   z-index: -10;
+}
+.TheAbout_Backgroud svg{
   padding: 120px;
-  fill: #f9f9f9;
+  fill: #d8d8d8;
+  opacity: 0.2;
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
   transition: 0.3s;
 }
+
+.TheAbout_Background_Black{
+  background: #272727;
+}
+.TheAbout_Heading_Black{
+  color: $heading-black-color;
+}
+.TheAbout_Heading_Black i{
+  transition: 0.15s;
+}
+.TheAbout_Heading_Black i:hover{
+  color: $hover-black-color;
+}
+.TheAbout_Text_Black{
+  color: $text-black-color;
+}
+.TheAbout_Text_Black .TheAbout_LinkColor{
+  color: $text-black-color;
+}
+
+
+
+
 
 @keyframes move {
   0% {

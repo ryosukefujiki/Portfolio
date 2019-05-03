@@ -6,8 +6,8 @@
                 <div class="TheHome_WorkTrim">
                     <img :src="scrapboardHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
-                <p class="TheHome_WorkCategory">UI / UX Design</p>
-                <p class="TheHome_WorkTitle">Scrap Board</p>
+                <p class="TheHome_WorkCategory" :style="headingStyle">UI / UX Design</p>
+                <p class="TheHome_WorkTitle" :style="textStyle">Scrap Board</p>
             </a>
         </div>
 </template>
@@ -19,18 +19,42 @@ import {mapGetters, mapMutations} from 'vuex'
 export default {
    components: {
   },
+  computed: {
+    ...mapGetters({
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn",
+    })
+  },
   methods: {
     routing(url){
       this.$router.push(url)
     },
     ...mapMutations({
-      click: 'scrapboard/click',
+      click: 'scrapboard/click'
     }),
   },
   data () {
     return {
       scrapboardHomeImg: '/home/scrapboard_home.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['text-color'],
+      },
+      workBgStyle: {
+        'background': this.$store.state.nav.style['workText-color'],
+      },
     }
+  },
+  watch: {
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['text-color']
+    },
+    async langEn(val){
+
+    },
   },
 }
 </script>

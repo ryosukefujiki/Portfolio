@@ -21,20 +21,22 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">Bot がサポートするメッセージアプリ</h2>
+            <h2 class="Content_Title" :style="headingStyle">Bot がサポートするメッセージアプリ</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >Goodpatch 2018 冬季インターンシップ において開催された「家族 or カップルの関係性をより深めるサービス」を考えるというテーマで゙制作したプロダクト。度重なるユーザーインタビューを行い、ペルソナ、ユーザーストーリーを定め、一つのアプリケーションの形に落とし込みました。カップルや家族が使用する専用のクローズドなメッセージアプリケーションで、Bot がメッセージ における関係性を支えます。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Award</p>
-            <h2 class="Content_Title">Goodpatch Internship 最優秀賞 受賞</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">Goodpatch Internship 最優秀賞 受賞</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="https://www.wantedly.com/companies/goodpatch/post_articles/110684"
                 target="_blank"
+                :style="textStyle"
               >Goodpatch Winter Internship 2018</a> 最優秀賞 受賞
             </p>
           </div>
@@ -43,14 +45,14 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2018年2月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2018年2月
               <br>制作期間: 1week
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Sketch
+            <p class="Overview_Text" :style="textStyle">Sketch
               <br>Adobe Illustrator
               <br>Adobe Photoshop
             </p>
@@ -58,7 +60,7 @@
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Credit (3)</p>
-            <p class="Overview_Text">藤木 良祐
+            <p class="Overview_Text" :style="textStyle">藤木 良祐
               <br>
               <span class="Overview_Text__task">- Logo Design</span>
               <br>
@@ -79,9 +81,10 @@
       <div class="TheWork_Content TheWork_Process TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">Process</p>
-          <h2 class="Content_Title">度重ねたユーザーインタビュー</h2>
+          <h2 class="Content_Title" :style="headingStyle">度重ねたユーザーインタビュー</h2>
           <p
             class="Content_Text"
+            :style="textStyle"
           >チームメンバーとのアイディエーションによって、「長い付き合いのある特別な 2 人は信頼関係が あり今後の関係性において大きな変化より安定を求めている」という仮説を導き出しました。この仮定検証を行うために、想定するユーザー像に近い男女合わせて 10 名にユーザーインタビューを行いました。そうしたの過程の中で、長い付き合いのある特別な2人は大きな変化より 安定を求めていることがわかり、またいくつかの不満を持っていることに気がつきました。</p>
           <div class="Image_Container">
             <img :src="process01Img" alt class="TheWork_Img TheWork_Img_Small">
@@ -93,9 +96,10 @@
       <div class="TheWork_Content TheWork_Contents TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">Persona</p>
-          <h2 class="Content_Title">ペルソナのペインとゴール</h2>
+          <h2 class="Content_Title" :style="headingStyle">ペルソナのペインとゴール</h2>
           <p
             class="Content_Text"
+            :style="textStyle"
           >度重ねたユーザーインタビューの過程の中で、信頼関係のある特別な 2人は Between や Slack などの Closed なメッセージアプリケーションを用いてコミュニケーションをとってることがわかりました。そこで、そうした Closed なメッセージアプリにおけるコミュニケーションで生じるペインとゴールを導き出し、ペルソナ、ユーザーストーリーを作成しました。</p>
 
           <div class="Image_Container">
@@ -109,9 +113,10 @@
       <div class="TheWork_Content TheWork_Research TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">Contents</p>
-          <h2 class="Content_Title">Hive でできること</h2>
+          <h2 class="Content_Title" :style="headingStyle">Hive でできること</h2>
           <p
             class="Content_Text"
+            :style="textStyle"
           >Hive は、まず2人だけのコミュニケーションスペースを提供します。自らチャットルームを作成 し、日々の思い出や目的ごとに分けたコミュニケーションをすることができます。次に、Hive で は、Bot を活用し、2 人だけのコミュニケーションをより快適なものにすべくサポートします。</p>
 
           <!-- <div class="Image_Container ">
@@ -124,7 +129,7 @@
       <div class="TheWork_Content TheWork_TheOther TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">The Other Works</p>
-          <h2 class="Content_Title">その他の作品について</h2>
+          <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
           <section class="TheOther_Works">
             <TheFamilybookButton></TheFamilybookButton>
@@ -186,17 +191,21 @@ export default {
       persona02Img: "/hive/persona02.png",
       persona03Img: "/hive/persona03.png",
       persona04Img: "/hive/persona04.png",
-      contentsImg: "/hive/contents.png"
-      //   sp01Img: 'hive/smartphone_01.png',
-      //   sp02Img: 'hive/smartphone_02.png',
-      //   sp03Img: 'hive/smartphone_03.png',
-      //   sp04Img: 'hive/smartphone_05.png',
+      contentsImg: "/hive/contents.png",
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     };
   },
   computed: {
     ...mapGetters({
       fadeIn: "hive/fadeIn",
-      move: "hive/move"
+      move: "hive/move",
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -213,7 +222,14 @@ export default {
     },
     async move(val) {
       this.targetMove();
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
   },
   methods: {
     handleScroll: function(evt, el) {

@@ -6,8 +6,8 @@
                 <div class="TheHome_WorkTrim">
                     <img :src="playfulfesHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
-                <p class="TheHome_WorkCategory">Web Design</p>
-                <p class="TheHome_WorkTitle">プレイフルフェス2018Winter</p>
+                <p class="TheHome_WorkCategory" :style="headingStyle">Web Design</p>
+                <p class="TheHome_WorkTitle" :style="textStyle">プレイフルフェス2018Winter</p>
             </a>
         </div>
 </template>
@@ -16,20 +16,41 @@
 import {mapGetters, mapMutations} from 'vuex'
 
 export default {
-   components: {
+  components: {
+  },
+  computed: {
+    ...mapGetters({
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn",
+    })
   },
   methods: {
     routing(url){
       this.$router.push(url)
     },
     ...mapMutations({
-      click: 'playfulfes/click',
+      click: 'playfulfes/click'
     }),
   },
   data () {
     return {
       playfulfesHomeImg: '/home/playfulfes_home.png ',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['text-color'],
+      }
     }
+  },
+  watch: {
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['text-color']
+    },
+    async langEn(val){
+
+    },
   },
 }
 </script>
