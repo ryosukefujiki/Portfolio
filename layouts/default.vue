@@ -14,7 +14,7 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <!-- <TheFirstview></TheFirstview> -->
+    <TheFirstview></TheFirstview>
     <div class="TheBackgroundColor" :style="style">
       <div class="TheBackgroundInside" v-if="colorBlack"></div>
     </div>
@@ -40,6 +40,12 @@ import TheFirstview from "~/components/TheFirstview.vue"
 import {mapGetters} from 'vuex'
 
 export default {
+  mounted () {
+    const userAgent = window.navigator.userAgent.toLowerCase()
+    if (userAgent.indexOf('msie') !== -1 || userAgent.indexOf('trident') !== -1 || userAgent.indexOf('edge') !== -1) {
+      this.$router.replace({ path: 'sorry' })
+    }
+  },
   components: {
     TheHeader,
     TheFooter,
