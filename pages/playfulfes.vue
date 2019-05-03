@@ -14,20 +14,22 @@
         <div class="TheWork_Overview_Leftside">
           <div class="Content_Overview TheWork_Section">
             <p class="Content_Subtitle">Overview</p>
-            <h2 class="Content_Title">ワークショップイベントのVisual Design</h2>
+            <h2 class="Content_Title" :style="headingStyle">ワークショップイベントのVisual Design</h2>
             <p
               class="Overview_Text"
+              :style="textStyle"
             >DeNA 主催による「Delight U for Student」における「ワークショップイベントのLPを制作する」というテーマで制作した作品です。「21世紀の学びはワクワクするあそび。」という与えられたコンセプトから、配色、タイポグラフィ、などグラフィックに落とし込みました。さらに、与えられたテキスト情報を、構築したユーザーストーリーに基づくUIへと設計しました。</p>
           </div>
 
           <div class="Content_Award TheWork_Section">
             <p class="Content_Subtitle">Resource</p>
-            <h2 class="Content_Title">プロトタイプ</h2>
-            <p class="Overview_Text">
+            <h2 class="Content_Title" :style="headingStyle">プロトタイプ</h2>
+            <p class="Overview_Text" :style="textStyle">
               <a
                 class="link__text familybookText"
                 href="https://share.protopie.io/JuFJCZ55aGN"
                 target="_blank"
+                :style="textStyle"
               >https://share.protopie.io/JuFJCZ55aGN</a> プレイフルフェス
             </p>
           </div>
@@ -36,20 +38,20 @@
         <div class="TheWork_Overview_RightSide">
           <div class="Content_Details TheWork_Section">
             <p class="Content_Right_Subtitle">Project Details</p>
-            <p class="Overview_Text">制作日 : 2017年12月
+            <p class="Overview_Text" :style="textStyle">制作日 : 2017年12月
               <br>制作期間: 2week
             </p>
           </div>
 
           <div class="Content_Tool TheWork_Section">
             <p class="Content_Right_Subtitle">Tool</p>
-            <p class="Overview_Text">Sketch
+            <p class="Overview_Text" :style="textStyle">Sketch
             </p>
           </div>
 
           <div class="Content_Team TheWork_Section">
             <p class="Content_Right_Subtitle">Personal Work</p>
-            <p class="Overview_Text">藤木 良祐
+            <p class="Overview_Text" :style="textStyle">藤木 良祐
               <br>
               <span class="Overview_Text__task">- Visual Design</span>
               <br>
@@ -64,8 +66,8 @@
       <div class="TheWork_Content TheWork_Process TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Process</p>
-                <h2 class="Content_Title">21世紀の学びはワクワクするあそび。</h2>
-                <p class="Content_Text">プレイフルフェスのコンセプトを表すため、「学び」としての印象よりも、「ワクワクするあそび」の印象を強く伝えるビジュアルを設計しました。ランディングページでは、ファーストビューがもっとも離脱に関わるため、ワークショップで大切にしているワクワクを演出する躍動感を伝えています。</p>
+                <h2 class="Content_Title" :style="headingStyle">21世紀の学びはワクワクするあそび。</h2>
+                <p class="Content_Text" :style="textStyle">プレイフルフェスのコンセプトを表すため、「学び」としての印象よりも、「ワクワクするあそび」の印象を強く伝えるビジュアルを設計しました。ランディングページでは、ファーストビューがもっとも離脱に関わるため、ワークショップで大切にしているワクワクを演出する躍動感を伝えています。</p>
                 <div class="Image_Container">
                     <img :src="process01Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
                     <img :src="process02Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -78,8 +80,8 @@
         <div class="TheWork_Content TheWork_Contents TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">PC Landing Page</p>
-                <h2 class="Content_Title">Call To Action</h2>
-                <p class="Content_Text">ワークショップイベントへの申し込みがこのランディングページでのコンバージョンになるため、CTAとしてエントリーボタンをナビゲーションバーに設置しました。</p>
+                <h2 class="Content_Title" :style="headingStyle">Call To Action</h2>
+                <p class="Content_Text" :style="textStyle">ワークショップイベントへの申し込みがこのランディングページでのコンバージョンになるため、CTAとしてエントリーボタンをナビゲーションバーに設置しました。</p>
 
                 <div class="Image_Container">
                     <img :src="page01Img" alt="" class="TheWork_Img TheWork_Img_Small ">
@@ -96,8 +98,8 @@
         <div class="TheWork_Content TheWork_Research TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">Responsive Design</p>
-                <h2 class="Content_Title">口コミによる流入</h2>
-                <p class="Content_Text">サイトへの流入が口コミからの流入であることを考え、スマホにおいてでも快適にランディングページが閲覧できるようResponsive Designを提案しました。また、サイト内にSocialShareボタンを設置することで、サイトへの流入を作りました。</p>
+                <h2 class="Content_Title" :style="headingStyle">口コミによる流入</h2>
+                <p class="Content_Text" :style="textStyle">サイトへの流入が口コミからの流入であることを考え、スマホにおいてでも快適にランディングページが閲覧できるようResponsive Designを提案しました。また、サイト内にSocialShareボタンを設置することで、サイトへの流入を作りました。</p>
 
                 <div class="Image_Container ">
                     <img :src="sp01Img" alt="" class="TheWork_Img TheWork_Img_Small Delete_Dropshadow">
@@ -113,7 +115,7 @@
         <div class="TheWork_Content TheWork_TheOther TheWork_Section">
             <div class="Content_Process">
                 <p class="Content_Subtitle">The Other Works</p>
-                <h2 class="Content_Title">その他の作品について</h2>
+                <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
                 <section class="TheOther_Works">
                      <TheHiveButton></TheHiveButton>
@@ -186,12 +188,20 @@ export default {
       process02Img: 'playfulfes/process02.png',
       process03Img: 'playfulfes/process03.png',
       process04Img: 'playfulfes/process04.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['workText-color'],
+      }
     }
   },
   computed: {
     ...mapGetters({
       fadeIn: 'playfulfes/fadeIn',
-      move: 'playfulfes/move'
+      move: 'playfulfes/move',
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn"
     })
   },
   watch: {
@@ -207,7 +217,14 @@ export default {
     },
     async move (val) {
       this.targetMove()
-    }
+    },
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['workText-color']
+    },
+    async langEn(val){
+
+    },
    },
    methods: {
      handleScroll: function(evt, el) {

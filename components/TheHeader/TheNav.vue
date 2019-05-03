@@ -71,7 +71,7 @@ export default {
   data() {
     return {
       logoImg: "/home/new_logo.png",
-      colorSwitchText: "Black",
+      colorSwitchText: "Dark",
       langSwitchText: "En"
     };
   },
@@ -92,10 +92,12 @@ export default {
       }
     },
     toggleColor(){
-      if(this.colorSwitchText == "Black"){
+      if(this.colorSwitchText == "Dark"){
         this.colorSwitchText = "Light"
+        this.$store.commit("nav/colorBlackClick")
       }else if(this.colorSwitchText == "Light"){
-        this.colorSwitchText = "Black"
+        this.colorSwitchText = "Dark"
+        this.$store.commit("nav/colorBlackClick")
       }
     },
     toggleLanguage(){
@@ -280,8 +282,8 @@ export default {
 
 .TheNav_ItemSwitch{
   font-size: 18px;
-  background: #272727;
-  color: #ffffff;
+  background: #ffffff;
+  color: #272727;
   display: block;
   border-radius: 24px;
   height: 40px;
@@ -290,10 +292,13 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
   transition: 0.15s;
+  box-shadow: 0px 0px 4px 0px rgba(155, 155, 155, 0.2);
 }
 
 .TheNav_ItemSwitch:hover{
   background: #d2dadf;
+  background: #272727;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 480px) {

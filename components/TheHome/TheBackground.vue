@@ -28,7 +28,7 @@ export default {};
 //   background: red;
   width: 200%;
   height: 150%;
-  position: absolute;
+  position: fixed;
   top: -25%;
   left: -50%;
 }

@@ -6,8 +6,8 @@
                 <div class="TheHome_WorkTrim">
                     <img :src="hiveHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
-                <p class="TheHome_WorkCategory">UI / UX Design</p>
-                <p class="TheHome_WorkTitle">Hive</p>
+                <p class="TheHome_WorkCategory" :style="headingStyle">UI / UX Design</p>
+                <p class="TheHome_WorkTitle" :style="textStyle">Hive</p>
             </a>
         </div>
 </template>
@@ -21,7 +21,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      enter: 'hive/enter'
+      enter: 'hive/enter',
+      colorBlack: "nav/colorBlack",
+      langEn: "nav/langEn",
     })
   },
   methods: {
@@ -35,7 +37,22 @@ export default {
   data () {
     return {
       hiveHomeImg: '/home/hive_home.png',
+      headingStyle: {
+        'color': this.$store.state.nav.style['heading-color'],
+      },
+      textStyle: {
+        'color': this.$store.state.nav.style['text-color'],
+      }
     }
+  },
+  watch: {
+    async colorBlack(val){
+      this.headingStyle['color'] = this.$store.state.nav.style['heading-color']
+      this.textStyle['color'] = this.$store.state.nav.style['text-color']
+    },
+    async langEn(val){
+
+    },
   },
 }
 </script>
