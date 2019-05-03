@@ -41,6 +41,24 @@
             </a>
           </div>
         </li>
+        <li class="TheNav_Item">
+          <div class="TheNav_ItemSwitchs">
+            <p
+              href="https://dribbble.com/bighappy"
+              class="TheNav_ItemSwitch"
+              @click="toggleColor"
+            >
+              {{colorSwitchText}}
+            </p>
+            <p
+              href="https://dribbble.com/bighappy"
+              class="TheNav_ItemSwitch"
+              @click="toggleLanguage"
+            >
+              {{langSwitchText}}
+            </p>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
@@ -52,7 +70,9 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      logoImg: "/home/new_logo.png"
+      logoImg: "/home/new_logo.png",
+      colorSwitchText: "Black",
+      langSwitchText: "En"
     };
   },
   props: ["headerActive"],
@@ -63,13 +83,26 @@ export default {
   },
   methods: {
     routing(url) {
-      // this.$router.push(url)
       this.$parent.toggleMenu();
       if (url == "home" && this.$route.path != "/") {
         this.$store.commit("homeClick");
       }
       if (url == "about" && this.$route.path != "/about") {
         this.$store.commit("about/aboutClick");
+      }
+    },
+    toggleColor(){
+      if(this.colorSwitchText == "Black"){
+        this.colorSwitchText = "Light"
+      }else if(this.colorSwitchText == "Light"){
+        this.colorSwitchText = "Black"
+      }
+    },
+    toggleLanguage(){
+      if(this.langSwitchText == "En"){
+        this.langSwitchText = "Jp"
+      }else if(this.langSwitchText == "Jp"){
+        this.langSwitchText = "En"
       }
     }
     // ...mapMutations({
@@ -238,6 +271,30 @@ export default {
 .TheNav_Item_Logo{
   margin-bottom: 20px;
 }
+.TheNav_ItemSwitchs{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  align-items: center;
+}
+
+.TheNav_ItemSwitch{
+  font-size: 18px;
+  background: #272727;
+  color: #ffffff;
+  display: block;
+  border-radius: 24px;
+  height: 40px;
+  width: 80px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.TheNav_ItemSwitch:hover{
+  background: #d2dadf;
+}
 
 @media screen and (max-width: 480px) {
   .TheNav_Item {
@@ -269,6 +326,19 @@ export default {
   .TheNav_ItemIcon_Facebook {
     font-size: 28px;
   }
+  .TheNav_ItemSwitchs{
+  width: 160px;
+}
+.TheNav_ItemSwitch{
+  font-size: 14px;
+  border-radius: 24px;
+  height: 36px;
+  width: 68px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.15s;
+}
 }
 </style>
 
