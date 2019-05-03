@@ -92,12 +92,14 @@ export default {
       }
     },
     toggleColor(){
+      this.$parent.toggleMenu();
       if(this.colorSwitchText == "Dark"){
         this.colorSwitchText = "Light"
-        this.$store.commit("nav/colorBlackClick")
+        // this.$store.commit("nav/colorBlackClick")
+        this.$store.commit("nav/colorBlackEntered")
       }else if(this.colorSwitchText == "Light"){
         this.colorSwitchText = "Dark"
-        this.$store.commit("nav/colorBlackClick")
+        this.$store.commit("nav/colorBlackEntered")
       }
     },
     toggleLanguage(){

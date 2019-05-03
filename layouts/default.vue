@@ -10,6 +10,7 @@
     <TheAboutTransition></TheAboutTransition>
     <ThePlayfulfesTransition></ThePlayfulfesTransition>
     <TheHomeTransition></TheHomeTransition>
+    <TheColorTransition></TheColorTransition>
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
@@ -34,6 +35,7 @@ import ThePlayfulfesTransition from '~/components/TheTransition/ThePlayfulfesTra
 import TheLineandballTransition from '~/components/TheTransition/TheLineandballTransition.vue'
 import TheAboutTransition from '~/components/TheTransition/TheAboutTransition.vue'
 import TheHomeTransition from '~/components/TheTransition/TheHomeTransition.vue'
+import TheColorTransition from '~/components/TheTransition/TheColorTransition.vue'
 import TheFirstview from "~/components/TheFirstview.vue"
 import {mapGetters} from 'vuex'
 
@@ -51,6 +53,7 @@ export default {
     TheHomeTransition,
     TheNorenTransition,
     TheFirstview,
+    TheColorTransition
   },
   data () {
     return {

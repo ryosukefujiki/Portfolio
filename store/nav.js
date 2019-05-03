@@ -1,4 +1,5 @@
 export const state = () => ({
+    colorBlackEnter: false,
     colorBlack: false,
     langEn: false,
     style: {
@@ -11,12 +12,17 @@ export const state = () => ({
   })
   
   export const getters = {
+    colorBlackEnter: state => state.colorBlackEnter,
     colorBlack: state => state.colorBlack,
     langEn: state => state.langEn,
   }
   // 上記はアロー関数　stateを引数にとって、state.enteredの値をgetterからアクセスできるようにしている
   
   export const mutations = {
+    colorBlackEntered(state){
+      state.colorBlackEnter = !state.colorBlackEnter
+      // console.log(state.colorBlackEnter)
+    },
     colorBlackClick (state) {
       state.colorBlack = !state.colorBlack
       if(state.colorBlack == true){
