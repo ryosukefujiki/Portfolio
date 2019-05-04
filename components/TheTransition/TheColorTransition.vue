@@ -20,7 +20,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      colorBlackEnter: 'nav/colorBlackEnter'
+      colorBlackEnter: 'nav/colorBlackEnter',
+      langEnEnter: 'nav/langEnEnter'
     })
   },
   watch: {
@@ -33,6 +34,20 @@ export default {
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
       this.$store.commit("nav/colorBlackClick")
+      await this.$delay(1000)
+      this.leave()
+      await this.$delay(1000)
+      this.set()
+    },
+    async langEnEnter(val){
+      if(this.langEnEnter == true){
+        this.title = "English Language"
+      }else if(this.langEnEnter == false){
+        this.title = "Japanese Language"
+      }
+      this.enter() // `entered`の値によってアニメーションを書き分け🔥
+      await this.$delay(550)
+      this.$store.commit("nav/langEnClick")
       await this.$delay(1000)
       this.leave()
       await this.$delay(1000)
