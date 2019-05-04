@@ -320,7 +320,6 @@ export default {
     async colorBlack(val){
     },
     async langEn(val){
-      console.log("aboutのcolorBlack")
     }
   },
   methods: {
