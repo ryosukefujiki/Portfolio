@@ -133,7 +133,7 @@
       <div class="TheWork_Content TheWork_TheOther TheWork_Section">
         <div class="Content_Process">
           <p class="Content_Subtitle">The Other Works</p>
-          <h2 class="Content_Title">その他の作品について</h2>
+          <h2 class="Content_Title" :style="headingStyle">その他の作品について</h2>
 
           <section class="TheOther_Works">
             <TheFamilybookButton></TheFamilybookButton>

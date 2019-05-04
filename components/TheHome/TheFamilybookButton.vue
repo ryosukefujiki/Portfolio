@@ -7,7 +7,8 @@
                     <img :src="familybookHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
                 <p class="TheHome_WorkCategory" :style="headingStyle">Planning</p>
-                <p class="TheHome_WorkTitle" :style="textStyle">かぞくが、ものがたり。</p>
+                <p class="TheHome_WorkTitle" :style="textStyle" v-if="!langEn">かぞくが、ものがたり。</p>
+                <p class="TheHome_WorkTitle" :style="textStyle" v-if="langEn">FamilyBook</p>
             </a>
         </div>
 </template>

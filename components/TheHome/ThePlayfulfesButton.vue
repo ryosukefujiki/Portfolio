@@ -7,7 +7,8 @@
                     <img :src="playfulfesHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
                 <p class="TheHome_WorkCategory" :style="headingStyle">Web Design</p>
-                <p class="TheHome_WorkTitle" :style="textStyle">プレイフルフェス2018Winter</p>
+                <p class="TheHome_WorkTitle" :style="textStyle" v-if="!langEn">プレイフルフェス2018Winter</p>
+                <p class="TheHome_WorkTitle" :style="textStyle" v-if="langEn">Playfulfes2018Winter</p>
             </a>
         </div>
 </template>

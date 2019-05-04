@@ -7,7 +7,8 @@
                     <img :src="hiveHomeImg" alt="" class="TheHome_WorkImg">
                 </div>
                 <p class="TheHome_WorkCategory" :style="headingStyle">Software</p>
-                <p class="TheHome_WorkTitle" :style="textStyle">のれんさま</p>
+                <p class="TheHome_WorkTitle" :style="textStyle" v-if="!langEn">のれんさま</p>
+                <p class="TheHome_WorkTitle" :style="textStyle" v-if="langEn">Norensama</p>
             </a>
         </div>
 </template>

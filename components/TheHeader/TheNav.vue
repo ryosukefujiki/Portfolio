@@ -103,10 +103,13 @@ export default {
       }
     },
     toggleLanguage(){
+      this.$parent.toggleMenu();
       if(this.langSwitchText == "En"){
         this.langSwitchText = "Jp"
+        this.$store.commit("nav/langEnEntered")
       }else if(this.langSwitchText == "Jp"){
         this.langSwitchText = "En"
+        this.$store.commit("nav/langEnEntered")
       }
     }
     // ...mapMutations({

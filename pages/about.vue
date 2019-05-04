@@ -5,18 +5,25 @@
       <!-- <img :src="profileImg" alt="" class="TheAbout_ProfileImg"> -->
       <div class="TheAbout_Profile TheAbout_Section">
         <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🙌 Hi, I’m Ryosuke Fujiki</h2>
-        <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
+        <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="!langEn">
           1996年シンガポール生まれ、東京育ち。
           2015年より慶應義塾大学環境情報学部に通い、2019年春に卒業。HCI,
           UI/UX を研究テーマとする中西泰人研究室に所属し、 ORFや MAKER FAIRE TOKYO など
           の展示を通して研究発表を行ってきた。デザイン、エンジニアリングの両軸を専門とする企画立案から ”ものづくり” をすることが得意。
+        </p>
+        <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="langEn">
+          Born in Singapore in 1996. Spent child life in Tokyo.
+          Graduated from Keio University in 2019.
+          Belonged to Yasuhito Nakanishi laboratory whose research theme is HCI and UI / UX. 
+          Made a research presentation at the exhibitions like ORF and MAKER FAIRE TOKYO.
+          Specializes in design and engineering and planning.
         </p>
         <!-- <TheFirstview></TheFirstview> -->
       </div>
       <div class="TheAbout_Detail TheAbout_Section">
         <div class="TheAbout_Award TheAbout_Content">
           <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🏆 AWARDS</h2>
-          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="!langEn">
             2019 SFC STUDENT AWARD
             <br>
             <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">
@@ -31,6 +38,22 @@
             <br>2018 Goodpatch Internship 最優秀賞
             <br>2017 CyberAgent UI Design Academy UI発明賞
             <br>2017 電通 アイディアの学校 金賞
+          </p>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="langEn">
+            2019 SFC STUDENT AWARD
+            <br>
+            <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">
+              2018 UIST Student Inovation Contest Most Creative
+              <span class="hide-text">Award</span>
+            </a>
+            <br>
+            <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">
+              2018 UIST Student Inovation Contest People Choice
+              <span class="hide-text">Award</span>
+            </a>
+            <br>2018 Goodpatch Internship Best Prize
+            <br>2017 CyberAgent UIDA UI Invention Award
+            <br>2017 Dentsu School of the idea Gold Prize
           </p>
         </div>
         <div class="TheAbout_Skill TheAbout_Content">
@@ -47,11 +70,12 @@
       <div class="TheAbout_Experience TheAbout_Section">
         <div class="TheAbout_Education TheAbout_Content">
           <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🎓 EDUCATION</h2>
-          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">2015-2019 慶應義塾大学環境情報学部</p>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="!langEn">2015-2019 慶應義塾大学環境情報学部</p>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="langEn">2015-2019 Keio Univ.</p>
         </div>
         <div class="TheAbout_Work TheAbout_Content">
           <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">💻 WORKS</h2>
-          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="!langEn">
             <a
               href="https://nihonbashi-beta.jp/"
               target="_blank"
@@ -65,6 +89,21 @@
             <br>2017 電通 アイディアの学校
             <br>2016 チームラボ株式会社
             <br>2015 株式会社ライフイズテック
+          </p>
+          <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="langEn">
+            <a
+              href="https://nihonbashi-beta.jp/"
+              target="_blank"
+              class="TheAbout_LinkColor"
+            >2018 NIHONBASHI β Creator</a>
+            <br>2018 Yahoo! Internship
+            <br>2018 Goodpatch Internship
+            <br>2017 DeNA Delight U for Student
+            <br>2017 CyberAgent Technical Creator Challenge
+            <br>2017 CyberAgent UI Design Academy
+            <br>2017 Dentsu School of the idea
+            <br>2016 teamLab Inc.
+            <br>2015 Life is Tech, Inc.
           </p>
         </div>
       </div>
@@ -279,10 +318,9 @@ export default {
       });
     },
     async colorBlack(val){
-      console.log("aboutのcolorBlack")
     },
     async langEn(val){
-
+      console.log("aboutのcolorBlack")
     }
   },
   methods: {
