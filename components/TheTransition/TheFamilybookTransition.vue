@@ -1,9 +1,13 @@
 <template>
 <div class='TheTransition TheFamilybookTransition'>
-    <div class='TheTransition_Background' ref='background'>
+  <div class='TheTransition_Background TheFamilybook_Background' ref='background'></div>
+  <div class='TheTransition_Background TheFamilybook_Background' ref='background'></div>
+    <div class='TheTransition_Background TheFamilybook_Background' ref='background'>
         <p class='TheTransition_Category' ref='category'>Planning</p>
         <p class='TheTransition_Title' ref='title'>かぞくが、ものがたり。</p>
     </div>
+    <div class='TheTransition_Background TheFamilybook_Background' ref='background'></div>
+    <div class='TheTransition_Background TheFamilybook_Background' ref='background'></div>
 </div>
 </template>
 
@@ -33,39 +37,39 @@ computed: {
   methods: { // アニメーションの宣言はここ
     enter () { // `entered`が`true`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".TheFamilybook_Background", 0.55, {
           x: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     },
     leave () { // `entered`が`false`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".TheFamilybook_Background", 0.55, {
           x: '100%',
           ease: Expo.easeIn
-        })
+        },0.04)
       })
       this.$store.commit('familybook/fadeIn')
     },
     async set (){
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheFamilybook_Background", 0, {
           opacity: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheFamilybook_Background", 0, {
           x: '-100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheFamilybook_Background", 0, {
           opacity: '100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     }
   }
@@ -74,6 +78,7 @@ computed: {
 
 
 <style lang='scss' scoped>
+
 .TheTransition {
   position: fixed;
   top: 0;
@@ -85,8 +90,11 @@ computed: {
 }
 
 .TheTransition_Background {
+    position: relative;
+    top: 0%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
     background: #82C3E0;
     transform: translateX(-100%);
     transform-origin: left center;

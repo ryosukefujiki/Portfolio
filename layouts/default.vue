@@ -14,9 +14,9 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <TheFirstview></TheFirstview>
+    <!-- <TheFirstview></TheFirstview> -->
     <div class="TheBackgroundColor" :style="style">
-      <div class="TheBackgroundInside" v-if="colorBlack"></div>
+      <div class="TheBackgroundInside"></div>
     </div>
     <!-- <TheAudio></TheAudio>  -->
     <!-- <TheFooter></TheFooter> -->
@@ -145,10 +145,18 @@ export default {
 }
 
 .TheBackgroundInside {
-  width: 94%;
+  width: 96%;
   height: 100%;
   margin: 0 auto;
-  background: #3a3a3a;
+  background: rgba(220,220,220,0.1);
+}
+
+@media screen and (max-width: 480px) {
+  .TheBackgroundInside {
+    width: 96%;
+  }
+}
+@media screen and (max-width: 320px) {
 }
 </style>
 

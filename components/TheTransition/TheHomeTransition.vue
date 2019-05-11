@@ -1,8 +1,12 @@
 <template>
 <div class='TheTransition TheHomeTransition'>
-    <div class='TheTransition_Background' ref='background'>
-        <p class='TheTransition_Category text--letterspace' ref='category'>Home</p>
+  <div class='TheTransition_Background TheHome_Background' ref='background'></div>
+  <div class='TheTransition_Background TheHome_Background' ref='background'></div>
+    <div class='TheTransition_Background TheHome_Background' ref='background'>
+       <p class='TheTransition_Category text--letterspace' ref='category'>Home</p>
     </div>
+    <div class='TheTransition_Background TheHome_Background' ref='background'></div>
+    <div class='TheTransition_Background TheHome_Background' ref='background'></div>
 </div>
 </template>
 
@@ -32,39 +36,39 @@ computed: {
   methods: { // アニメーションの宣言はここ
     enter () { // `entered`が`true`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".TheHome_Background", 0.55, {
           x: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     },
     leave () { // `entered`が`false`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".TheHome_Background", 0.55, {
           x: '100%',
           ease: Expo.easeIn
-        })
+       },0.04)
       })
        this.$store.commit('homeFadeIn')
     },
     async set (){
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheHome_Background", 0, {
           opacity: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheHome_Background", 0, {
           x: '-100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheHome_Background", 0, {
           opacity: '100%',
           ease: Expo.easeOut
-        })
+       },0.04)
       })
     }
   }
@@ -84,8 +88,11 @@ computed: {
 }
 
 .TheTransition_Background {
+    position: relative;
+    top: 0%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
     background: #D2DADF;
     transform: translateX(-100%);
     transform-origin: left center;

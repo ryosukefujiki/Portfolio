@@ -1,8 +1,12 @@
 <template>
 <div class='TheTransition TheColorTransition'>
-    <div class='TheTransition_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}">
+  <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
+  <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
+    <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}">
         <p class='TheTransition_Category' ref='category' v-bind:class="{textBlack: !colorBlackEnter}">{{title}}</p>
     </div>
+    <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
+  <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
 </div>
 </template>
 
@@ -57,39 +61,39 @@ export default {
   methods: { // アニメーションの宣言はここ
     enter () { // `entered`が`true`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".TheColor_Background", 0.55, {
           x: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     },
     leave () { // `entered`が`false`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".TheColor_Background", 0.55, {
           x: '100%',
           ease: Expo.easeIn
-        })
+        },0.04)
       })
       // this.$store.commit('about/aboutMove')
     },
     async set (){
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheColor_Background", 0, {
           opacity: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheColor_Background", 0, {
           x: '-100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".TheColor_Background", 0, {
           opacity: '100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     }
   }
@@ -109,8 +113,11 @@ export default {
 }
 
 .TheTransition_Background {
+    position: relative;
+    top: 0%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
     background: #272727;
     transform: translateX(-100%);
     transform-origin: left center;

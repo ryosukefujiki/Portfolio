@@ -1,9 +1,13 @@
 <template>
 <div class='TheTransition ThePlayfulfesTransition'>
-    <div class='TheTransition_Background' ref='background'>
+  <div class='TheTransition_Background ThePlayfulfes_Background' ref='background'></div>
+  <div class='TheTransition_Background ThePlayfulfes_Background' ref='background'></div>
+    <div class='TheTransition_Background ThePlayfulfes_Background' ref='background'>
         <p class='TheTransition_Category' ref='category'>Web Design</p>
         <p class='TheTransition_Title' ref='title'>プレイフルフェス 2018 Winter</p>
     </div>
+    <div class='TheTransition_Background ThePlayfulfes_Background' ref='background'></div>
+  <div class='TheTransition_Background ThePlayfulfes_Background' ref='background'></div>
 </div>
 </template>
 
@@ -33,39 +37,39 @@ computed: {
   methods: { // アニメーションの宣言はここ
     enter () { // `entered`が`true`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".ThePlayfulfes_Background", 0.55, {
           x: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     },
     leave () { // `entered`が`false`になったとき発火
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0.55, {
+        TweenMax.staggerTo(".ThePlayfulfes_Background", 0.55, {
           x: '100%',
           ease: Expo.easeIn
-        })
+        },0.04)
       })
       this.$store.commit('playfulfes/fadeIn')
     },
     async set (){
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".ThePlayfulfes_Background", 0, {
           opacity: '0%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".ThePlayfulfes_Background", 0, {
           x: '-100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
       requestAnimationFrame(() => {
-        TweenMax.to(this.$refs.background, 0, {
+        TweenMax.staggerTo(".ThePlayfulfes_Background", 0, {
           opacity: '100%',
           ease: Expo.easeOut
-        })
+        },0.04)
       })
     }
   }
@@ -85,8 +89,11 @@ computed: {
 }
 
 .TheTransition_Background {
+    position: relative;
+    top: 0%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
     background: #EEC91D;
     transform: translateX(-100%);
     transform-origin: left center;
