@@ -66,7 +66,7 @@ export default {
 .TheError{
   width: 100%;
   height: 100%;
-  padding-top: 200px;
+  // padding-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,6 +88,10 @@ export default {
   color: #9b9b9b;
   margin-bottom: 20px;
 }
+// .TheError_HomeLink{
+//   text-decoration: underline;
+//   cursor: pointer;
+// }
 
 .TheBackgroundColor {
   position: fixed;
