@@ -60,7 +60,7 @@ export default {
         // this.$router.replace({ path: "sorry" });
     } else if(userAgent.indexOf('safari') != -1) {
         console.log('Safariをお使いですね');
-        this.$router.replace({ path: "sorry" });
+        // this.$router.replace({ path: "sorry" });
     } else if(userAgent.indexOf('firefox') != -1) {
         console.log('FireFoxをお使いですね');
     } else if(userAgent.indexOf('opera') != -1) {

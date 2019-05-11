@@ -105,4 +105,42 @@ export default {
   background: #3a3a3a;
 }
 
+@media screen and (max-width: 1024px) {
+  .TheError_Status{
+    font-size: 80px;
+  }
+    /* 1024pxまでの幅の場合に適応される */
+    .TheError{
+      padding-top: 240px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+  .TheError_Status{
+    font-size: 80px;
+  }
+  .TheError{
+      padding-top: 240px;
+    }
+}
+@media screen and (max-width: 480px) {
+  .TheError_Status{
+    font-size: 80px;
+  }
+  .TheError{
+      padding-top: 240px;
+    }
+}
+@media screen and (max-width: 320px) {
+  .TheError_Status{
+    font-size: 80px;
+  }
+  .TheError_Message{
+    font-size: 12px;
+  }
+  .TheError{
+      padding-top: 160px;
+    }
+}
+
 </style>
