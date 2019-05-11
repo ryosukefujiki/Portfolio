@@ -9,13 +9,18 @@
     <div class="TheBackgroundColor" :style="style">
       <div class="TheBackgroundInside" v-if="colorBlack"></div>
     </div>
+    <TheFooter class="TheFooter"></TheFooter>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import TheFooter from "~/components/TheHeader/TheFooter.vue";
 
 export default {
+  components: {
+    TheFooter,
+  },
   props: ['error'],
   computed: {
     ...mapGetters({
@@ -49,10 +54,19 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
+// .default{
+//   height: 100%;
+// }
+.TheFooter{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 .TheError{
   width: 100%;
   height: 100%;
+  // padding-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +88,10 @@ export default {
   color: #9b9b9b;
   margin-bottom: 20px;
 }
+// .TheError_HomeLink{
+//   text-decoration: underline;
+//   cursor: pointer;
+// }
 
 .TheBackgroundColor {
   position: fixed;
