@@ -175,6 +175,12 @@ $blackColor: #272727;
     bottom: 50px;
     right: 44px;
   }
+  .ripple-effect {
+    height: 32px;
+    width: 32px;
+    top: calc(50% - 22px);
+    left: calc(50% - 16px);
+  }
 
 
 }

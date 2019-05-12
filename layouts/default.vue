@@ -14,7 +14,7 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <!-- <TheFirstview></TheFirstview> -->
+    <TheFirstview></TheFirstview>
     <div class="TheBackgroundColor" :style="style">
       <div class="TheBackgroundInside"></div>
     </div>
@@ -153,10 +153,13 @@ export default {
 
 @media screen and (max-width: 480px) {
   .TheBackgroundInside {
-    width: 96%;
+    width: 94%;
   }
 }
 @media screen and (max-width: 320px) {
+  .TheBackgroundInside {
+    width: 96%;
+  }
 }
 </style>
 
