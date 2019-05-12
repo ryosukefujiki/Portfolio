@@ -211,7 +211,7 @@ export default {
       this.opacityLeave()
       this.backgroundLeave()
       await this.$delay(2200)
-      VueScrollTo.scrollTo('#anchor', 500);
+      // VueScrollTo.scrollTo('#anchor', 500);
     },
     async move (val) {
       this.targetMove()
