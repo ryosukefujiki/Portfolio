@@ -3,6 +3,7 @@
     <img :src="headerHamburgerBg" alt class="TheScrollBtn_Img">
     <span></span>
     <span></span>
+    <div class="ripple-effect"></div>
   </div>
 </template>
 
@@ -55,6 +56,28 @@ $blackColor: #272727;
   transform-origin: bottom right;
   transform: rotateZ(-45deg);
   //   animation: hoppingLeft 2s infinite;
+}
+
+
+.ripple-effect {
+  z-index: -1;
+  display: block;
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  background: rgb(0, 0, 0);
+  // background: red;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 1.5s infinite;
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
 }
 
 // @keyframes hoppingLeft{
