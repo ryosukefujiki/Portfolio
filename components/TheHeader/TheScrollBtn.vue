@@ -28,7 +28,7 @@ $blackColor: #272727;
   position: fixed;
   bottom: 56px;
   right: 74px;
-  z-index: 10;
+  z-index: 8;
   display: block;
   cursor: pointer;
 }
