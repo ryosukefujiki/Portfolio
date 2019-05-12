@@ -113,7 +113,7 @@ $blackColor: #272727;
 // }
 
 .TheScrollBtn:hover span {
-  background: #d2dadf;
+  background: #9b9b9b;
 }
 
 @media screen and (max-width: 1024px) {

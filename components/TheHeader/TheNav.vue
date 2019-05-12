@@ -7,14 +7,14 @@
             <img :src="logoImg" alt class="TheNav_Logo">
           </p>
         </li>
-        <li class="TheNav_Item">
-          <a @click="routing('home')" class="text--letterspace">Home</a>
+        <li class="TheNav_Item" @mouseenter="theNavBgOpen('home')" @touchstart="theNavBgOpen('home')">
+          <a @click="routing('home')" class="text--letterspace">Home<span class="TheNav_ItemBg" v-if="homeFlag"></span></a>
         </li>
-        <li class="TheNav_Item">
-          <a @click="routing('about')" class="text--letterspace">About</a>
+        <li class="TheNav_Item" @mouseenter="theNavBgOpen('about')" @touchstart="theNavBgOpen('about')">
+          <a @click="routing('about')" class="text--letterspace">About<span class="TheNav_ItemBg" v-if="aboutFlag"></span></a>
         </li>
-        <li class="TheNav_Item">
-          <a href="https://note.mu/ryosukefujiki" target="_blank" class="text--letterspace">Blogs</a>
+        <li class="TheNav_Item" @mouseenter="theNavBgOpen('blog')" @touchstart="theNavBgOpen('blog')">
+          <a href="https://note.mu/ryosukefujiki" target="_blank" class="text--letterspace">Blogs<span class="TheNav_ItemBg" v-if="blogFlag"></span></a>
         </li>
         <li class="TheNav_Item">
           <div class="TheNav_ItemIcons">
@@ -22,22 +22,28 @@
               href="https://dribbble.com/bighappy"
               class="TheNav_ItemIcon TheNav_ItemIcon_Dribbble"
               target="_blank"
+              @mouseenter="theNavBgOpen('dribbble')" @touchstart="theNavBgOpen('dribbble')"
             >
               <i class="fab fa-dribbble"></i>
+              <span class="TheNav_ItemBg" v-if="dribbleFlag"></span>
             </a>
             <a
               href="https://www.facebook.com/rfujiki0625"
               class="TheNav_ItemIcon TheNav_ItemIcon_Facebook"
               target="_blank"
+              @mouseenter="theNavBgOpen('facebook')" @touchstart="theNavBgOpen('facebook')"
             >
               <i class="fab fa-facebook-square"></i>
+              <span class="TheNav_ItemBg" v-if="facebookFlag"></span>
             </a>
             <a
               href="https://www.instagram.com/ryosukefujiki/"
               class="TheNav_ItemIcon TheNav_ItemIcon_Instagram"
               target="_blank"
+              @mouseenter="theNavBgOpen('instagram')" @touchstart="theNavBgOpen('instagram')"
             >
               <i class="fab fa-instagram"></i>
+              <span class="TheNav_ItemBg" v-if="instagramFlag"></span>
             </a>
           </div>
         </li>
@@ -72,7 +78,13 @@ export default {
     return {
       logoImg: "/home/new_logo.png",
       colorSwitchText: "Dark",
-      langSwitchText: "En"
+      langSwitchText: "En",
+      homeFlag: false,
+      aboutFlag: false,
+      blogFlag: false,
+      dribbleFlag: false,
+      facebookFlag: false,
+      instagramFlag: false,
     };
   },
   props: ["headerActive"],
@@ -111,7 +123,69 @@ export default {
         this.langSwitchText = "En"
         this.$store.commit("nav/langEnEntered")
       }
-    }
+    },
+    theNavBgOpen(val){
+      this.homeFlag = false
+      this.aboutFlag = false
+      this.blogFlag = false
+      this.dribbleFlag = false
+      this.facebookFlag = false
+      this.instagramFlag = false
+      if(val == 'home'){
+        this.homeFlag = true
+      }else if(val == 'about'){
+        this.aboutFlag = true
+      }else if(val == 'blog'){
+        this.blogFlag = true
+      }else if(val == 'dribbble'){
+        this.dribbleFlag = true
+      }else if(val == 'facebook'){
+        this.facebookFlag = true
+      }else if(val == 'instagram'){
+        this.instagramFlag = true
+      }
+      this.backgroundEnter()
+      this.backgroundLeave()
+    },
+    // opacityEnter () {
+    //    requestAnimationFrame(() => {
+    //     TweenMax.to('.TheWork_TitleText', 0, {
+    //       opacity: 0,
+    //       ease: Expo.easeOut,
+    //     })
+    //   })
+    //  },
+     backgroundEnter(){
+       requestAnimationFrame(() => {
+        TweenMax.to('.TheNav_ItemBg', 0.3, {
+          width: '102%',
+          ease: Expo.easeOut,
+          startAt: {
+            width: '0%',
+          }
+        })
+      })
+     },
+    //  opacityLeave () {
+    //    requestAnimationFrame(() => {
+    //     TweenMax.to('.TheWork_TitleText', 0.5, {
+    //       opacity: 1,
+    //       ease: Expo.easeOut,
+    //     })
+    //   })
+    //  },
+     backgroundLeave(){
+       requestAnimationFrame(() => {
+        TweenMax.to('.TheNav_ItemBg', 0.5, {
+          x: '120%',
+          ease: Expo.easeIn,
+          startAt: {
+            x: '0%',
+          }
+        })
+      })
+     },
+
     // ...mapMutations({
     //   aboutClick: 'aboutClick',
     // }),
@@ -162,11 +236,16 @@ export default {
 
 .TheNav nav {
   position: relative;
-  height: 50%;
+  // height: 50%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 36px;
   text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 48px;
 }
 
 .TheNav.open li {
@@ -190,8 +269,11 @@ export default {
   letter-spacing: 10px;
 }
 
+
 .TheNav_Item a {
   cursor: pointer;
+  overflow: hidden;
+  line-height: 48px;
 }
 
 .TheNav ul {
@@ -219,19 +301,21 @@ export default {
   position: relative;
   color: #272727;
   text-decoration: none;
+  transition-delay: 0.2s;
+  transition-timing-function:ease-out;
   /* overflow: hidden; */
 }
 
 .TheNav ul li a:hover,
 .TheNav ul li a:focus,
 .TheNav ul li a:active {
-  color: #d2dadf;
+  color: #9b9b9b;
 }
 .TheNav ul li a:hover:after,
 .TheNav ul li a:focus:after,
 .TheNav ul li a:active:after {
   width: 100%;
-  background: #d2dadf;
+  background: #9b9b9b;
 }
 
 .TheNav_ItemIcons {
@@ -260,7 +344,9 @@ export default {
   transform: translateX(-50%);
   height: 3px;
   background: #fff;
-  transition: 0.35s;
+  transition-delay: 0.2s;
+  transition-timing-function:ease-out;
+  transition-duration: 0.35s;
 }
 
 @keyframes fadeInRight {
@@ -272,6 +358,19 @@ export default {
     opacity: 1;
     left: 0;
   }
+}
+
+
+.TheNav_ItemBg{
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -2px;
+  width: 0%;
+  height: 120%;
+  background-color:#272727;
+  // opacity: 0.6;
+  z-index: 2;
 }
 
 
@@ -305,6 +404,7 @@ export default {
   background: #272727;
   color: #ffffff;
 }
+
 
 @media screen and (max-width: 480px) {
   .TheNav_Item {
@@ -348,6 +448,12 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
   transition: 0.15s;
+}
+
+.TheNav_Item a {
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 36px;
 }
 }
 </style>

@@ -14,7 +14,7 @@
     <TheHeader></TheHeader>
     <nuxt></nuxt>
     <!-- </div> -->
-    <TheFirstview></TheFirstview>
+    <!-- <TheFirstview></TheFirstview> -->
     <div class="TheBackgroundColor" :style="style">
       <div class="TheBackgroundInside"></div>
     </div>

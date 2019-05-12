@@ -87,7 +87,7 @@ $blackColor: #272727;
 }
 
 .TheHeader_Toggle:hover span{
-  background: #D2DADF;
+  background: #9b9b9b;
 }
 
 .TheHeader_Toggle span:nth-of-type(1) {
