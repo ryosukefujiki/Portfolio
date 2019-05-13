@@ -815,7 +815,7 @@ body,
     left: -24px;
     font-size: 12px;
     width: 140px;
-    height: 60px;
+    height: 10px;
   }
   .TheHero_Heding_Copy {
     width: 344px;
