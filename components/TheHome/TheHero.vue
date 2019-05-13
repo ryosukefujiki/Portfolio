@@ -166,6 +166,7 @@ export default {
   },
   methods: {
     acceleration(e) {
+      const userAgent = window.navigator.userAgent.toLowerCase();
       var x = parseFloat(e.acceleration.x);
       var y = parseFloat(e.acceleration.y);
       var z = parseFloat(e.acceleration.z);
