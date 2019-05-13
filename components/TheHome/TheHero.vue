@@ -66,7 +66,6 @@ export default {
   },
   mounted() {
     window.addEventListener("mousemove", this.mouseIsMoving);
-    window.addEventListener("devicemotion", this.acceleration);
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     let self = this;
@@ -165,43 +164,6 @@ export default {
     }
   },
   methods: {
-    acceleration(e) {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      var x = parseFloat(e.acceleration.x);
-      var y = parseFloat(e.acceleration.y);
-      var z = parseFloat(e.acceleration.z);
-      if (userAgent.indexOf("iPhone") > 0 ||
-          userAgent.indexOf("iPad") > 0 ||
-          userAgent.indexOf("iPod") > 0) {
-            x *= -1;
-            y *= -1;
-            z *= -1;
-      }
-      var convertX = Math.round(this.map(x, 0, 360, -20, 40));
-      var convertY = Math.round(this.map(y, 0, 360, -40, 20));
-      var rotateX = Math.round(this.map(x, 0, 360, 35, 45));
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheHero_WorkTrim", 0, {
-          x: convertX,
-          y: convertY,
-          rotationX: rotateX
-        });
-      });
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheHero_WorkBg_Second", 0, {
-          x: convertX,
-          y: convertY,
-          rotationX: rotateX
-        });
-      });
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheHero_WorkBg_Third", 0, {
-          x: convertX - 12,
-          y: convertY + 16,
-          rotationX: rotateX
-        });
-      });
-    },
     mouseIsMoving(e) {
       var x = e.pageX;
       var y = e.pageY;
