@@ -690,7 +690,7 @@ body,
     color: #9b9b9b;
     top: 256px;
     left: -136px;
-    font-size: 24px;
+    font-size: 16px;
   }
   .TheHero_Heding_Copy {
     width: 900px;
@@ -726,7 +726,7 @@ body,
     color: #9b9b9b;
     top: 336px;
     left: -48px;
-    font-size: 24px;
+    font-size: 16px;
   }
   .TheHero_Heding_Copy {
     width: 688px;
@@ -813,7 +813,9 @@ body,
     position: relative;
     top: -60px;
     left: -24px;
-    font-size: 16px;
+    font-size: 12px;
+    width: 140px;
+    height: 60px;
   }
   .TheHero_Heding_Copy {
     width: 344px;
