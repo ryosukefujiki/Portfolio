@@ -169,8 +169,8 @@ export default {
       var y = e.pageY
       console.log(x, y)
       console.log(this.width,this.height)
-      var convertX = Math.round(this.map(x,0,this.width,-30,30))
-      var convertY = Math.round(this.map(y,0,this.height,-30,30))
+      var convertX = Math.round(this.map(x,0,this.width,-20,40))
+      var convertY = Math.round(this.map(y,0,this.height,-40,20))
       var rotateX = Math.round(this.map(x,0,this.width,35,45))
       requestAnimationFrame(() => {
         TweenMax.to(".TheHero_WorkTrim", 0, {
@@ -595,12 +595,27 @@ body,
   position: relative;
   top: 80px;
   left: -228px;
+  // font-family: "Noto Sans", sans-serif;
+  // font-weight: bold;
   font-family: "Noto Sans", sans-serif;
-  // font-weight: 200;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 16px;
   z-index: 8;
   cursor: pointer;
   display: block;
+  background: #ffffff;
+  width: 200px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  border-radius: 100px;
+  text-align: center;
+  transition: 0.2s;
+  box-shadow: 0px 0px 4px 0px rgba(155, 155, 155, 0.2);
+}
+
+.TheHero_AnchorText:hover {
+  color: #ffffff;
+  background-color: #272727 !important;
 }
 
 .TheHero_Arrow {
