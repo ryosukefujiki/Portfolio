@@ -1,6 +1,6 @@
 <template>
   <div class="TheHero">
-    <div class="TheHero_Img" @click="heroClick()">
+    <div class="TheHero_Img">
       <div class="TheHero_WorkTrim">
         <img :src="homeImg" class="TheHero_WorkImg">
         <div v-bind:style="{background:backgroundColor}" class="TheHero_WorkBg_FadeIn"></div>
@@ -14,9 +14,10 @@
         <span class="TheHero_Heading_Text">{{headingCopy}}</span>
         <span class="TheHero_Bg" v-bind:style="{background:backgroundColor}"></span>
       </h2>
-      <p class="TheHero_AnchorText">Show me more
+      <a class="TheHero_AnchorText" @click="heroClick()">
+        Show me more
         <span class="TheHero_Arrow">→</span>
-      </p>
+      </a>
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Right">
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Left">
       <TheBackground class="TheBackground"></TheBackground>
@@ -56,16 +57,24 @@ export default {
       // foxColor: "#F79CAE",
       foxColor: "#F8C4D0",
       headingCopy: "COMMUNICATION",
+      width: null,
+      height: null,
       // backgroundWidth: "1024px",
       // familybookWidth: "1024px",
       // lineandballWidth: "360px"
     };
   },
   mounted() {
+    window.addEventListener("mousemove", this.mouseIsMoving);
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     let self = this;
     this.intervalId = setInterval(function() {
       self.changeHero();
     }, 5000);
+  },
+  destroyed: function() {
+    window.removeEventListener("mousemove", this.mouseIsMoving);
   },
   computed: {
     ...mapGetters({
@@ -76,41 +85,41 @@ export default {
     async homeFadeIn(val) {
       // ステートの`entered`が切り替わるたび、この処理が実行される
       // this.backgroundColor = this.familybookColor;
-      var random = Math.floor( Math.random () * 7) + 1;
-      switch( random ) {
+      var random = Math.floor(Math.random() * 7) + 1;
+      switch (random) {
         case 1:
           this.headingCopy = "COMMUNICATION";
-          this.homeImg = this.familybookHomeImg
+          this.homeImg = this.familybookHomeImg;
           this.backgroundColor = this.familybookColor;
           break;
         case 2:
           this.headingCopy = "GAME";
-          this.homeImg = this.lineandballHomeImg
+          this.homeImg = this.lineandballHomeImg;
           this.backgroundColor = this.lineandballColor;
           break;
         case 3:
           this.headingCopy = "WEB";
-          this.homeImg = this.playfulfesHomeImg
+          this.homeImg = this.playfulfesHomeImg;
           this.backgroundColor = this.playfulfesColor;
           break;
         case 4:
           this.headingCopy = "USER INTERFACE";
-          this.homeImg = this.scrapboardHomeImg
+          this.homeImg = this.scrapboardHomeImg;
           this.backgroundColor = this.scrapboardColor;
           break;
         case 5:
           this.headingCopy = "LOGO";
-          this.homeImg = this.hiveHomeImg
+          this.homeImg = this.hiveHomeImg;
           this.backgroundColor = this.hiveColor;
           break;
         case 6:
           this.headingCopy = "HARDWARE";
-          this.homeImg = this.foxHomeImg
+          this.homeImg = this.foxHomeImg;
           this.backgroundColor = this.foxColor;
           break;
         case 7:
           this.headingCopy = "TRADITION";
-          this.homeImg = this.norenHomeImg
+          this.homeImg = this.norenHomeImg;
           this.backgroundColor = this.norenColor;
           break;
       }
@@ -128,7 +137,7 @@ export default {
       this.reset();
       await this.$delay(600);
       this.resetOpacity2();
-      switch( random ) {
+      switch (random) {
         case 1:
           this.backgroundColor = this.lineandballColor;
           break;
@@ -155,6 +164,40 @@ export default {
     }
   },
   methods: {
+    mouseIsMoving(e) {
+      var x = e.pageX
+      var y = e.pageY
+      console.log(x, y)
+      console.log(this.width,this.height)
+      var convertX = Math.round(this.map(x,0,this.width,-30,30))
+      var convertY = Math.round(this.map(y,0,this.height,-30,30))
+      var rotateX = Math.round(this.map(x,0,this.width,35,45))
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkTrim", 0, {
+          x: convertX,
+          y: convertY,
+          rotationX: rotateX,
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkBg_Second", 0, {
+          x: convertX,
+          y: convertY,
+          rotationX: rotateX,
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".TheHero_WorkBg_Third", 0, {
+          x: convertX-12,
+          y: convertY+16,
+          rotationX: rotateX,
+        });
+      });
+      // console.log(convertX, convertY)
+    },
+    map(value, start1, end1, start2, end2) {
+      return start2 + (end2 - start2) * ((value - start1) / (end1 - start1))
+    },
     heroClick() {
       if (this.homeImg == this.familybookHomeImg) {
         this.$store.commit("familybook/click");
@@ -168,7 +211,7 @@ export default {
         this.$store.commit("hive/click");
       } else if (this.homeImg == this.foxHomeImg) {
         this.$store.commit("fox/click");
-      }else if (this.homeImg == this.norenHomeImg) {
+      } else if (this.homeImg == this.norenHomeImg) {
         this.$store.commit("noren/click");
       }
     },
@@ -200,9 +243,9 @@ export default {
         this.backgroundColor = this.hiveColor;
       } else if (this.backgroundColor == this.hiveColor) {
         this.backgroundColor = this.foxColor;
-      }else if (this.backgroundColor == this.foxColor) {
+      } else if (this.backgroundColor == this.foxColor) {
         this.backgroundColor = this.norenColor;
-      }else if (this.backgroundColor == this.norenColor) {
+      } else if (this.backgroundColor == this.norenColor) {
         this.backgroundColor = this.familybookColor;
       }
     },
@@ -222,10 +265,10 @@ export default {
       } else if (this.homeImg == this.hiveHomeImg) {
         this.homeImg = this.foxHomeImg;
         this.headingCopy = "HARDWARE";
-      }else if (this.homeImg == this.foxHomeImg) {
+      } else if (this.homeImg == this.foxHomeImg) {
         this.homeImg = this.norenHomeImg;
         this.headingCopy = "TRADITION";
-      }else if (this.homeImg == this.norenHomeImg) {
+      } else if (this.homeImg == this.norenHomeImg) {
         this.homeImg = this.familybookHomeImg;
         this.headingCopy = "COMMUNICATION";
       }
@@ -393,7 +436,7 @@ body,
   height: 450px;
   margin: 0 auto;
   position: relative;
-  cursor: pointer;
+  // cursor: pointer;
   transform: translate3d(0px, 0px, 0px);
 }
 
@@ -429,24 +472,24 @@ body,
   z-index: 3;
 }
 
-.TheHero_Img:hover .TheHero_WorkTrim {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-20px) translateY(28px)
-    translateZ(30px);
-}
-
-// .TheHero_Img:hover .TheHero_WorkBg_FadeIn{
-//   transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+// .TheHero_Img:hover .TheHero_WorkTrim {
+//   transform: rotateX(40deg) rotateZ(-20deg) translateX(-20px) translateY(28px)
+//     translateZ(30px);
 // }
 
-.TheHero_Img:hover .TheHero_WorkBg_Second {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px)
-    translateZ(20px);
-}
+// // .TheHero_Img:hover .TheHero_WorkBg_FadeIn{
+// //   transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px);
+// // }
 
-.TheHero_Img:hover .TheHero_WorkBg_Third {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px)
-    translateZ(10px);
-}
+// .TheHero_Img:hover .TheHero_WorkBg_Second {
+//   transform: rotateX(40deg) rotateZ(-20deg) translateX(-12px) translateY(16px)
+//     translateZ(20px);
+// }
+
+// .TheHero_Img:hover .TheHero_WorkBg_Third {
+//   transform: rotateX(40deg) rotateZ(-20deg) translateX(-24px) translateY(32px)
+//     translateZ(10px);
+// }
 
 .TheHero_WorkBg {
   width: 600px;
@@ -493,7 +536,7 @@ body,
   overflow: hidden;
   position: relative;
   top: 60px;
-  left: -240px;
+  left: -244px;
   z-index: 8;
   // -webkit-backface-visibility: hidden;
   transform: translate3d(0px, 0px, 400px);
@@ -501,14 +544,16 @@ body,
 
 .TheHero_Heding_Design {
   color: #454545;
+  // text-shadow: 6px 6px #ffffff;
   width: 400px;
   height: auto;
 }
 
 .TheHero_Heding_Copy {
-  width: 1024px;
+  width: 1032px;
   height: auto;
   text-shadow: rgba(125, 155, 155, 0.2) 0 0 8px;
+  // text-shadow: 6px 6px #ffffff;
 }
 
 .TheHero_Bg {
@@ -533,16 +578,16 @@ body,
   top: -360px;
   right: -520px;
   transform: rotateZ(90deg);
-   transform: translate3d(0px, 0px, -400px);
+  transform: translate3d(0px, 0px, -400px);
 }
 .TheHero_PointImg_Left {
   position: relative;
   top: -80px;
   left: -400px;
-   transform: translate3d(0px, 0px, -400px);
+  transform: translate3d(0px, 0px, -400px);
 }
-.TheBackground{
-   transform: translate3d(0px, 0px, -400px);
+.TheBackground {
+  transform: translate3d(0px, 0px, -400px);
 }
 
 .TheHero_AnchorText {
@@ -554,6 +599,8 @@ body,
   // font-weight: 200;
   font-size: 24px;
   z-index: 8;
+  cursor: pointer;
+  display: block;
 }
 
 .TheHero_Arrow {
@@ -671,30 +718,35 @@ body,
     top: 8px;
   }
 
-.TheHero_WorkTrim {
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(30px);
-}
+  .TheHero_WorkTrim {
+    transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px)
+      translateZ(30px);
+  }
 
-.TheHero_WorkBg_Second {
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-5px) translateY(4px) translateZ(20px);
-  z-index: 4;
-}
-.TheHero_WorkBg_Third {
-  transform: rotateX(45deg) rotateZ(-20deg) translateX(-10px) translateY(8px) translateZ(10px);
-  z-index: 3;
-}
-.TheHero_Img:hover .TheHero_WorkTrim {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px) translateZ(30px);
-}
+  .TheHero_WorkBg_Second {
+    transform: rotateX(45deg) rotateZ(-20deg) translateX(-5px) translateY(4px)
+      translateZ(20px);
+    z-index: 4;
+  }
+  .TheHero_WorkBg_Third {
+    transform: rotateX(45deg) rotateZ(-20deg) translateX(-10px) translateY(8px)
+      translateZ(10px);
+    z-index: 3;
+  }
+  .TheHero_Img:hover .TheHero_WorkTrim {
+    transform: rotateX(40deg) rotateZ(-20deg) translateX(0px) translateY(0px)
+      translateZ(30px);
+  }
 
-.TheHero_Img:hover .TheHero_WorkBg_Second {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-5px) translateY(4px) translateZ(20px);
-}
+  .TheHero_Img:hover .TheHero_WorkBg_Second {
+    transform: rotateX(40deg) rotateZ(-20deg) translateX(-5px) translateY(4px)
+      translateZ(20px);
+  }
 
-.TheHero_Img:hover .TheHero_WorkBg_Third {
-  transform: rotateX(40deg) rotateZ(-20deg) translateX(-10px) translateY(8px) translateZ(10px);
-}
-
+  .TheHero_Img:hover .TheHero_WorkBg_Third {
+    transform: rotateX(40deg) rotateZ(-20deg) translateX(-10px) translateY(8px)
+      translateZ(10px);
+  }
 
   .TheHero_Heading {
     width: 300px;
@@ -729,8 +781,6 @@ body,
     left: -40px;
     transform: rotateZ(90deg);
   }
-
-
 }
 @media screen and (max-width: 320px) {
   .TheHero {
