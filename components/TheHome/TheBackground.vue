@@ -26,7 +26,7 @@ export default {};
 <style lang="scss">
 .TheBackground {
 //   background: red;
-  width: 200%;
+  width: 160%;
   height: 150%;
   position: fixed;
   top: -25%;
