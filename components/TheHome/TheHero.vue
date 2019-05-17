@@ -14,10 +14,10 @@
         <span class="TheHero_Heading_Text">{{headingCopy}}</span>
         <span class="TheHero_Bg" v-bind:style="{background:backgroundColor}"></span>
       </h2>
-      <a class="TheHero_AnchorText">
+      <!-- <a class="TheHero_AnchorText">
         Show me more
         <span class="TheHero_Arrow">→</span>
-      </a>
+      </a> -->
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Right">
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Left">
       <TheBackground class="TheBackground"></TheBackground>
@@ -166,9 +166,9 @@ export default {
   methods: {
     mouseIsMoving(e) {
       if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
-        console.log("sp");
+        // console.log("sp");
       } else {
-        console.log("pc");
+        // console.log("pc");
         var x = e.pageX;
         var y = e.pageY;
         // console.log(x, y);
@@ -527,7 +527,7 @@ body,
 .TheHero_WorkImg {
   width: auto;
   height: 100%;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .TheHero_Heading {
@@ -607,7 +607,7 @@ body,
   font-weight: 700;
   font-size: 16px;
   z-index: 8;
-  cursor: pointer;
+  // cursor: pointer;
   display: block;
   background: #ffffff;
   width: 200px;
@@ -862,6 +862,7 @@ body,
   }
 }
 </style>
+
 
 
 
