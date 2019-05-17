@@ -92,7 +92,7 @@ $hover-black-color: #d2dadf;
 }
 
 .TheHome_Work:hover{
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .TheHome_Work:hover .TheHome_WorkBg{

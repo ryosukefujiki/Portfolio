@@ -30,7 +30,7 @@ $blackColor: #272727;
   right: 74px;
   z-index: 8;
   display: block;
-  cursor: pointer;
+  // cursor: pointer;
 }
 .TheScrollBtn_Img {
   height: 64px;

@@ -271,7 +271,7 @@ export default {
 
 
 .TheNav_Item a {
-  cursor: pointer;
+  // cursor: pointer;
   overflow: hidden;
   line-height: 48px;
 }
@@ -394,7 +394,7 @@ export default {
   width: 80px;
   padding-top: 10px;
   box-sizing: border-box;
-  cursor: pointer;
+  // cursor: pointer;
   transition: 0.15s;
   box-shadow: 0px 0px 4px 0px rgba(155, 155, 155, 0.2);
 }
@@ -446,12 +446,12 @@ export default {
   width: 68px;
   padding-top: 10px;
   box-sizing: border-box;
-  cursor: pointer;
+  // cursor: pointer;
   transition: 0.15s;
 }
 
 .TheNav_Item a {
-  cursor: pointer;
+  // cursor: pointer;
   overflow: hidden;
   line-height: 36px;
 }

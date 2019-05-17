@@ -58,7 +58,7 @@ $blackColor: #272727;
   left: 74px;
   z-index: 10;
   display: block;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .TheHeader_Toggle{
@@ -67,7 +67,7 @@ $blackColor: #272727;
   right: 74px;
   z-index: 10;
   display: block;
-  cursor: pointer;
+  // cursor: pointer;
 }
 .TheHeader_ToggleImg{
   height: 64px;

@@ -84,7 +84,7 @@ export default {
 }
 
 .TheHome_Work:hover{
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .TheHome_Work:hover .TheHome_WorkBg{
