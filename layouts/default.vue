@@ -1,5 +1,5 @@
 <template>
-  <div class="default" @mousemove="onMousemove">
+  <div class="default" @mousemove="onMousemove" @click="clickeMouse">
     <!-- <div id="scrollArea"> -->
     <TheNorenTransition></TheNorenTransition>
     <TheFoxTransition></TheFoxTransition>
@@ -128,6 +128,32 @@ export default {
   methods: {
     addCount(e) {
       this.$store.commit("counter/add");
+    },
+    clickeMouse(e){
+      var fWidth = 40; //フォロワーの大きさ
+      requestAnimationFrame(() => {
+          TweenMax.to(".cursor", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "border-radius": "2px",
+               width: "40px",
+               height: "40px",
+               x: e.x - fWidth / 2 + 2,
+               y: e.y - fWidth / 2 + 2
+            },
+          });
+          TweenMax.to(".cursor", 0.2, {
+            delay: 0.15,
+            ease: Expo.easeIn,
+            css:{
+               "border-radius": "50%",
+               width: "8px",
+               height: "8px",
+               x: e.x,
+               y: e.y,
+            },
+          });
+        });
     },
     onMousemove(e) {
       if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
