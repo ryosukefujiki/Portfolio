@@ -1,20 +1,20 @@
 <template>
   <div class="TheBackground">
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
+    <div class="grayball"></div>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {};
   top: -25%;
   left: -50%;
 }
-.firefly {
+.grayball {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -42,7 +42,7 @@ export default {};
   animation: ease 200s alternate infinite;
   pointer-events: none;
 }
-.firefly::before, .firefly::after {
+.grayball::before, .grayball::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -50,25 +50,25 @@ export default {};
   border-radius: 50%;
   transform-origin: -10vw;
 }
-.firefly::before {
+.grayball::before {
   background: #9b9b9b;
   opacity: 0.4;
   animation: drift ease alternate infinite;
 }
-.firefly::after {
+.grayball::after {
   background: white;
   opacity: 0;
 //   box-shadow: 0 0 0vw 0vw yellow;
 //   animation: drift ease alternate infinite, flash ease infinite;
 }
 
-.firefly:nth-child(1) {
+.grayball:nth-child(1) {
   animation-name: move1;
 }
-.firefly:nth-child(1)::before {
+.grayball:nth-child(1)::before {
   animation-duration: 12s;
 }
-.firefly:nth-child(1)::after {
+.grayball:nth-child(1)::after {
   animation-duration: 12s, 5276ms;
   animation-delay: 0ms, 5912ms;
 }
@@ -138,13 +138,13 @@ export default {};
     transform: translateX(35vw) translateY(-31vh) scale(0.98);
   }
 }
-.firefly:nth-child(2) {
+.grayball:nth-child(2) {
   animation-name: move2;
 }
-.firefly:nth-child(2)::before {
+.grayball:nth-child(2)::before {
   animation-duration: 13s;
 }
-.firefly:nth-child(2)::after {
+.grayball:nth-child(2)::after {
   animation-duration: 13s, 10833ms;
   animation-delay: 0ms, 4133ms;
 }
@@ -208,13 +208,13 @@ export default {};
     transform: translateX(-26vw) translateY(43vh) scale(0.83);
   }
 }
-.firefly:nth-child(3) {
+.grayball:nth-child(3) {
   animation-name: move3;
 }
-.firefly:nth-child(3)::before {
+.grayball:nth-child(3)::before {
   animation-duration: 15s;
 }
-.firefly:nth-child(3)::after {
+.grayball:nth-child(3)::after {
   animation-duration: 15s, 9813ms;
   animation-delay: 0ms, 997ms;
 }
@@ -296,13 +296,13 @@ export default {};
     transform: translateX(21vw) translateY(-19vh) scale(0.39);
   }
 }
-.firefly:nth-child(4) {
+.grayball:nth-child(4) {
   animation-name: move4;
 }
-.firefly:nth-child(4)::before {
+.grayball:nth-child(4)::before {
   animation-duration: 11s;
 }
-.firefly:nth-child(4)::after {
+.grayball:nth-child(4)::after {
   animation-duration: 11s, 6842ms;
   animation-delay: 0ms, 5840ms;
 }
@@ -393,13 +393,13 @@ export default {};
     transform: translateX(-45vw) translateY(-37vh) scale(0.26);
   }
 }
-.firefly:nth-child(5) {
+.grayball:nth-child(5) {
   animation-name: move5;
 }
-.firefly:nth-child(5)::before {
+.grayball:nth-child(5)::before {
   animation-duration: 11s;
 }
-.firefly:nth-child(5)::after {
+.grayball:nth-child(5)::after {
   animation-duration: 11s, 6252ms;
   animation-delay: 0ms, 6573ms;
 }
@@ -463,13 +463,13 @@ export default {};
     transform: translateX(42vw) translateY(35vh) scale(0.37);
   }
 }
-.firefly:nth-child(6) {
+.grayball:nth-child(6) {
   animation-name: move6;
 }
-.firefly:nth-child(6)::before {
+.grayball:nth-child(6)::before {
   animation-duration: 9s;
 }
-.firefly:nth-child(6)::after {
+.grayball:nth-child(6)::after {
   animation-duration: 9s, 5711ms;
   animation-delay: 0ms, 3867ms;
 }
@@ -548,13 +548,13 @@ export default {};
     transform: translateX(-33vw) translateY(-38vh) scale(0.92);
   }
 }
-.firefly:nth-child(7) {
+.grayball:nth-child(7) {
   animation-name: move7;
 }
-.firefly:nth-child(7)::before {
+.grayball:nth-child(7)::before {
   animation-duration: 17s;
 }
-.firefly:nth-child(7)::after {
+.grayball:nth-child(7)::after {
   animation-duration: 17s, 5648ms;
   animation-delay: 0ms, 7109ms;
 }
@@ -618,13 +618,13 @@ export default {};
     transform: translateX(-15vw) translateY(-39vh) scale(0.99);
   }
 }
-.firefly:nth-child(8) {
+.grayball:nth-child(8) {
   animation-name: move8;
 }
-.firefly:nth-child(8)::before {
+.grayball:nth-child(8)::before {
   animation-duration: 10s;
 }
-.firefly:nth-child(8)::after {
+.grayball:nth-child(8)::after {
   animation-duration: 10s, 8326ms;
   animation-delay: 0ms, 2388ms;
 }
@@ -691,13 +691,13 @@ export default {};
     transform: translateX(-8vw) translateY(-15vh) scale(0.58);
   }
 }
-.firefly:nth-child(9) {
+.grayball:nth-child(9) {
   animation-name: move9;
 }
-.firefly:nth-child(9)::before {
+.grayball:nth-child(9)::before {
   animation-duration: 10s;
 }
-.firefly:nth-child(9)::after {
+.grayball:nth-child(9)::after {
   animation-duration: 10s, 10367ms;
   animation-delay: 0ms, 4646ms;
 }
@@ -785,13 +785,13 @@ export default {};
     transform: translateX(15vw) translateY(-9vh) scale(0.98);
   }
 }
-.firefly:nth-child(10) {
+.grayball:nth-child(10) {
   animation-name: move10;
 }
-.firefly:nth-child(10)::before {
+.grayball:nth-child(10)::before {
   animation-duration: 16s;
 }
-.firefly:nth-child(10)::after {
+.grayball:nth-child(10)::after {
   animation-duration: 16s, 10698ms;
   animation-delay: 0ms, 8110ms;
 }
@@ -861,13 +861,13 @@ export default {};
     transform: translateX(-17vw) translateY(-30vh) scale(0.26);
   }
 }
-.firefly:nth-child(11) {
+.grayball:nth-child(11) {
   animation-name: move11;
 }
-.firefly:nth-child(11)::before {
+.grayball:nth-child(11)::before {
   animation-duration: 12s;
 }
-.firefly:nth-child(11)::after {
+.grayball:nth-child(11)::after {
   animation-duration: 12s, 9944ms;
   animation-delay: 0ms, 5752ms;
 }
@@ -949,13 +949,13 @@ export default {};
     transform: translateX(34vw) translateY(-27vh) scale(0.37);
   }
 }
-.firefly:nth-child(12) {
+.grayball:nth-child(12) {
   animation-name: move12;
 }
-.firefly:nth-child(12)::before {
+.grayball:nth-child(12)::before {
   animation-duration: 14s;
 }
-.firefly:nth-child(12)::after {
+.grayball:nth-child(12)::after {
   animation-duration: 14s, 9303ms;
   animation-delay: 0ms, 6742ms;
 }
@@ -1022,13 +1022,13 @@ export default {};
     transform: translateX(-5vw) translateY(27vh) scale(0.49);
   }
 }
-.firefly:nth-child(13) {
+.grayball:nth-child(13) {
   animation-name: move13;
 }
-.firefly:nth-child(13)::before {
+.grayball:nth-child(13)::before {
   animation-duration: 9s;
 }
-.firefly:nth-child(13)::after {
+.grayball:nth-child(13)::after {
   animation-duration: 9s, 5546ms;
   animation-delay: 0ms, 968ms;
 }
@@ -1116,13 +1116,13 @@ export default {};
     transform: translateX(-26vw) translateY(-48vh) scale(0.28);
   }
 }
-.firefly:nth-child(14) {
+.grayball:nth-child(14) {
   animation-name: move14;
 }
-.firefly:nth-child(14)::before {
+.grayball:nth-child(14)::before {
   animation-duration: 13s;
 }
-.firefly:nth-child(14)::after {
+.grayball:nth-child(14)::after {
   animation-duration: 13s, 7217ms;
   animation-delay: 0ms, 5865ms;
 }
@@ -1213,13 +1213,13 @@ export default {};
     transform: translateX(7vw) translateY(-25vh) scale(0.26);
   }
 }
-.firefly:nth-child(15) {
+.grayball:nth-child(15) {
   animation-name: move15;
 }
-.firefly:nth-child(15)::before {
+.grayball:nth-child(15)::before {
   animation-duration: 13s;
 }
-.firefly:nth-child(15)::after {
+.grayball:nth-child(15)::after {
   animation-duration: 13s, 7800ms;
   animation-delay: 0ms, 1711ms;
 }
