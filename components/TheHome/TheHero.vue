@@ -2,7 +2,7 @@
   <div class="TheHero">
     <div class="TheHero_Img">
       <div class="TheHero_WorkTrim">
-        <img :src="homeImg" class="TheHero_WorkImg">
+        <img :src="homeImg" class="TheHero_WorkImg" @click="heroClick()">
         <div v-bind:style="{background:backgroundColor}" class="TheHero_WorkBg_FadeIn"></div>
       </div>
       <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
@@ -14,7 +14,7 @@
         <span class="TheHero_Heading_Text">{{headingCopy}}</span>
         <span class="TheHero_Bg" v-bind:style="{background:backgroundColor}"></span>
       </h2>
-      <a class="TheHero_AnchorText" @click="heroClick()">
+      <a class="TheHero_AnchorText">
         Show me more
         <span class="TheHero_Arrow">→</span>
       </a>
@@ -165,35 +165,39 @@ export default {
   },
   methods: {
     mouseIsMoving(e) {
-      var x = e.pageX;
-      var y = e.pageY;
-      console.log(x, y);
-      console.log(this.width, this.height);
-      var convertX = Math.round(this.map(x, 0, this.width, -20, 40));
-      var convertY = Math.round(this.map(y, 0, this.height, -40, 20));
-      var rotateX = Math.round(this.map(x, 0, this.width, 35, 45));
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheHero_WorkTrim", 0, {
-          x: convertX,
-          y: convertY,
-          rotationX: rotateX
+      if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
+        console.log("sp");
+      } else {
+        console.log("pc");
+        var x = e.pageX;
+        var y = e.pageY;
+        // console.log(x, y);
+        // console.log(this.width, this.height);
+        var convertX = Math.round(this.map(x, 0, this.width, -20, 40));
+        var convertY = Math.round(this.map(y, 0, this.height, -40, 20));
+        var rotateX = Math.round(this.map(x, 0, this.width, 35, 45));
+        requestAnimationFrame(() => {
+          TweenMax.to(".TheHero_WorkTrim", 0, {
+            x: convertX,
+            y: convertY,
+            rotationX: rotateX
+          });
         });
-      });
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheHero_WorkBg_Second", 0, {
-          x: convertX,
-          y: convertY,
-          rotationX: rotateX
+        requestAnimationFrame(() => {
+          TweenMax.to(".TheHero_WorkBg_Second", 0, {
+            x: convertX,
+            y: convertY,
+            rotationX: rotateX
+          });
         });
-      });
-      requestAnimationFrame(() => {
-        TweenMax.to(".TheHero_WorkBg_Third", 0, {
-          x: convertX - 12,
-          y: convertY + 16,
-          rotationX: rotateX
+        requestAnimationFrame(() => {
+          TweenMax.to(".TheHero_WorkBg_Third", 0, {
+            x: convertX - 12,
+            y: convertY + 16,
+            rotationX: rotateX
+          });
         });
-      });
-      // console.log(convertX, convertY)
+      }
     },
     map(value, start1, end1, start2, end2) {
       return start2 + (end2 - start2) * ((value - start1) / (end1 - start1));
@@ -523,6 +527,7 @@ body,
 .TheHero_WorkImg {
   width: auto;
   height: 100%;
+  cursor: pointer;
 }
 
 .TheHero_Heading {
@@ -540,6 +545,7 @@ body,
   z-index: 8;
   // -webkit-backface-visibility: hidden;
   transform: translate3d(0px, 0px, 400px);
+  pointer-events: none;
 }
 
 .TheHero_Heding_Design {
