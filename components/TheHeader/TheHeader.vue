@@ -1,9 +1,9 @@
 <template>
   <header class="TheHeader">
         <h1 class="TheHeader_Title">
-            <img :src="headerTitle" alt="" class="TheHeader_TitleImg"  @click="routing('/')">
+            <img :src="headerTitle" alt="" class="TheHeader_TitleImg"  @click="routing('/')"  @mouseenter="mouseOver()" @mouseleave="mouseLeave()">
         </h1>
-        <div class="TheHeader_Toggle" :class="{'active': headerActive}" @click="toggleMenu">
+        <div class="TheHeader_Toggle" :class="{'active': headerActive}" @click="toggleMenu"  @mouseenter="mouseOver()" @mouseleave="mouseLeave()">
             <img :src="headerHamburgerBg" alt="" class="TheHeader_ToggleImg">
             <span></span>
             <span></span>
@@ -31,6 +31,14 @@ export default {
     TheNav,
   },
   methods: {
+    mouseOver(){
+      console.log("MouseOver")
+      this.$store.commit("mouseHover");
+    },
+    mouseLeave(){
+      console.log("MouseLeave")
+      this.$store.commit("mouseLeave");
+    },
     toggleMenu (){
       this.headerActive = !this.headerActive
     },
@@ -58,7 +66,7 @@ $blackColor: #272727;
   left: 74px;
   z-index: 10;
   display: block;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .TheHeader_Toggle{
@@ -67,7 +75,7 @@ $blackColor: #272727;
   right: 74px;
   z-index: 10;
   display: block;
-  cursor: pointer;
+  // cursor: pointer;
 }
 .TheHeader_ToggleImg{
   height: 64px;

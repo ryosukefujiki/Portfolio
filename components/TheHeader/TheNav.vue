@@ -8,13 +8,13 @@
           </p>
         </li>
         <li class="TheNav_Item" @mouseenter="theNavBgOpen('home')" @touchstart="theNavBgOpen('home')">
-          <a @click="routing('home')" class="text--letterspace">Home<span class="TheNav_ItemBg" v-if="homeFlag"></span></a>
+          <a @click="routing('home')" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" class="text--letterspace">Home<span class="TheNav_ItemBg" v-if="homeFlag"></span></a>
         </li>
         <li class="TheNav_Item" @mouseenter="theNavBgOpen('about')" @touchstart="theNavBgOpen('about')">
-          <a @click="routing('about')" class="text--letterspace">About<span class="TheNav_ItemBg" v-if="aboutFlag"></span></a>
+          <a @click="routing('about')" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" class="text--letterspace">About<span class="TheNav_ItemBg" v-if="aboutFlag"></span></a>
         </li>
         <li class="TheNav_Item" @mouseenter="theNavBgOpen('blog')" @touchstart="theNavBgOpen('blog')">
-          <a href="https://note.mu/ryosukefujiki" target="_blank" class="text--letterspace">Blogs<span class="TheNav_ItemBg" v-if="blogFlag"></span></a>
+          <a href="https://note.mu/ryosukefujiki" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" target="_blank" class="text--letterspace">Blogs<span class="TheNav_ItemBg" v-if="blogFlag"></span></a>
         </li>
         <li class="TheNav_Item">
           <div class="TheNav_ItemIcons">
@@ -22,6 +22,7 @@
               href="https://dribbble.com/bighappy"
               class="TheNav_ItemIcon TheNav_ItemIcon_Dribbble"
               target="_blank"
+              @mouseleave="mouseLeave()"
               @mouseenter="theNavBgOpen('dribbble')" @touchstart="theNavBgOpen('dribbble')"
             >
               <i class="fab fa-dribbble"></i>
@@ -31,6 +32,7 @@
               href="https://www.facebook.com/rfujiki0625"
               class="TheNav_ItemIcon TheNav_ItemIcon_Facebook"
               target="_blank"
+              @mouseleave="mouseLeave()"
               @mouseenter="theNavBgOpen('facebook')" @touchstart="theNavBgOpen('facebook')"
             >
               <i class="fab fa-facebook-square"></i>
@@ -40,6 +42,7 @@
               href="https://www.instagram.com/ryosukefujiki/"
               class="TheNav_ItemIcon TheNav_ItemIcon_Instagram"
               target="_blank"
+              @mouseleave="mouseLeave()"
               @mouseenter="theNavBgOpen('instagram')" @touchstart="theNavBgOpen('instagram')"
             >
               <i class="fab fa-instagram"></i>
@@ -53,6 +56,7 @@
               href="https://dribbble.com/bighappy"
               class="TheNav_ItemSwitch"
               @click="toggleColor"
+              @mouseenter="mouseOver()" @mouseleave="mouseLeave()"
             >
               {{colorSwitchText}}
             </p>
@@ -60,6 +64,7 @@
               href="https://dribbble.com/bighappy"
               class="TheNav_ItemSwitch"
               @click="toggleLanguage"
+              @mouseenter="mouseOver()" @mouseleave="mouseLeave()"
             >
               {{langSwitchText}}
             </p>
@@ -94,6 +99,14 @@ export default {
     })
   },
   methods: {
+    mouseOver(){
+      console.log("MouseOver")
+      this.$store.commit("mouseHover");
+    },
+    mouseLeave(){
+      console.log("MouseLeave")
+      this.$store.commit("mouseLeave");
+    },
     routing(url) {
       this.$parent.toggleMenu();
       if (url == "home" && this.$route.path != "/") {
@@ -125,6 +138,7 @@ export default {
       }
     },
     theNavBgOpen(val){
+      this.mouseOver()
       this.homeFlag = false
       this.aboutFlag = false
       this.blogFlag = false
@@ -271,7 +285,7 @@ export default {
 
 
 .TheNav_Item a {
-  cursor: pointer;
+  // cursor: pointer;
   overflow: hidden;
   line-height: 48px;
 }
@@ -394,7 +408,7 @@ export default {
   width: 80px;
   padding-top: 10px;
   box-sizing: border-box;
-  cursor: pointer;
+  // cursor: pointer;
   transition: 0.15s;
   box-shadow: 0px 0px 4px 0px rgba(155, 155, 155, 0.2);
 }
@@ -446,12 +460,12 @@ export default {
   width: 68px;
   padding-top: 10px;
   box-sizing: border-box;
-  cursor: pointer;
+  // cursor: pointer;
   transition: 0.15s;
 }
 
 .TheNav_Item a {
-  cursor: pointer;
+  // cursor: pointer;
   overflow: hidden;
   line-height: 36px;
 }

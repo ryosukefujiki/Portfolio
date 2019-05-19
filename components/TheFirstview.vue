@@ -122,7 +122,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 12;
+  z-index: 40;
   overflow: hidden;
   // padding-top: 320px;
   display: flex;
@@ -171,5 +171,6 @@ export default {
   margin: 0 auto;
 }
 </style>
+
 
 
