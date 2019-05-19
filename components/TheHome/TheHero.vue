@@ -465,6 +465,7 @@ body,
   z-index: 5;
   box-shadow: 0px 0px 20px 0px rgba(155, 155, 155, 0.2);
   transition: 0.3s;
+  background: #ffffff;
 }
 
 .TheHero_WorkBg_Second {
