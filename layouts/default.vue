@@ -108,13 +108,19 @@ export default {
     return {
       style: {
         "background-color": this.$store.state.nav.style["background-color"]
-      }
+      },
+      mouseX: 0,
+      mouseY: 0,
+      fWidth: 40,
+      offset: 0,
     };
   },
   computed: {
     ...mapGetters({
       colorBlack: "nav/colorBlack",
-      langEn: "nav/langEn"
+      langEn: "nav/langEn",
+      mouseOver: "mouseHover",
+      // mouseLeave: "mouseLeave"
     })
   },
   watch: {
@@ -123,14 +129,52 @@ export default {
         "background-color"
       ];
     },
-    async langEn(val) {}
+    async mouseOver(val) {
+      console.log(this.$store.state.mouseHover)
+      if(this.$store.state.mouseHover == true){
+        // this.fWidth = 20
+        // this.offset = 2
+        this.offset = 2
+        requestAnimationFrame(() => {
+          TweenMax.to(".cursor", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "background-color": "rgba(175, 175, 175, 0.6)",
+            },
+          });
+           TweenMax.to(".follower", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "border": "2px solid rgba(175, 175, 175, 0.6)",
+            },
+          });
+        });
+      }else{
+        // this.fWidth = 40
+        // this.offset = 0
+        requestAnimationFrame(() => {
+          TweenMax.to(".cursor", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "background-color": "rgba(0, 0, 0, 0.6)",
+            },
+          });
+           TweenMax.to(".follower", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "border": "2px solid rgba(0, 0, 0, 0.6)",
+            },
+          });
+        });
+      }
+    },
   },
   methods: {
     addCount(e) {
       this.$store.commit("counter/add");
     },
     clickeMouse(e){
-      var fWidth = 40; //フォロワーの大きさ
+      this.offset = 2
       requestAnimationFrame(() => {
           TweenMax.to(".cursor", 0.1, {
             ease: Expo.easeOut,
@@ -138,10 +182,13 @@ export default {
               "border-radius": "2px",
                width: "40px",
                height: "40px",
-               x: e.x - fWidth / 2 + 2,
-               y: e.y - fWidth / 2 + 2
+               x: this.mouseX - this.fWidth / 2 + this.offset,
+               y: this.mouseY - this.fWidth / 2 + this.offset
             },
           });
+        });
+        requestAnimationFrame(() => {
+          this.offset = 0
           TweenMax.to(".cursor", 0.2, {
             delay: 0.15,
             ease: Expo.easeIn,
@@ -149,35 +196,47 @@ export default {
                "border-radius": "50%",
                width: "8px",
                height: "8px",
-               x: e.x,
-               y: e.y,
+               x: this.mouseX + this.offset/2,
+               y: this.mouseY + this.offset/2,
+            },
+          });
+        });
+        // this.$delay(2200);
+        // this.$store.commit("mouseLeave");
+        requestAnimationFrame(() => {
+          TweenMax.to(".cursor", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "background-color": "rgba(0, 0, 0, 0.6)",
+            },
+          });
+           TweenMax.to(".follower", 0.1, {
+            ease: Expo.easeOut,
+            css:{
+              "border": "2px solid rgba(0, 0, 0, 0.6)",
             },
           });
         });
     },
     onMousemove(e) {
+      if(this.$store.state.mouseHover == false){
+        this.offset = 0
+      }
       if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
       } else {
-        var cWidth = 8; //カーソルの大きさ
-        var fWidth = 40; //フォロワーの大きさ
-        var delay = 10; //数字を大きくするとフォロワーがより遅れて来る
-        var mouseX = 0; //マウスのX座標
-        var mouseY = 0; //マウスのY座標
-        var posX = 0; //フォロワーのX座標
-        var posY = 0; //フォロワーのX座標
+        this.mouseX = e.x; //マウスのX座標
+        this.mouseY = e.y; //マウスのY座標
 
         requestAnimationFrame(() => {
-          posX += (e.x - posX) / delay;
-          posY += (e.y - posY) / delay;
           TweenMax.to(".cursor", 0, {
-            x: e.x,
-            y: e.y
+            x: this.mouseX + this.offset,
+            y: this.mouseY + this.offset
           });
           TweenMax.to(".follower", 0, {
             delay: 0.1,
             ease: Expo.easeOut,
-            x: e.x - fWidth / 2,
-            y: e.y - fWidth / 2
+            x: this.mouseX - this.fWidth / 2,
+            y: this.mouseY - this.fWidth / 2
           });
         });
       }

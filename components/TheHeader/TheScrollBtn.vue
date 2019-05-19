@@ -1,5 +1,5 @@
 <template>
-  <div class="TheScrollBtn">
+  <div class="TheScrollBtn" @mouseenter="mouseOver()" @mouseleave="mouseLeave()">
     <img :src="headerHamburgerBg" alt class="TheScrollBtn_Img">
     <span></span>
     <span></span>
@@ -16,7 +16,16 @@ export default {
   },
 
   components: {},
-  methods: {}
+  methods: {
+     mouseOver(){
+      console.log("MouseOver")
+      this.$store.commit("mouseHover");
+    },
+    mouseLeave(){
+      console.log("MouseLeave")
+      this.$store.commit("mouseLeave");
+    },
+  }
 };
 </script>
 

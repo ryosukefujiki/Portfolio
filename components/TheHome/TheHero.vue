@@ -2,7 +2,7 @@
   <div class="TheHero">
     <div class="TheHero_Img">
       <div class="TheHero_WorkTrim">
-        <img :src="homeImg" class="TheHero_WorkImg" @click="heroClick()">
+        <img :src="homeImg" class="TheHero_WorkImg" @click="heroClick()" @mouseenter="mouseOver()" @mouseleave="mouseLeave()">
         <div v-bind:style="{background:backgroundColor}" class="TheHero_WorkBg_FadeIn"></div>
       </div>
       <div class="TheHero_WorkBg TheHero_WorkBg_Second"></div>
@@ -201,6 +201,14 @@ export default {
     },
     map(value, start1, end1, start2, end2) {
       return start2 + (end2 - start2) * ((value - start1) / (end1 - start1));
+    },
+    mouseOver(){
+      console.log("MouseOver")
+      this.$store.commit("mouseHover");
+    },
+    mouseLeave(){
+      console.log("MouseLeave")
+      this.$store.commit("mouseLeave");
     },
     heroClick() {
       if (this.homeImg == this.familybookHomeImg) {
@@ -518,6 +526,7 @@ body,
   box-shadow: 0px 0px 10px 0px rgba(155, 155, 155, 0.2);
   transition: 0.3s;
   z-index: 7;
+  pointer-events: none;
   // transform: rotateX(45deg) rotateZ(-20deg) translateX(0px) translateY(0px);
 
   // animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(.77,0,.175,1),secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(.77,0,.175,1);

@@ -1,6 +1,6 @@
 <template>
    <div class="TheHome_Work">
-            <a @click="click">
+            <a @click="click" @mouseenter="mouseOver()" @mouseleave="mouseLeave()">
                 <div class="TheHome_WorkBg">
                 </div>
                 <div class="TheHome_WorkTrim">
@@ -26,6 +26,14 @@ export default {
     })
   },
   methods: {
+    mouseOver(){
+      console.log("MouseOver")
+      this.$store.commit("mouseHover");
+    },
+    mouseLeave(){
+      console.log("MouseLeave")
+      this.$store.commit("mouseLeave");
+    },
     routing(url){
       this.$router.push(url)
     },
