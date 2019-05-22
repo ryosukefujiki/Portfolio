@@ -1,9 +1,15 @@
 <template>
-  <div class="TheFirstview" v-if='!killed'>
+  <div class="TheFirstview">
+    <div class="TheFirstviewTransition" v-if='!killed'></div>
+    <div class="TheFirstviewTransition" v-if='!killed'></div>
+    <div class="TheFirstviewTransition" v-if='!killed'>
     <!-- <p class="TheFirstview_Text TheFirstview_PercentText">{{number}}%</p> -->
-    <p class="TheFirstview_Text TheFirstview_PercentText"><img :src="logoImg" alt="" class="TheFirstview_Logo"><img :src="nameImg" alt="" class="TheFirstview_Name"></p>
-    <p class="TheFirstview_Text">{{loadingText}}</p>
-    <BarLoader class="BarLoader"></BarLoader>
+      <p class="TheFirstview_Text TheFirstview_PercentText"><img :src="logoImg" alt="" class="TheFirstview_Logo"><img :src="nameImg" alt="" class="TheFirstview_Name"></p>
+      <p class="TheFirstview_Text">{{loadingText}}</p>
+      <BarLoader class="BarLoader"></BarLoader>
+    </div>
+    <div class="TheFirstviewTransition" v-if='!killed'></div>
+    <div class="TheFirstviewTransition" v-if='!killed'></div>
   </div>
 </template>
 
@@ -95,17 +101,21 @@ export default {
      async entered(val) {
        await this.$delay(1500);
        requestAnimationFrame(() => {
-        TweenMax.to(".TheFirstview", 0.55, {
+        TweenMax.staggerTo(".TheFirstviewTransition", 0.55, {
           x: '100%',
-          ease: Expo.easeIn,
-          startAt: {
-              x: '0%',
-          },
-        })
-      });
+          ease: Expo.easeIn
+        },0.04)
+      })
       // await this.$delay(3000);
-      // this.$store.commit("homeFadeIn");
-      // this.$store.commit("about/aboutMoved");
+      //  requestAnimationFrame(() => {
+      //   TweenMax.staggerTo(".TheFirstview", 0.1, {
+      //     x: '100%',
+      //     ease: Expo.easeIn
+      //   })
+      // })
+      // // await this.$delay(3000);
+      // // this.$store.commit("homeFadeIn");
+      // // this.$store.commit("about/aboutMoved");
       await this.$delay(3000);
       this.$store.commit("firstview/kill");
      }
@@ -118,17 +128,27 @@ export default {
 .TheFirstview{
   width: 100%;
   height: 100%;
-  background: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 40;
   overflow: hidden;
   // padding-top: 320px;
+  pointer-events: none;
+}
+
+.TheFirstviewTransition{
+  background: #ffffff;
+  position: relative;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 20%;
   display: flex;
   justify-content :center;
   align-items: center;
   flex-direction: column;
+  pointer-events: auto;
 }
 .TheFirstview_Text{
   margin: 0 auto;
