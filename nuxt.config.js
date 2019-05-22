@@ -43,6 +43,11 @@ module.exports = {
     '~plugins/scroll.js',
     '~/plugins/vue-scrollto.js'
   ],
+  modules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-100786231-2'
+    }]
+  ],
   /*
   ** Build configuration
   */
