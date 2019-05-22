@@ -136,16 +136,16 @@ export default {
         // this.offset = 2
         this.offset = 2
         requestAnimationFrame(() => {
-          TweenMax.to(".cursor", 0.1, {
+          TweenMax.to(".cursor", 0.2, {
             ease: Expo.easeOut,
             css:{
-              "background-color": "rgba(175, 175, 175, 0.6)",
+              "background-color": "rgba(255, 31, 85, 1.0)",
             },
           });
-           TweenMax.to(".follower", 0.1, {
+           TweenMax.to(".follower", 0.2, {
             ease: Expo.easeOut,
             css:{
-              "border": "2px solid rgba(175, 175, 175, 0.6)",
+              "border": "2px solid rgba(255, 31, 85, 1.0)",
             },
           });
         });
@@ -153,13 +153,13 @@ export default {
         // this.fWidth = 40
         // this.offset = 0
         requestAnimationFrame(() => {
-          TweenMax.to(".cursor", 0.1, {
+          TweenMax.to(".cursor", 0.2, {
             ease: Expo.easeOut,
             css:{
               "background-color": "rgba(0, 0, 0, 0.6)",
             },
           });
-           TweenMax.to(".follower", 0.1, {
+           TweenMax.to(".follower", 0.2, {
             ease: Expo.easeOut,
             css:{
               "border": "2px solid rgba(0, 0, 0, 0.6)",
