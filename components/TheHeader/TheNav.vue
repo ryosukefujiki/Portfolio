@@ -81,7 +81,7 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      logoImg: "/home/new_logo.png",
+      logoImg: "/home/logo.png",
       colorSwitchText: "Dark",
       langSwitchText: "En",
       homeFlag: false,
@@ -213,6 +213,7 @@ export default {
 .TheNav {
   z-index: 9;
   position: fixed;
+  // background: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.8);
   top: 0;
   left: 0;
@@ -238,8 +239,10 @@ export default {
   margin-bottom: 12px;
 }
 .TheNav_Logo {
-  width: 48px;
-  height: 48px;
+  // width: 48px;
+  // height: 48px;
+  width: 24px;
+  height: 30px;
 }
 
 .TheNav.open {
@@ -433,8 +436,8 @@ export default {
     width: 160px;
   }
   .TheNav_Logo {
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 30px;
   }
 
   .TheNav nav {

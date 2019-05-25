@@ -93,7 +93,8 @@ computed: {
     left: 0;
     width: 100%;
     height: 20%;
-    background: #D2DADF;
+    background: #fcfcfc;
+    // background: #FF005B;
     transform: translateX(-100%);
     transform-origin: left center;
 
@@ -106,7 +107,8 @@ computed: {
 
 
 .TheTransition_Category {
-    color: #FCFCFC;
+    color: #9b9b9b;
+    // color: #ffffff;
     text-align: center;
     font-size: 28px;
     z-index: 12;

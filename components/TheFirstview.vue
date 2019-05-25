@@ -22,7 +22,7 @@ export default {
     return {
       number: 0,
       intervalId: undefined,
-      logoImg: "/home/new_logo.png",
+      logoImg: "/home/logo.png",
       nameImg: "/home/name.png",
       loadingText: "LOADING NOW ...",
     }
@@ -161,8 +161,12 @@ export default {
   margin-bottom: 8px;
 }
 .TheFirstview_Logo{
-  width: 56px;
-  height: 56px;
+  // width: 56px;
+  // height: 56px;
+  width: 24px;
+  height: 30px;
+  padding-bottom: 12px;
+  margin-right: 8px;
   display: inline-block;
   animation: rotate 3000ms ease-out 2;
 }
