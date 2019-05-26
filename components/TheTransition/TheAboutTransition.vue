@@ -1,12 +1,12 @@
 <template>
 <div class='TheTransition TheAboutTransition'>
-  <div class='TheTransition_Background TheAbout_Background' ref='background'></div>
-  <div class='TheTransition_Background TheAbout_Background' ref='background'></div>
-    <div class='TheTransition_Background TheAbout_Background' ref='background'>
+  <div class='TheTransition_Background TheAbout_Background' ref='background' :style="style"></div>
+  <div class='TheTransition_Background TheAbout_Background' ref='background' :style="style"></div>
+    <div class='TheTransition_Background TheAbout_Background' ref='background' :style="style">
         <p class='TheTransition_Category' ref='category'>About</p>
     </div>
-    <div class='TheTransition_Background TheAbout_Background' ref='background'></div>
-    <div class='TheTransition_Background TheAbout_Background' ref='background'></div>
+    <div class='TheTransition_Background TheAbout_Background' ref='background' :style="style"></div>
+    <div class='TheTransition_Background TheAbout_Background' ref='background' :style="style"></div>
 </div>
 </template>
 
@@ -17,12 +17,25 @@ import {mapGetters} from 'vuex'
 import {TweenMax, Expo, Elastic} from 'gsap'
 
 export default {
+  data() {
+    return {
+      style: {
+        "background-color": this.$store.state.nav.style["background-color"]
+      },
+    };
+  },
   computed: {
     ...mapGetters({
-      aboutEntered: 'about/aboutEntered'
+      aboutEntered: 'about/aboutEntered',
+      colorBlack: "nav/colorBlack",
     })
   },
   watch: {
+    async colorBlack(val) {
+      this.style["background-color"] = this.$store.state.nav.style[
+        "background-color"
+      ];
+    },
     async aboutEntered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
@@ -52,6 +65,7 @@ export default {
       this.$store.commit('about/aboutMove')
     },
     async set (){
+      console.log(this.style)
       requestAnimationFrame(() => {
         TweenMax.staggerTo(".TheAbout_Background", 0, {
           opacity: '0%',
@@ -93,10 +107,9 @@ export default {
     left: 0;
     width: 100%;
     height: 20%;
-    background: #fcfcfc;
+    background-color: #fcfcfc;
     transform: translateX(-100%);
     transform-origin: left center;
-
     display: flex;
     justify-content: center;
     align-items: center;

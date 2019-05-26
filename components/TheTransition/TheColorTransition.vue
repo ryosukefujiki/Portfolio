@@ -3,7 +3,7 @@
   <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
   <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
     <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}">
-        <p class='TheTransition_Category' ref='category' v-bind:class="{textBlack: !colorBlackEnter}">{{title}}</p>
+        <p class='TheTransition_Category' ref='category'>{{title}}</p>
     </div>
     <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
   <div class='TheTransition_Background TheColor_Background' ref='background' v-bind:class="{backgroundBlack: !colorBlackEnter}"></div>
@@ -130,7 +130,7 @@ export default {
 
 
 .TheTransition_Category {
-    color: #ffffff;
+    color: #9b9b9b;
     text-align: center;
     font-size: 28px;
     z-index: 12;

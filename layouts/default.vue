@@ -20,8 +20,8 @@
     </div>
     <!-- <TheAudio></TheAudio>  -->
     <!-- <TheFooter></TheFooter> -->
-    <div class="cursor" ref="cursor"></div>
-    <div class="follower" ref="follower"></div>
+    <div class="cursor" ref="cursor" :style="cursorStyle"></div>
+    <div class="follower" ref="follower" :style="followerStyle"></div>
   </div>
 </template>
 
@@ -43,19 +43,19 @@ import { mapGetters } from "vuex";
 
 export default {
   mounted() {
-     if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
-        console.log("sp");
-        requestAnimationFrame(() => {
-          TweenMax.to(".cursor", 0, {
-            opacity: 0,
-          });
-        })
-        requestAnimationFrame(() => {
-          TweenMax.to(".follower", 0, {
-            opacity: 0,
-          });
-        })
-      }
+    if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
+      console.log("sp");
+      requestAnimationFrame(() => {
+        TweenMax.to(".cursor", 0, {
+          opacity: 0
+        });
+      });
+      requestAnimationFrame(() => {
+        TweenMax.to(".follower", 0, {
+          opacity: 0
+        });
+      });
+    }
     const userAgent = window.navigator.userAgent.toLowerCase();
     if (userAgent.indexOf("msie") != -1 || userAgent.indexOf("trident") != -1) {
       // console.log('Internet Explorerをお使いですね');
@@ -109,17 +109,23 @@ export default {
       style: {
         "background-color": this.$store.state.nav.style["background-color"]
       },
+      cursorStyle: {
+        "background-color": this.$store.state.nav.style["mouse-color"]
+      },
+      followerStyle: {
+        "border-color": this.$store.state.nav.style["mouse-color"]
+      },
       mouseX: 0,
       mouseY: 0,
       fWidth: 40,
-      offset: 0,
+      offset: 0
     };
   },
   computed: {
     ...mapGetters({
       colorBlack: "nav/colorBlack",
       langEn: "nav/langEn",
-      mouseOver: "mouseHover",
+      mouseOver: "mouseHover"
       // mouseLeave: "mouseLeave"
     })
   },
@@ -128,99 +134,139 @@ export default {
       this.style["background-color"] = this.$store.state.nav.style[
         "background-color"
       ];
+      this.cursorStyle["background-color"] = this.$store.state.nav.style[
+        "mouse-color"
+      ];
+      this.followerStyle["border-color"] = this.$store.state.nav.style[
+        "mouse-color"
+      ];
     },
     async mouseOver(val) {
-      console.log(this.$store.state.mouseHover)
-      if(this.$store.state.mouseHover == true){
+      // console.log(this.$store.state.mouseHover)
+      if (this.$store.state.mouseHover == true) {
         // this.fWidth = 20
         // this.offset = 2
-        this.offset = 2
+        this.offset = 2;
         requestAnimationFrame(() => {
           TweenMax.to(".cursor", 0.2, {
             ease: Expo.easeOut,
-            css:{
-              "background-color": "rgba(255, 31, 85, 1.0)",
-            },
+            css: {
+              "background-color": "rgba(255, 30, 85, 1.0)"
+            }
           });
-           TweenMax.to(".follower", 0.2, {
+          TweenMax.to(".follower", 0.2, {
             ease: Expo.easeOut,
-            css:{
-              "border": "2px solid rgba(255, 31, 85, 1.0)",
-            },
+            css: {
+              border: "2px solid rgba(255, 30, 85, 1.0)"
+            }
           });
         });
-      }else{
+      } else {
         // this.fWidth = 40
         // this.offset = 0
-        requestAnimationFrame(() => {
-          TweenMax.to(".cursor", 0.2, {
-            ease: Expo.easeOut,
-            css:{
-              "background-color": "rgba(0, 0, 0, 0.6)",
-            },
+        if (this.colorBlack == true) {
+          requestAnimationFrame(() => {
+            TweenMax.to(".cursor", 0.2, {
+              ease: Expo.easeOut,
+              css: {
+                "background-color": "rgba(255, 255, 255, 0.8)"
+              }
+            });
+            TweenMax.to(".follower", 0.2, {
+              ease: Expo.easeOut,
+              css: {
+                border: "2px solid rgba(255, 255, 255, 0.8)"
+              }
+            });
           });
-           TweenMax.to(".follower", 0.2, {
-            ease: Expo.easeOut,
-            css:{
-              "border": "2px solid rgba(0, 0, 0, 0.6)",
-            },
+        } else {
+          requestAnimationFrame(() => {
+            TweenMax.to(".cursor", 0.2, {
+              ease: Expo.easeOut,
+              css: {
+                "background-color": "rgba(0, 0, 0, 0.8)"
+              }
+            });
+            TweenMax.to(".follower", 0.2, {
+              ease: Expo.easeOut,
+              css: {
+                border: "2px solid rgba(0, 0, 0, 0.8)"
+              }
+            });
           });
-        });
+        }
       }
-    },
+    }
   },
   methods: {
     addCount(e) {
       this.$store.commit("counter/add");
     },
-    clickeMouse(e){
-      this.offset = 2
+    clickeMouse(e) {
+      this.offset = 2;
       requestAnimationFrame(() => {
+        TweenMax.to(".cursor", 0.1, {
+          ease: Expo.easeOut,
+          css: {
+            "border-radius": "2px",
+            width: "40px",
+            height: "40px",
+            x: this.mouseX - this.fWidth / 2 + this.offset,
+            y: this.mouseY - this.fWidth / 2 + this.offset
+          }
+        });
+      });
+      requestAnimationFrame(() => {
+        this.offset = 0;
+        TweenMax.to(".cursor", 0.2, {
+          delay: 0.15,
+          ease: Expo.easeIn,
+          css: {
+            "border-radius": "50%",
+            width: "8px",
+            height: "8px",
+            x: this.mouseX + this.offset / 2,
+            y: this.mouseY + this.offset / 2
+          }
+        });
+      });
+      // this.$delay(2200);
+      // this.$store.commit("mouseLeave");
+      if (this.colorBlack == true) {
+        requestAnimationFrame(() => {
           TweenMax.to(".cursor", 0.1, {
             ease: Expo.easeOut,
-            css:{
-              "border-radius": "2px",
-               width: "40px",
-               height: "40px",
-               x: this.mouseX - this.fWidth / 2 + this.offset,
-               y: this.mouseY - this.fWidth / 2 + this.offset
-            },
+            css: {
+              "background-color": "rgba(255, 255, 255, 0.8)"
+            }
+          });
+          TweenMax.to(".follower", 0.1, {
+            ease: Expo.easeOut,
+            css: {
+              border: "2px solid rgba(255, 255, 255, 0.8)"
+            }
           });
         });
-        requestAnimationFrame(() => {
-          this.offset = 0
-          TweenMax.to(".cursor", 0.2, {
-            delay: 0.15,
-            ease: Expo.easeIn,
-            css:{
-               "border-radius": "50%",
-               width: "8px",
-               height: "8px",
-               x: this.mouseX + this.offset/2,
-               y: this.mouseY + this.offset/2,
-            },
-          });
-        });
-        // this.$delay(2200);
-        // this.$store.commit("mouseLeave");
+      } else {
         requestAnimationFrame(() => {
           TweenMax.to(".cursor", 0.1, {
             ease: Expo.easeOut,
-            css:{
-              "background-color": "rgba(0, 0, 0, 0.6)",
-            },
+            css: {
+              "background-color": "rgba(0, 0, 0, 0.8)"
+            }
           });
-           TweenMax.to(".follower", 0.1, {
+          TweenMax.to(".follower", 0.1, {
             ease: Expo.easeOut,
-            css:{
-              "border": "2px solid rgba(0, 0, 0, 0.6)",
-            },
+            css: {
+              border: "2px solid rgba(0, 0, 0, 0.8)"
+            }
           });
         });
+      }
     },
     onMousemove(e) {
-      if(this.$store.state.mouseHover == false){
-        this.offset = 0
+      if (this.$store.state.mouseHover == false) {
+        this.offset = 0;
       }
       if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
       } else {
@@ -254,7 +300,7 @@ body {
   cursor: none; //もともとあるカーソルは見えなくなるようにする
 }
 
-a{
+a {
   cursor: none;
 }
 
@@ -267,11 +313,10 @@ a{
   pointer-events: none; //他の要素がクリックできなくならないように
 }
 
-
 .cursor {
   width: 8px;
   height: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 31; //どの要素よりも一番上になるようにする
   border-radius: 50%;
 }
@@ -281,7 +326,9 @@ a{
   height: 40px;
   border-radius: 4px;
   // background-color: #fdfe00;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8);
   z-index: 30; //カーソルの次に上になるようにする
 }
 

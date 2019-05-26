@@ -1,12 +1,12 @@
 <template>
 <div class='TheTransition TheHomeTransition'>
-  <div class='TheTransition_Background TheHome_Background' ref='background'></div>
-  <div class='TheTransition_Background TheHome_Background' ref='background'></div>
-    <div class='TheTransition_Background TheHome_Background' ref='background'>
+  <div class='TheTransition_Background TheHome_Background' ref='background' :style="style"></div>
+  <div class='TheTransition_Background TheHome_Background' ref='background' :style="style"></div>
+    <div class='TheTransition_Background TheHome_Background' ref='background' :style="style">
        <p class='TheTransition_Category text--letterspace' ref='category'>Home</p>
     </div>
-    <div class='TheTransition_Background TheHome_Background' ref='background'></div>
-    <div class='TheTransition_Background TheHome_Background' ref='background'></div>
+    <div class='TheTransition_Background TheHome_Background' ref='background' :style="style"></div>
+    <div class='TheTransition_Background TheHome_Background' ref='background' :style="style"></div>
 </div>
 </template>
 
@@ -17,12 +17,25 @@ import {mapGetters} from 'vuex'
 import {TweenMax, Expo, Elastic} from 'gsap'
 
 export default {
+  data() {
+    return {
+      style: {
+        "background-color": this.$store.state.nav.style["background-color"]
+      },
+    };
+  },
 computed: {
     ...mapGetters({
-      homeEntered: 'homeEntered'
+      homeEntered: 'homeEntered',
+      colorBlack: "nav/colorBlack",
     })
   },
   watch: {
+    async colorBlack(val) {
+      this.style["background-color"] = this.$store.state.nav.style[
+        "background-color"
+      ];
+    },
     async homeEntered (val) { // ステートの`entered`が切り替わるたび、この処理が実行される
       this.enter() // `entered`の値によってアニメーションを書き分け🔥
       await this.$delay(550)
@@ -52,6 +65,7 @@ computed: {
        this.$store.commit('homeFadeIn')
     },
     async set (){
+      console.log(this.style)
       requestAnimationFrame(() => {
         TweenMax.staggerTo(".TheHome_Background", 0, {
           opacity: '0%',
@@ -93,7 +107,7 @@ computed: {
     left: 0;
     width: 100%;
     height: 20%;
-    background: #fcfcfc;
+    background-color: #fcfcfc;
     // background: #FF005B;
     transform: translateX(-100%);
     transform-origin: left center;

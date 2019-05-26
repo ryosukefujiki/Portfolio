@@ -1,20 +1,21 @@
 <template>
-  <div class="TheNav">
+  <div class="TheNav" :style="style">
     <nav>
       <ul class="TheNav_List">
         <li class="TheNav_Item TheNav_Item_Logo">
           <p class="TheNav_Text">
-            <img :src="logoImg" alt class="TheNav_Logo">
+            <img :src="logoImg" alt class="TheNav_Logo" v-if="!this.colorBlack">
+            <img :src="logoWhiteImg" alt class="TheNav_Logo" v-if="this.colorBlack">
           </p>
         </li>
         <li class="TheNav_Item" @mouseenter="theNavBgOpen('home')" @touchstart="theNavBgOpen('home')">
-          <a @click="routing('home')" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" class="text--letterspace">Home<span class="TheNav_ItemBg" v-if="homeFlag"></span></a>
+          <a @click="routing('home')" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" class="text--letterspace" :style="textStyle">Home<span class="TheNav_ItemBg" v-if="homeFlag" :style="bgStyle"></span></a>
         </li>
         <li class="TheNav_Item" @mouseenter="theNavBgOpen('about')" @touchstart="theNavBgOpen('about')">
-          <a @click="routing('about')" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" class="text--letterspace">About<span class="TheNav_ItemBg" v-if="aboutFlag"></span></a>
+          <a @click="routing('about')" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" class="text--letterspace" :style="textStyle">About<span class="TheNav_ItemBg" v-if="aboutFlag" :style="bgStyle"></span></a>
         </li>
         <li class="TheNav_Item" @mouseenter="theNavBgOpen('blog')" @touchstart="theNavBgOpen('blog')">
-          <a href="https://note.mu/ryosukefujiki" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" target="_blank" class="text--letterspace">Blogs<span class="TheNav_ItemBg" v-if="blogFlag"></span></a>
+          <a href="https://note.mu/ryosukefujiki" @mouseenter="mouseOver()" @mouseleave="mouseLeave()" target="_blank" class="text--letterspace" :style="textStyle">Blogs<span class="TheNav_ItemBg" v-if="blogFlag" :style="bgStyle"></span></a>
         </li>
         <li class="TheNav_Item">
           <div class="TheNav_ItemIcons">
@@ -24,9 +25,10 @@
               target="_blank"
               @mouseleave="mouseLeave()"
               @mouseenter="theNavBgOpen('dribbble')" @touchstart="theNavBgOpen('dribbble')"
+              :style="textStyle"
             >
               <i class="fab fa-dribbble"></i>
-              <span class="TheNav_ItemBg" v-if="dribbleFlag"></span>
+              <span class="TheNav_ItemBg" v-if="dribbleFlag" :style="bgStyle"></span>
             </a>
             <a
               href="https://www.facebook.com/rfujiki0625"
@@ -34,9 +36,10 @@
               target="_blank"
               @mouseleave="mouseLeave()"
               @mouseenter="theNavBgOpen('facebook')" @touchstart="theNavBgOpen('facebook')"
+              :style="textStyle"
             >
               <i class="fab fa-facebook-square"></i>
-              <span class="TheNav_ItemBg" v-if="facebookFlag"></span>
+              <span class="TheNav_ItemBg" v-if="facebookFlag" :style="bgStyle"></span>
             </a>
             <a
               href="https://www.instagram.com/ryosukefujiki/"
@@ -44,9 +47,10 @@
               target="_blank"
               @mouseleave="mouseLeave()"
               @mouseenter="theNavBgOpen('instagram')" @touchstart="theNavBgOpen('instagram')"
+              :style="textStyle"
             >
               <i class="fab fa-instagram"></i>
-              <span class="TheNav_ItemBg" v-if="instagramFlag"></span>
+              <span class="TheNav_ItemBg" v-if="instagramFlag" :style="bgStyle"></span>
             </a>
           </div>
         </li>
@@ -82,6 +86,7 @@ export default {
   data() {
     return {
       logoImg: "/home/logo.png",
+      logoWhiteImg: "/home/logo_white.png",
       colorSwitchText: "Dark",
       langSwitchText: "En",
       homeFlag: false,
@@ -90,13 +95,36 @@ export default {
       dribbleFlag: false,
       facebookFlag: false,
       instagramFlag: false,
+      style: {
+        "background-color": this.$store.state.nav.style["nav-background-color"]
+      },
+      textStyle: {
+        "color": this.$store.state.nav.style["heading-color"]
+      },
+      bgStyle: {
+        "background-color": this.$store.state.nav.style["heading-color"]
+      },
     };
   },
   props: ["headerActive"],
   computed: {
     ...mapGetters({
-      aboutEntered: "about/aboutEntered"
+      aboutEntered: "about/aboutEntered",
+      colorBlack: "nav/colorBlack",
     })
+  },
+  watch: {
+    async colorBlack(val) {
+      this.style["background-color"] = this.$store.state.nav.style[
+        "nav-background-color"
+      ];
+      this.textStyle["color"] = this.$store.state.nav.style[
+        "heading-color"
+      ];
+      this.bgStyle["background-color"] = this.$store.state.nav.style[
+        "heading-color"
+      ];
+    },
   },
   methods: {
     mouseOver(){
@@ -326,7 +354,7 @@ export default {
 .TheNav ul li a:hover,
 .TheNav ul li a:focus,
 .TheNav ul li a:active {
-  color: #9b9b9b;
+  color: #9b9b9b !important;
 }
 .TheNav ul li a:hover:after,
 .TheNav ul li a:focus:after,
