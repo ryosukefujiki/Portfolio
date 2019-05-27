@@ -263,6 +263,8 @@ export default {
           });
         });
       }
+      console.log("hoge")
+      this.$store.commit("mouseLeave");
     },
     onMousemove(e) {
       if (this.$store.state.mouseHover == false) {

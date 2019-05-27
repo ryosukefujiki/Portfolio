@@ -6,7 +6,7 @@
     <p v-else class="TheError_Message" :style="textStyle">🙇‍♂️Something wrong...</p>
     <nuxt-link to="/" class="TheError_Message" v-if="!langEn" :style="textStyle">ホームに戻る</nuxt-link>
     <nuxt-link to="/" class="TheError_Message" v-if="langEn" :style="textStyle">Back to Home</nuxt-link>
-    <div class="TheBackgroundColor" :style="style">
+    <div class="TheBackgroundColor" :style="backgroundStyle">
       <div class="TheBackgroundInside" v-if="colorBlack"></div>
     </div>
     <TheFooter class="TheFooter"></TheFooter>
