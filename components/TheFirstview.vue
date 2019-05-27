@@ -1,5 +1,5 @@
 <template>
-  <div class="TheFirstview">
+  <div class="TheFirstview" v-if='!showFlag'>
     <div class="TheFirstviewTransition" v-if='!killed'></div>
     <div class="TheFirstviewTransition" v-if='!killed'></div>
     <div class="TheFirstviewTransition" v-if='!killed'>
@@ -25,6 +25,7 @@ export default {
       logoImg: "/home/logo.png",
       nameImg: "/home/name.png",
       loadingText: "LOADING NOW ...",
+      showFlag: false,
     }
   },
   components: {
@@ -38,6 +39,11 @@ export default {
     })
   },
   mounted() {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    if (userAgent.indexOf("msie") != -1 || userAgent.indexOf("trident") != -1) {
+      console.log("お使いのブラウザには対応しておりません")
+      this.showFlag = true
+    }
     let self = this;
     this.intervalId = setInterval(function() {
       self.number += 1
