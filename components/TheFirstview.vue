@@ -6,7 +6,7 @@
     <!-- <p class="TheFirstview_Text TheFirstview_PercentText">{{number}}%</p> -->
       <p class="TheFirstview_Text TheFirstview_PercentText"><img :src="logoImg" alt="" class="TheFirstview_Logo"><img :src="nameImg" alt="" class="TheFirstview_Name"></p>
       <p class="TheFirstview_Text">{{loadingText}}</p>
-      <BarLoader class="BarLoader"></BarLoader>
+      <BarLoader class="BarLoader" color="#d1d1d1"></BarLoader>
     </div>
     <div class="TheFirstviewTransition" v-if='!killed'></div>
     <div class="TheFirstviewTransition" v-if='!killed'></div>
@@ -22,8 +22,10 @@ export default {
     return {
       number: 0,
       intervalId: undefined,
-      logoImg: "/home/logo.png",
-      nameImg: "/home/name.png",
+      // logoImg: "/home/logo.png",
+      logoImg: "/home/logo_gray.png",
+      // nameImg: "/home/name.png",
+      nameImg: "/home/name_gray.png",
       loadingText: "LOADING NOW ...",
       showFlag: false,
     }
@@ -165,6 +167,7 @@ export default {
   font-weight: 700;
   font-style: italic;
   margin-bottom: 8px;
+  color: #d1d1d1;
 }
 .TheFirstview_Logo{
   // width: 56px;

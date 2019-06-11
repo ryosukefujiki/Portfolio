@@ -121,7 +121,8 @@ computed: {
 
 
 .TheTransition_Category {
-    color: #9b9b9b;
+    // color: #9b9b9b;
+    color: #d1d1d1;
     // color: #ffffff;
     text-align: center;
     font-size: 28px;

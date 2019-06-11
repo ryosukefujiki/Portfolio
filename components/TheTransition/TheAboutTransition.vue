@@ -119,7 +119,8 @@ export default {
 
 
 .TheTransition_Category {
-    color: #9b9b9b;
+    // color: #9b9b9b;
+    color: #d1d1d1;
     text-align: center;
     font-size: 28px;
     z-index: 12;
