@@ -24,7 +24,13 @@
         <div class="TheAbout_Award TheAbout_Content">
           <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🏆 AWARDS</h2>
           <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="!langEn">
+            <a href="https://spajam.jp/2019/entry/tokyo-b/" target="_blank" class="TheAbout_LinkColor">
+              2019 SPAJAM Hackthon 最優秀賞
+            </a>
+            <br>
+             <a href="https://www.sfc.keio.ac.jp/doc/award2009-2018.pdf" target="_blank" class="TheAbout_LinkColor">
             2019 SFC STUDENT AWARD
+             </a>
             <br>
             <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">
               2018 UIST Student Inovation Contest Most Creative
@@ -40,7 +46,13 @@
             <br>2017 電通 アイディアの学校 金賞
           </p>
           <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="langEn">
+            <a href="https://spajam.jp/2019/entry/tokyo-b/" target="_blank" class="TheAbout_LinkColor">
+              2019 SPAJAM Hackthon Best Prize
+            </a>
+            <br>
+            <a href="https://www.sfc.keio.ac.jp/doc/award2009-2018.pdf" target="_blank" class="TheAbout_LinkColor">
             2019 SFC STUDENT AWARD
+            </a>
             <br>
             <a href="https://uist.acm.org/uist2018/" target="_blank" class="TheAbout_LinkColor">
               2018 UIST Student Inovation Contest Most Creative
