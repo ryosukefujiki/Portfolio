@@ -150,7 +150,7 @@
         </div>
         <div class="TheAbout_Email TheAbout_Content">
           <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">📩 DROP ME A LINE !</h2>
-          <a class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">ryosukefujiki625 ＠ gmail.com</a>
+          <a class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}">me ＠ ryosukefujiki.design</a>
         </div>
       </div>
     </div>
