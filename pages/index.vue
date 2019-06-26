@@ -2,6 +2,7 @@
   <div class="TheHome" v-scroll="handleScroll">
     <TheHero class="TheHero"></TheHero>
     <TheScrollBtn v-scroll-to="'#anchor'" class="TheScrollBtn_Ref"></TheScrollBtn>
+    <TheCDABtn class="TheCDABtn"></TheCDABtn>
     <div class="TheHome_Container" id="anchor">
       <TheFoxButton class="TheTransitionBtn"></TheFoxButton>
       <TheNorenButton class="TheTransitionBtn"></TheNorenButton>
@@ -18,6 +19,7 @@
 <script>
 import TheHero from "~/components/TheHome/TheHero.vue";
 import TheScrollBtn from "~/components/TheHeader/TheScrollBtn.vue";
+import TheCDABtn from "~/components/TheHome/TheCDABtn.vue";
 import TheFooter from "~/components/TheHeader/TheFooter.vue";
 import TheHiveButton from "~/components/TheHome/TheHiveButton.vue";
 import TheFamilybookButton from "~/components/TheHome/TheFamilybookButton.vue";
@@ -40,6 +42,7 @@ export default {
     TheScrapboardButton,
     TheFoxButton,
     TheNorenButton,
+    TheCDABtn
   },
   computed: {
     ...mapGetters({
