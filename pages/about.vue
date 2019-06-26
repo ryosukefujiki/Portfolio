@@ -24,6 +24,10 @@
         <div class="TheAbout_Award TheAbout_Content">
           <h2 class="TheAbout_Heading" v-bind:class="{TheAbout_Heading_Black:colorBlack}">🏆 AWARDS</h2>
           <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="!langEn">
+            <a href="https://www.cssdesignawards.com/sites/ryosuke-fujiki-portfolio/35363" target="_blank" class="TheAbout_LinkColor">
+              2019 CSS Design Awards SPECIAL KUDOS AWARD
+            </a>
+            <br>
             <a href="https://spajam.jp/2019/entry/tokyo-b/" target="_blank" class="TheAbout_LinkColor">
               2019 SPAJAM Hackthon 最優秀賞
             </a>
@@ -46,6 +50,9 @@
             <br>2017 電通 アイディアの学校 金賞
           </p>
           <p class="TheAbout_Text" v-bind:class="{TheAbout_Text_Black:colorBlack}" v-if="langEn">
+            <a href="https://www.cssdesignawards.com/sites/ryosuke-fujiki-portfolio/35363" target="_blank" class="TheAbout_LinkColor">
+              2019 CSS Design Awards SPECIAL KUDOS AWARD
+            </a>
             <a href="https://spajam.jp/2019/entry/tokyo-b/" target="_blank" class="TheAbout_LinkColor">
               2019 SPAJAM Hackthon Best Prize
             </a>
@@ -220,6 +227,11 @@
           ></animate>
         </path>
       </svg>
+      <!-- 
+        Copyright (c) 2014 Noah Blon
+        Released under the MIT license
+        http://opensource.org/licenses/mit-license.php
+       -->
       <div class="TheBackgroundInside" v-if="colorBlack"></div>
     </div>
   </section>
