@@ -7,7 +7,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { hid: 'description', name: 'description', content: 'Ryosuke Fujiki Portsolio Site.' },
       { name: 'keywords', content: 'Ryosuke Fujiki,藤木 良祐,Ryosuke,Fujiki' },
       { property: 'fb:app_id', content: '828074940735241' },
       { property: 'og:description', content: 'Ryosuke Fujiki Portfolio' },
