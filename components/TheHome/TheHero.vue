@@ -20,7 +20,7 @@
       </a> -->
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Right">
       <img :src="pointImg" class="TheHero_PointImg TheHero_PointImg_Left">
-      <TheBackground class="TheBackground"></TheBackground>
+      <!-- <TheBackground class="TheBackground"></TheBackground> -->
     </div>
   </div>
 </template>
@@ -437,10 +437,13 @@ body,
   width: 100%;
   height: 100%;
   background: var(--background-color);
-  padding-top: 120px;
+  // padding-top: 120px;
   box-sizing: border-box;
   // position: relative;
   // -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .TheHero_Img {
@@ -657,7 +660,7 @@ body,
 
 @media screen and (max-width: 1024px) {
   .TheHero {
-    padding-top: 400px;
+    // padding-top: 400px;
   }
   .TheHero_Heading {
     font-size: 100px;
@@ -693,7 +696,7 @@ body,
 
 @media screen and (max-width: 768px) {
   .TheHero {
-    padding-top: 240px;
+    // padding-top: 240px;
   }
   .TheHero_Heading {
     font-size: 80px;
