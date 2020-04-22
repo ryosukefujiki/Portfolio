@@ -5,7 +5,7 @@
     <TheCDABtn class="TheCDABtn"></TheCDABtn>
     <div class="TheHome_Container" id="anchor">
       <TheFoxButton class="TheTransitionBtn"></TheFoxButton>
-      <TheNorenButton class="TheTransitionBtn"></TheNorenButton>
+      <!-- <TheNorenButton class="TheTransitionBtn"></TheNorenButton> -->
       <TheFamilybookButton class="TheTransitionBtn"></TheFamilybookButton>
       <ThePlayfulfesButton class="TheTransitionBtn"></ThePlayfulfesButton>
       <TheLineandballButton class="TheTransitionBtn"></TheLineandballButton>
