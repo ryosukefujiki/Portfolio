@@ -62,9 +62,9 @@
             <p class="Overview_Text" :style="textStyle">藤木
               <br>
               <span class="Overview_Text__task">- Engineer</span>
-              <br>深谷
+              <!-- <br>深谷
               <br>
-              <span class="Overview_Text__task">- Engineer Leader</span>
+              <span class="Overview_Text__task">- Engineer Leader</span> -->
               <br>成田
               <br>
               <span class="Overview_Text__task">- Designer</span>
