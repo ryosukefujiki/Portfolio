@@ -382,8 +382,8 @@ $text-size: 16px;
 }
 .TheAbout_Heading {
   color: $heading-color;
-  // font-family: "Noto Sans", sans-serif;
-  font-family: "秀英角ゴシック金 B" !important;
+  font-family: "Noto Sans", sans-serif;
+  // font-family: "秀英角ゴシック金 B" !important;
   // font-style: normal;
   font-size: $heading-size;
   // letter-spacing: 0.5px;
@@ -391,12 +391,15 @@ $text-size: 16px;
 }
 .TheAbout_Text {
   color: $text-color;
-  // font-family: "Noto Sans JP", "Hiragino Kaku Gothic Pro", Verdana, Arial,
-  //   Helvetica, "ヒラギノ角ゴ Pro W3", "Osaka", "ＭＳ Ｐゴシック", sans-serif;
-  font-family: "秀英角ゴシック金 B" !important;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic Pro", Verdana, Arial,
+    Helvetica, "ヒラギノ角ゴ Pro W3", "Osaka", "ＭＳ Ｐゴシック", sans-serif;
+  // font-family: "秀英角ゴシック金 B" !important;
   font-size: $text-size;
   margin-top: 8px;
   line-height: 48px;
+}
+.fontplus-trial-banner{
+  display: none !important;
 }
 
 .TheAbout_LinkColor {
