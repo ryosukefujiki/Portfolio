@@ -24,7 +24,10 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans:400,700i'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css'},
       { rel: "stylesheet", href:"https://use.fontawesome.com/releases/v5.6.1/css/all.css"}
-    ]
+    ],
+    script: [
+      { type: 'text/javascript', src: '//webfont.fontplus.jp/accessor/script/fontplus.js?4tBhYYtMw3k%3D&box=zMeDqHC5zZ8%3D&pm=1&aa=1&ab=2',charset: 'utf-8' }
+    ],
   },
   css: [
     // プロジェクト内の CSS ファイル
