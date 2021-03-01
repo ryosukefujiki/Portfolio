@@ -22,7 +22,7 @@
     "gsap": "^2.1.2",
     "nuxt": "^2.6.2",
     "nuxt-fontawesome": "^0.4.0",
-    "three": "^0.104.0",
+    "three": "^0.125.0",
     "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {
